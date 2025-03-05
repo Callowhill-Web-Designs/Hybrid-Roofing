@@ -1,14 +1,14 @@
 module.exports = {
-    "name": "Code Stitch Web Designs",
-    "email": "help@codestitch.app",
-    "phoneForTel": "555-779-4407",
-    "phoneFormatted": "(555) 779-4407",
+    "name": "Hybrid Roofing PA",
+    "email": "insertemailhere@gmail.com",
+    "phoneForTel": "123-456-7890",
+    "phoneFormatted": "(123) 456-7890",
     "address": {
         "lineOne": "First Address Line",
         "lineTwo": "Second Address Line",
-        "city": "Denver",
-        "state": "CO",
-        "zip": "80206",
+        "city": "New York City",
+        "state": "NY",
+        "zip": "12345",
         "country": "US",
         "mapLink": "https://maps.app.goo.gl/TEdS5KoLC9ZcULuQ6"
     },
