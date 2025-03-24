@@ -18,82 +18,96 @@ eleventyNavigation:
 {% block body %}
 
     <!-- ============================================ -->
-    <!--                    LANDING                   -->
+    <!--                   Banner                     -->
     <!-- ============================================ -->
 
-    <section id="int-hero">
-        <h1 id="home-h">Contact Us</h1>
-        <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
-        </picture>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                Contact Form                  -->
-    <!-- ============================================ -->
-
-    <section id="cs-contact">
+    <div id="banner-2285">
         <div class="cs-container">
-            <form id="cs-form" name="Contact Form" method="post">
-                <div class="cs-content">
-                    <span class="cs-topper">Contact</span>
-                    <h2 class="cs-title">Get in Touch</h2>
-                    <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus elementum ullamcorper ipsum porttitor aliquam. Id magna urna ultrices odio pulvinar. Sed ut.
-                    </p>
-                </div>
-                <label>
-                    Name
-                    <input required type="text" id="name" name="name" placeholder="Name">
-                </label>
-                <label>
-                    Email
-                    <input required type="text" id="email" name="email" placeholder="Email">
-                </label>
-                <label>
-                    Phone
-                    <input required type="text" id="phone" name="phone" placeholder="Phone">
-                </label>
-                <label>
-                    How Did You Find Us
-                    <input type="text" id="find" name="find-us" placeholder="How did you find us?">
-                </label>
-                <label class="cs-label-message">
-                    Message
-                    <textarea required name="Message" id="message" placeholder="Write message..."></textarea>
-                </label>
-                <button class="cs-button-solid" type="submit">Submit Message</button>
-            </form>
-            <div class="cs-right-section">
-                <!--Email-->
-                <span class="cs-header">Email</span>
-                <a class="cs-link" href="mailto:{{client.email}}">{{client.email}}</a>
-                <!--Phone-->
-                <span class="cs-header">Phone</span>
-                <a class="cs-link" href="tel:{{client.phoneForTel}}">{{client.phoneFormatted}}</a>
-                <!--Address-->
-                <span class="cs-header">Address</span>
-                <a class="cs-link" href="{{client.address.mapLink}}">
-                    {{client.address.lineOne}},
-                    <br/>
-                    {{client.address.lineTwo}},
-                    <br/>
-                    <span class="cs-block">
-                        {{client.address.city}}
-                        {{client.address.state}}
-                        {{client.address.zip}}
-                    </span>
-                </a>
+            <span class="cs-int-title">Contact Us</span>
+            <p class="cs-text">
+                Fill out this short form and a Hybrid Roofing and Renovations representative will contact you the same business day.
+            </p>
+            <div class="cs-breadcrumbs">
+                <a href="" class="cs-link">Home</a>
+                <a href="" class="cs-link cs-active">Contact</a>
+            </div>
+        </div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="/assets/images/shingles.webp">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="/assets/images/shingles.webp">
+            <img decoding="async" src="/assets/images/shingles.webp" alt="construction" width="1280" height="568" aria-hidden="true">
+        </picture>
+    </div>
+                                
+    <!-- ============================================ -->
+    <!--                   Contact                    -->
+    <!-- ============================================ -->
 
-                <!-- Background Image-->
-                <picture class="cs-bg-picture">
-                    <source media="(min-width: 601px)" srcset="/assets/images/skyscraper.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/skyscraper.jpg" alt="building" loading="lazy" width="2500" height="1667">
+    <section id="contact-1601">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Contact Us</span>
+                <h2 class="cs-title">Get A Free Quote</h2>
+                <!--Form-->
+                <form class="cs-form" id="cs-form-1601" name="Contact Form" method="post">
+                    <label class="cs-label">
+                        Name
+                        <input class="cs-input" required type="text" id="name-1601" name="name" placeholder="Name">
+                    </label>
+                    <label class="cs-label cs-email">
+                        Email
+                        <input class="cs-input" required type="email" id="email-1601" name="email" placeholder="Email">
+                    </label>
+                    <label class="cs-label cs-phone">
+                        Phone
+                        <input class="cs-input" required type="phone" id="phone-1601" name="phone" placeholder="Phone">
+                    </label>
+                    <label class="cs-label">
+                        Message
+                        <textarea class="cs-input cs-textarea" required name="Message" id="message-1601" placeholder="Write message..."></textarea>
+                    </label>
+                    <button class="cs-button-solid cs-submit" type="submit">Submit Now</button>
+                </form>
+            </div>
+            <div class="cs-wrapper">
+                <ul class="cs-card-group">
+                    <li class="cs-item">
+                        <span class="cs-header">Call Us</span>
+                        <p class="cs-item-text">
+                            We are available weekdays from 9am - 5pm to answer your questions.<br>
+                            <a class="cs-link" href="tel:{{client.phoneForTel}}">{{client.phoneFormatted}}</a>                    
+                        </p>
+                    </li>
+                    <li class="cs-item">
+                        <span class="cs-header">Email Us</span>
+                        <p class="cs-item-text">
+                            Please email your questions to
+                            <a class="cs-link" href="mailto:{{client.email}}">{{client.email}}</a>     
+                        </p>
+                    </li>
+                    <li class="cs-item">
+                        <span class="cs-header">Reviews</span>
+                        <p class="cs-item-text">
+                            See what our customers say
+                            <a href="https://g.co/kgs/eum28nu" class="cs-link">
+                                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/google-1a.svg" alt="icon" loading="lazy" decoding="async" width="16" height="16" aria-hidden="true">
+                                4.9/5 Stars Based On 72 Reviews
+                            </a>                   
+                        </p>
+                    </li>
+                </ul>
+                <picture class="cs-background">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/finishedroof1.webp">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/finishedroof1.webp">
+                    <img loading="lazy" decoding="async" src="/assets/images/finishedroof1.webp" alt="people" width="522" height="771">
                 </picture>
-
             </div>
         </div>
     </section>
+                                    
 {% endblock %}
