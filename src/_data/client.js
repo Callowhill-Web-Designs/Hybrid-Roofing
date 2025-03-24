@@ -1,8 +1,8 @@
 module.exports = {
     "name": "Hybrid Roofing PA",
-    "email": "insertemailhere@gmail.com",
-    "phoneForTel": "123-456-7890",
-    "phoneFormatted": "(123) 456-7890",
+    "email": "HybridRenovationsLLC@gmail.com",
+    "phoneForTel": "215-807-9195",
+    "phoneFormatted": "(215) 807-9195",
     "address": {
         "lineOne": "First Address Line",
         "lineTwo": "Second Address Line",
