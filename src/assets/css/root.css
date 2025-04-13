@@ -1323,7 +1323,7 @@
     transition: color 0.3s;
   }
   #cs-footer-1294 .cs-link:hover {
-    color: var(--primary);
+    color: var(--secondary);
   }
   #cs-footer-1294 .cs-wrapper {
     display: flex;
