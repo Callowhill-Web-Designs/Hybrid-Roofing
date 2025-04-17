@@ -6,7 +6,7 @@ author: Zade Dohan
 date: 2025-04-10T08:00:00.000Z
 tags:
   - post
-image: /assets/images/blog/landing.jpg
+image: /assets/images/blog/img_2190.webp
 imageAlt: roof
 ---
 
