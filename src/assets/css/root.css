@@ -753,7 +753,7 @@
   #cs-navigation .cs-social {
     height: 2rem;
     opacity: 1;
-    display: none;
+    display: flex;
     visibility: visible;
     justify-content: center;
     align-items: center;
