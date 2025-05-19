@@ -214,7 +214,7 @@
 @media only screen and (min-width: 64rem) {
   #sbs-2277 .cs-content {
     /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
+    gap: 0px;
   }
   #sbs-2277 .cs-title {
     margin: 0;
@@ -349,7 +349,7 @@
     content: '';
     width: 100%;
     height: 100%;
-    background: var(--primary);
+    background: var(--secondary);
     opacity: 0.1;
     display: block;
     position: absolute;
@@ -785,10 +785,10 @@
     opacity: 1;
     bottom: -0.625rem;
   }
-  #gallery-2281 .cs-button.cs-active {
+  #gallery-2281 .cs-button.cs-active-gallery {
     color: var(--primary);
   }
-  #gallery-2281 .cs-button.cs-active:before {
+  #gallery-2281 .cs-button.cs-active-gallery:before {
     opacity: 1;
     bottom: -0.625rem;
   }

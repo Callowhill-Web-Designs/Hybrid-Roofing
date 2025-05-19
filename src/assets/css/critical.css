@@ -1,17 +1,108 @@
 /* STYLES FOR ABOVE THE FOLD */
 /*-- -------------------------- -->
+<---          Services          -->
+<--- -------------------------- -*/
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+  #services-2349 {
+    padding: 50px;
+  }
+  #services-2349 .cs-card-group {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* 16px - 20px, changes to 100px at large desktop 1300px */
+    column-gap: clamp(1rem, 3vw, 1.25rem);
+    row-gap: 2rem;
+  }
+  #services-2349 .cs-item {
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    grid-column: span 12;
+  }
+  #services-2349 .cs-link {
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  #services-2349 .cs-icon {
+    width: 1.5rem;
+    height: auto;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  #services-2349 .cs-h2 {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 3vw, 1.5625rem);
+    text-align: inherit;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    padding-bottom: 1rem;
+    height: 100%;
+    color: var(--headerColor);
+    border-bottom: 1px solid #E3DDD9;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  #services-2349 .cs-h2:hover {
+    color: var(--primary);
+  }
+  #services-2349 .cs-icon {
+    width: 1.5rem;
+    height: auto;
+    display: block;
+  }
+  #services-2349 .cs-item-text {
+    font-size: 1rem;
+    text-align: inherit;
+    line-height: 1.5em;
+    margin: 0;
+    color: var(--bodyTextColor);
+  }
+  #services-2349 .cs-item-text:hover {
+    color: var(--primary);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #services-2349 .cs-item {
+    grid-column: span 6;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #services-2349 .cs-item {
+    grid-column: span 3;
+  }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #services-2349 .cs-card-group {
+    column-gap: 6.25rem;
+  }
+}
+/*-- -------------------------- -->
 <---           Hero             -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #hero-2275 {
-    /* 150px - 300px Top */
-    padding: clamp(9rem, 30.95vw, 18.75rem) 1rem clamp(7.5rem, 14vw, 10.9375rem);
+  #hero-2334 {
+    /* 150px - 258px Top */
+    padding: clamp(9rem, 23.95vw, 16.125rem) 1rem 0rem;
     overflow: hidden;
     position: relative;
-    z-index: 10;
+    z-index: 1;
   }
-  #hero-2275 .cs-container {
+  #hero-2334 .cs-container {
     width: 100%;
     max-width: 80rem;
     margin: auto;
@@ -22,19 +113,41 @@
     justify-content: center;
     gap: 5.5rem;
   }
-  #hero-2275 .cs-content {
+  #hero-2334 .cs-content {
     /* set text align to left if content needs to be left aligned */
     text-align: left;
     width: 100%;
     max-width: 39.375rem;
+    /* 60px - 80px top & Bottom */
+    /* 16px - 32px left & right */
+    padding: clamp(3.75rem, 8vw, 5rem) clamp(1rem, 5vw, 2rem);
     display: flex;
     flex-direction: column;
     /* centers content horizontally, set to flex-start to left align */
     align-items: flex-start;
     position: relative;
-    z-index: 10;
+    z-index: 1;
   }
-  #hero-2275 .cs-title {
+  #hero-2334 .cs-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #111418;
+    opacity: 0.8;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #hero-2334 .cs-graphic {
+    width: 117.8125rem;
+    height: auto;
+    opacity: 0.1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  #hero-2334 .cs-title {
     /* 39px - 61px */
     font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
     font-weight: 900;
@@ -46,18 +159,24 @@
     color: var(--bodyTextColorWhite);
     position: relative;
   }
-  #hero-2275 .cs-text {
+  #hero-2334 .cs-tag {
+    /* 25px - 39px */
+    font-size: clamp(1.5625rem, 4vw, 2.4375rem);
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+  #hero-2334 .cs-text {
     /* 16px - 20px */
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     line-height: 1.5em;
     width: 100%;
-    max-width: 43.75rem;
+    max-width: 56.25rem;
     /* 28px - 40px */
     margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
     color: var(--bodyTextColorWhite);
     opacity: 0.8;
   }
-  #hero-2275 .cs-button-solid {
+  #hero-2334 .cs-button-solid {
     font-size: 1rem;
     text-align: center;
     /* 46px - 56px */
@@ -67,9 +186,9 @@
     /* clips corners of the before element */
     overflow: hidden;
     margin: 0;
-    color: #fff;
+    color: #000;
     padding: 0 1.75rem;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
@@ -78,42 +197,48 @@
     z-index: 1;
     transition: color 0.3s;
   }
-  #hero-2275 .cs-button-solid:before {
+  #hero-2334 .cs-button-solid:before {
     content: "";
     position: absolute;
     display: block;
     height: 100%;
     width: 0%;
-    background: #000;
+    background: var(--primary);
     opacity: 1;
     top: 0;
     left: 0;
     z-index: -1;
     transition: width 0.3s;
   }
-  #hero-2275 .cs-button-solid:hover {
+  #hero-2334 .cs-button-solid:hover {
     color: #fff;
   }
-  #hero-2275 .cs-button-solid:hover:before {
+  #hero-2334 .cs-button-solid:hover:before {
     width: 100%;
   }
-  #hero-2275 .cs-image-group {
+  #hero-2334 .cs-picture {
+    width: 100%;
+    /* 427px - 581px */
+    max-width: clamp(26.6875rem, 60vw, 42.5rem);
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    z-index: 7;
+  }
+  #hero-2334 .cs-picture img {
+    width: 100%;
+    height: auto;
+  }
+  #hero-2334 .cs-background {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
     position: absolute;
     top: 0;
     left: 0;
-    overflow: hidden;
+    z-index: -1;
   }
-  #hero-2275 .cs-background {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 1;
-  }
-  #hero-2275 .cs-background img {
+  #hero-2334 .cs-background img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -122,309 +247,67 @@
     left: 0;
     z-index: -1;
   }
-  #hero-2275 .cs-background1:before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: #000;
-    opacity: 0.72;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  #hero-2275 .cs-background2 {
-    display: none;
-    flex: none;
-  }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #hero-2275 {
+  #hero-2334 {
+    /* 80px - 112px */
+    --heroPadding: clamp(5rem, 10vw, 7rem);
+    padding-bottom: var(--heroPadding);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 5.625rem;
   }
-  #hero-2275 .cs-container {
+  #hero-2334 .cs-container {
     justify-content: flex-start;
-    align-items: flex-start;
     flex-direction: row;
   }
-  #hero-2275 .cs-content {
+  #hero-2334 .cs-content {
     text-align: left;
-    width: 53%;
+    width: 100%;
+    max-width: 100%;
+    padding: 5rem 2rem;
     align-items: flex-start;
   }
-  #hero-2275 .cs-picture {
-    width: 56%;
-    position: absolute;
-    bottom: -4.0625rem;
-    right: -1.875rem;
-  }
-  #hero-2275 .cs-image-group {
-    flex-direction: row;
-  }
-  #hero-2275 .cs-background2 {
-    width: 25vw;
-    height: 100%;
-    max-height: 100%;
-    border-left: 2px solid #FFC219;
-  }
-}
-/* Large Desktop - 1300px */
-@media only screen and (min-width: 81.25rem) {
-  #hero-2275 .cs-background1 {
-    width: 75vw;
-    margin-right: -21.5625rem;
-    position: absolute;
-    top: 0;
-    right: 50%;
-  }
-  #hero-2275 .cs-background2 {
-    width: 40.8125vw;
-    height: auto;
-    margin-left: 21.3125rem;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    bottom: 8.5rem;
-  }
-}
-/*-- -------------------------- -->
-<---         Services           -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #Hservices-2275 {
-    width: 100%;
-    padding: var(--sectionPadding);
-    padding-bottom: 0;
-    position: relative;
-    z-index: 20;
-  }
-  #Hservices-2275 .cs-container {
-    max-width: 80rem;
-    margin: auto;
-    position: relative;
-    z-index: 1;
-  }
-  #Hservices-2275 .cs-card-group {
-    width: 100%;
-    max-width: 80rem;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    row-gap: 2rem;
-  }
-  #Hservices-2275 .cs-item {
-    text-align: left;
-    list-style: none;
-    width: 100%;
-    box-sizing: border-box;
-    grid-column: span 12;
-    position: relative;
-    z-index: 1;
-    transition: background-color 0.3s, border-color 0.3s;
-  }
-  #Hservices-2275 .cs-item:last-of-type .cs-link {
-    /* 32px - 80px top & bottom */
-    padding: clamp(2rem, 4vw, 5rem) 0;
-    box-sizing: border-box;
-  }
-  #Hservices-2275 .cs-item:last-of-type .cs-icon {
-    width: 4rem;
-    margin-bottom: 1.5rem;
-  }
-  #Hservices-2275 .cs-item:last-of-type .cs-h3 {
-    font-size: 1.5625rem;
-  }
-  #Hservices-2275 .cs-item:last-of-type .cs-item-text {
-    margin-bottom: 2rem;
-  }
-  #Hservices-2275 .cs-number {
-    font-size: 4.5rem;
-    line-height: 1.2em;
-    font-weight: 700;
-    margin: 0;
-    color: var(--headerColor);
-  }
-  #Hservices-2275 .cs-fake-link {
-    font-size: 1rem;
-    line-height: 1.2em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0;
-    padding: 0 0 0.25rem 0;
-    border-bottom: 1px solid var(--primary);
-    color: var(--primary);
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  #Hservices-2275 .cs-item-background {
-    margin-top: 1.75rem;
-    /* offsets the 32px gap between all cs-items */
-    margin-bottom: -2rem;
-  }
-  #Hservices-2275 .cs-item-picture {
-    width: 100%;
-    height: 100vw;
-    display: block;
-    position: relative;
-    z-index: 1;
-  }
-  #Hservices-2275 .cs-item-picture img {
+  #hero-2334 .cs-overlay {
     width: 100vw;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
-  }
-  #Hservices-2275 .cs-background {
-    width: 100vw;
-    height: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
-  }
-  #Hservices-2275 .cs-background:before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    opacity: 1;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  #Hservices-2275 .cs-background img {
-    width: 100%;
-    height: 100%;
-    opacity: 0.08;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  #Hservices-2275 .cs-link {
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-  #Hservices-2275 .cs-icon {
-    width: 2.5rem;
-    height: auto;
-    margin: 0 0 1.25rem 0;
-  }
-  #Hservices-2275 .cs-h3 {
-    /* 20px - 25px */
-    font-size: clamp(1.25rem, 2vw, 1.5625rem);
-    font-weight: 700;
-    text-align: inherit;
-    line-height: 1.2em;
-    margin: 0 0 0.5rem 0;
-    color: var(--headerColor);
-    transition: color 0.3s;
-  }
-  #Hservices-2275 .cs-item-text {
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    text-align: inherit;
-    line-height: 1.5em;
-    margin: 0;
-    color: var(--bodyTextColor);
-    transition: color 0.3s, opacity 0.3s;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #Hservices-2275 {
-    padding: var(--sectionPadding);
-  }
-  #Hservices-2275 .cs-card-group {
-    width: 44%;
-  }
-  #Hservices-2275 .cs-item:last-of-type {
-    width: 49%;
-    position: absolute;
-    right: 1rem;
-    /* --60px to -100px */
-    bottom: calc(clamp(3.75rem, 7.82vw, 6.25rem) * -1);
-  }
-  #Hservices-2275 .cs-item:last-of-type .cs-link {
-    /* 32px - 80px top & bottom */
-    /* 16px - 80px left & right */
-    padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 6vw, 5rem);
-  }
-  #Hservices-2275 .cs-item-background {
-    width: 45%;
-    height: 30.5rem;
-    margin: 0;
-    position: absolute;
-    /* -260px to -300px */
-    top: calc(clamp(16.25rem, 25vw, 18.75rem) * -1);
+    border-radius: 0 18.75rem 18.75rem 0;
+    left: auto;
     right: -1rem;
   }
-  #Hservices-2275 .cs-item-picture {
-    height: 100%;
-  }
-  #Hservices-2275 .cs-item-picture img {
+  #hero-2334 .cs-title {
     width: 100%;
-    left: 0;
-    transform: none;
   }
-  #Hservices-2275 .cs-background {
+  #hero-2334 .cs-text {
     width: 100%;
-    left: 0;
-    transform: none;
+  }
+  #hero-2334 .cs-picture {
+    width: 40%;
+    position: absolute;
+    bottom: calc(var(--heroPadding)*-1 - 3rem);
+    right: -0.625rem;
   }
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  #Hservices-2275 .cs-item:last-of-type {
-    width: 47vw;
-    top: auto;
+  #hero-2334 .cs-content {
+    width: 80%;
+    max-width: 62.5rem;
   }
-  #Hservices-2275 .cs-item-background {
-    width: 40%;
+  #hero-2334 .cs-graphic {
+    width: 186.375rem;
+  }
+  #hero-2334 .cs-picture {
+    width: 50vw;
+    /* 32px - 80px */
+    right: 1rem;
   }
 }
 /* Large Desktop - 1300px */
 @media only screen and (min-width: 81.25rem) {
-  #Hservices-2275 {
-    padding: 0;
-  }
-  #Hservices-2275 .cs-card-group {
-    width: 53.75rem;
-    padding: 3.75rem 0;
-    column-gap: 1.25rem;
-  }
-  #Hservices-2275 .cs-item {
-    grid-column: span 4;
-  }
-  #Hservices-2275 .cs-item:last-of-type {
-    width: 25rem;
-    top: auto;
-    right: 0;
-    bottom: 0;
-  }
-  #Hservices-2275 .cs-item-background {
-    display: none;
+  #hero-2334 .cs-content {
+    padding-left: 0;
   }
 }

@@ -1,7 +1,7 @@
 class GalleryFilter {
     filtersSelector = '.cs-button'
     imagesSelector = '.cs-gallery'
-    activeClass = 'cs-active'
+    activeClass = 'cs-active-gallery'
     hiddenClass = 'cs-hidden'
 
     constructor() {
