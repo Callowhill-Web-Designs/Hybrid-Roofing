@@ -8,7 +8,7 @@
     padding: var(--sectionPadding);
     position: relative;
     z-index: 1;
-    background-color: #f7f7f7;
+    background-color: #f3f3f3;
   }
   #sbs-2277 .cs-container {
     width: 100%;
@@ -527,7 +527,7 @@
     /* centers the button */
     text-align: center;
     padding: var(--sectionPadding);
-    background-color: #f7f7f7;
+    background-color: #f3f3f3;
     /* clips the orbs from causing overflow issues */
     overflow: hidden;
     position: relative;
@@ -996,7 +996,7 @@
   #faq-2286 {
     padding: var(--sectionPadding);
     position: relative;
-    background-color: #f7f7f7;
+    background-color: #f3f3f3;
   }
   #faq-2286 .cs-container {
     width: 100%;

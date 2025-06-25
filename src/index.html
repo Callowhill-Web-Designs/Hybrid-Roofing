@@ -15,6 +15,8 @@ eleventyNavigation:
     <link rel="stylesheet" href="/assets/css/local.css"/>
     <link rel="stylesheet" href="/assets/css/critical.css"/>
 
+    <script src="./assets/js/hero.js"></script>
+
     <!-- Script for Netlify Identity -->
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script defer>
@@ -92,13 +94,36 @@ eleventyNavigation:
                 </div>
             </div>
         </div>
-        <picture class="cs-background">
-            <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-            <!--Tablet and above Image-->
-            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-            <img decoding="async" src="./assets/images/workersonroof.webp" width="1800" height="860">
-        </picture>
+        <div class="cs-background-slider">
+            <picture class="cs-slide">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="./assets/images/rooftopdeckchair.webp">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="./assets/images/rooftopdeckchair.webp">
+                <img decoding="async" src="./assets/images/rooftopdeckchair.webp" width="2560" height="1440">
+            </picture>
+            <picture class="cs-slide">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="./assets/images/IMG_2191.webp">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="./assets/images/IMG_2191.webp">
+                <img decoding="async" src="./assets/images/IMG_2191.webp" width="2560" height="1440">
+            </picture>
+            <picture class="cs-slide">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="./assets/images/rooftopdeckblue.webp">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="./assets/images/rooftopdeckblue.webp">
+                <img decoding="async" src="./assets/images/rooftopdeckblue.webp" width="2560" height="1440">
+            </picture>
+            <picture class="cs-slide">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
+                <img decoding="async" src="./assets/images/workersonroof.webp" width="2560" height="1440">
+            </picture>
+        </div>
     </section>
            
     <!-- ============================================ -->
@@ -108,7 +133,7 @@ eleventyNavigation:
     <section id="services-2349">
         <ul class="cs-card-group">
             <li class="cs-item">
-                <a href="/project-one" class="cs-link">
+                <a href="/repair-replacement" class="cs-link">
                     <h2 class="cs-h2">Repair & Replacement</h2>
                     <p class="cs-item-text">
                         From storm damage to everyday wear and tear, we handle all types of roof repairs—big or small.
@@ -116,7 +141,7 @@ eleventyNavigation:
                 </a>
             </li>
             <li class="cs-item">
-                <a href="/project-two" class="cs-link">
+                <a href="/roof-decks" class="cs-link">
                     <h2 class="cs-h2">Fiberglass Roof Decks</h2>
                     <p class="cs-item-text">
                         We design and build stunning roof decks that allow you to make the most of your rooftop space.
@@ -124,7 +149,7 @@ eleventyNavigation:
                 </a>
             </li>
             <li class="cs-item">
-                <a href="/project-three" class="cs-link">
+                <a href="/siding-stucco" class="cs-link">
                     <h2 class="cs-h2">Siding & Stucco Remidiation</h2>
                     <p class="cs-item-text">
                         We offer a full range of materials and styles for siding to match your vision and budget.
@@ -132,7 +157,7 @@ eleventyNavigation:
                 </a>
             </li>
             <li class="cs-item">
-                <a href="/project-four" class="cs-link">
+                <a href="/commercial" class="cs-link">
                     <h2 class="cs-h2">Commercial Roofing</h2>
                     <p class="cs-item-text">
                         For retail spaces, office complexes, warehouses, and more, we provide expert solutions.
@@ -241,7 +266,7 @@ eleventyNavigation:
                     <p class="cs-item-text">
                         Quick, reliable repairs and seasonal maintenance to keep your roof in top shape year-round.
                     </p>
-                    <a href="" class="cs-link">
+                    <a href="/repair-replacement" class="cs-link">
                         View More
                         <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/upper-right-black-arrow.svg" alt="icon" width="20" height="20">
                     </a>
@@ -258,7 +283,7 @@ eleventyNavigation:
                     <p class="cs-item-text">
                         Full tear-offs and re-roofs using durable materials built to protect your home or business.
                     </p>
-                    <a href="" class="cs-link">
+                    <a href="/repair-replacement" class="cs-link">
                         View More
                         <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/upper-right-black-arrow.svg" alt="icon" width="20" height="20">
                     </a>
@@ -275,7 +300,7 @@ eleventyNavigation:
                     <p class="cs-item-text">
                         Lightweight, waterproof, and long-lasting—ideal for flat or low-slope roofs.
                     </p>
-                    <a href="" class="cs-link">
+                    <a href="/roof-decks" class="cs-link">
                         View More
                         <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/upper-right-black-arrow.svg" alt="icon" width="20" height="20">
                     </a>
@@ -292,7 +317,7 @@ eleventyNavigation:
                     <p class="cs-item-text">
                         Custom-built roof decks that turn your rooftop into a stylish, functional outdoor living space.
                     </p>
-                    <a href="" class="cs-link">
+                    <a href="/roof-decks" class="cs-link">
                         View More
                         <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/upper-right-black-arrow.svg" alt="icon" width="20" height="20">
                     </a>
@@ -309,7 +334,7 @@ eleventyNavigation:
                     <p class="cs-item-text">
                        Boost curb appeal and energy efficiency with expert siding solutions tailored to your property.
                     </p>
-                    <a href="" class="cs-link">
+                    <a href="/siding-stucco" class="cs-link">
                         View More
                         <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/upper-right-black-arrow.svg" alt="icon" width="20" height="20">
                     </a>
@@ -326,7 +351,7 @@ eleventyNavigation:
                     <p class="cs-item-text">
                         We identify and fix hidden moisture damage, restoring your exterior with safer, longer-lasting materials.
                     </p>
-                    <a href="" class="cs-link">
+                    <a href="/siding-stucco" class="cs-link">
                         View More
                         <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/upper-right-black-arrow.svg" alt="icon" width="20" height="20">
                     </a>
@@ -367,11 +392,8 @@ eleventyNavigation:
                         I’d definitely recommend them for anyone looking for reliable roofing and siding services.
                     </p>
                     <div class="cs-flex-group">
-                        <picture class="cs-picture">
-                            <img class="cs-profile" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/construction-review1.png" decoding="async" alt="profile" width="50" height="50" aria-hidden="true">
-                        </picture>
                         <span class="cs-name">
-                            Drew Parker
+                            - Drew Parker
                         </span>
                     </div>
                 </li>
@@ -385,11 +407,8 @@ eleventyNavigation:
                         You can trust him and his team to get your project job done right with integrity and care.
                     </p>
                     <div class="cs-flex-group">
-                        <picture class="cs-picture">
-                            <img class="cs-profile" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/construction-review2.png" decoding="async" alt="profile" width="50" height="50" aria-hidden="true">
-                        </picture>
                         <span class="cs-name">
-                            Alesandra Bevilacqua
+                            - Alesandra Bevilacqua
                         </span>
                     </div>
                 </li>
@@ -403,11 +422,8 @@ eleventyNavigation:
                         When the inevitable issues were found they communicated promptly and clearly, and partnered with us to find the right solution. Very highly recommended.
                     </p>
                     <div class="cs-flex-group">
-                        <picture class="cs-picture">
-                            <img class="cs-profile" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/construction-review3.png" decoding="async" alt="profile" width="50" height="50" aria-hidden="true">
-                        </picture>
                         <span class="cs-name">
-                            J. Kevin Porter
+                            - J. Kevin Porter
                         </span>
                     </div>
                 </li>
@@ -421,11 +437,8 @@ eleventyNavigation:
                         All of my questions and conversations were welcomed by Donta and the team, which allowed me to learn so much about the process and to be a more knowledgeable homeowner.
                     </p>
                     <div class="cs-flex-group">
-                        <picture class="cs-picture">
-                            <img class="cs-profile" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/construction-review4.png" decoding="async" alt="profile" width="50" height="50" aria-hidden="true">
-                        </picture>
                         <span class="cs-name">
-                            Nick Ross
+                            - Nick Ross
                         </span>
                     </div>
                 </li>
@@ -442,305 +455,77 @@ eleventyNavigation:
     -->
 
     <section id="gallery-2281">
-        <script defer src="/assets/js/gallery.js"></script>
         <div class="cs-container">
             <div class="cs-content">
                 <div class="cs-flex">
                     <span class="cs-topper">Our Portfolio</span>
                     <h2 class="cs-title">Featured Projects</h2>
                 </div>
-                <div class="cs-button-group">
-                    <button class="cs-button" data-filter="one">
-                        All
-                    </button>
-                    <button class="cs-button" data-filter="two">
-                        Residential
-                    </button>
-                    <button class="cs-button" data-filter="three">
-                        Commercial
-                    </button>
-                    <button class="cs-button" data-filter="four">
-                        Roof Decks
-                    </button>
-                </div>
             </div>
             <div class="cs-gallery-wrapper">
                 <!--Gallery 1-->
                 <div class="cs-gallery" data-category="one">
                     <!--Picture 1-->
-                    <a class="cs-image" href="">
+                    <div class="cs-image">
                         <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
+                            <source media="(max-width: 600px)" srcset="./assets/images/IMG_2191.webp">
+                            <source media="(min-width: 601px)" srcset="./assets/images/IMG_2191.webp">
+                            <img loading="lazy" decoding="async" src="./assets/images/IMG_2191.webp" width="305" height="400">
                         </picture>
                         <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
+                            <span class="cs-project">Fiberglass Roof Deck</span>
                         </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/rooftopdeckchair.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/rooftopdeckchair.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/rooftopdeckchair.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
+                    </div>
+                    <div class="cs-image">
                         <picture class="cs-picture">
                             <source media="(max-width: 600px)" srcset="./assets/images/rooftopdeckchair.webp">
                             <source media="(min-width: 601px)" srcset="./assets/images/rooftopdeckchair.webp">
                             <img loading="lazy" decoding="async" src="./assets/images/rooftopdeckchair.webp" alt="gallery" width="305" height="400">
                         </picture>
                         <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
+                            <span class="cs-project">Fiberglass Roof Deck</span>
                         </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/rooftopdeckchair.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/rooftopdeckchair.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/rooftopdeckchair.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                </div>
-                <!--Gallery 2-->
-                <div class="cs-gallery cs-hidden" data-category="two">
-                    <a class="cs-image" href="">
+                    </div>
+                    <div class="cs-image">
                         <picture class="cs-picture">
                             <source media="(max-width: 600px)" srcset="./assets/images/rooftopdeckblue.webp">
                             <source media="(min-width: 601px)" srcset="./assets/images/rooftopdeckblue.webp">
                             <img loading="lazy" decoding="async" src="./assets/images/rooftopdeckblue.webp" alt="gallery" width="305" height="400">
                         </picture>
                         <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
+                            <span class="cs-project">Fiberglass Roof Deck</span>
                         </div>
-                    </a>
-                    <a class="cs-image" href="">
+                    </div>
+                    <div class="cs-image">
                         <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
+                            <source media="(max-width: 600px)" srcset="./assets/images/IMG_3833.webp">
+                            <source media="(min-width: 601px)" srcset="./assets/images/IMG_3833.webp">
+                            <img loading="lazy" decoding="async" src="./assets/images/IMG_3833.webp" alt="gallery" width="305" height="400">
                         </picture>
                         <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
+                            <span class="cs-project">Fiberglass Roof Deck</span>
                         </div>
-                    </a>
-                    <a class="cs-image" href="">
+                    </div>
+                    <div class="cs-image">
                         <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
+                            <source media="(max-width: 600px)" srcset="./assets/images/IMG_4662.webp">
+                            <source media="(min-width: 601px)" srcset="./assets/images/IMG_4662.webp">
+                            <img loading="lazy" decoding="async" src="./assets/images/IMG_4662.webp" alt="gallery" width="305" height="400">
                         </picture>
                         <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
+                            <span class="cs-project">Fiberglass Roof Deck</span>
                         </div>
-                    </a>
-                    <a class="cs-image" href="">
+                    </div>
+                    <div class="cs-image">
                         <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
+                            <source media="(max-width: 600px)" srcset="./assets/images/IMG_4660.webp">
+                            <source media="(min-width: 601px)" srcset="./assets/images/IMG_4660.webp">
+                            <img loading="lazy" decoding="async" src="./assets/images/IMG_4660.webp" alt="gallery" width="305" height="400">
                         </picture>
                         <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
+                            <span class="cs-project">Fiberglass Roof Deck</span>
                         </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                </div>
-                <!--Gallery 3-->
-                <div class="cs-gallery cs-hidden" data-category="three">
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                </div>
-                <!--Gallery 4-->
-                <div class="cs-gallery cs-hidden" data-category="four">
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
-                    <a class="cs-image" href="">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                            <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                            <img loading="lazy" decoding="async" src="./assets/images/workersonroof.webp" alt="gallery" width="305" height="400">
-                        </picture>
-                        <div class="cs-info">
-                            <span class="cs-tag">Hardscaping</span>
-                            <span class="cs-project">Stonemere Patio Retreat</span>
-                        </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -839,5 +624,7 @@ eleventyNavigation:
             </div>
         </div>
     </section>
+
+    {% include "components/cta.html" %}
                                                                     
 {% endblock %}

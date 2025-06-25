@@ -775,7 +775,7 @@
     text-decoration: none;
     width: 2rem;
     height: 2rem;
-    background-color: #f7f7f7;
+    background-color: #f3f3f3;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -975,309 +975,109 @@
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #cta-262 {
+  #cta-51 {
     padding: var(--sectionPadding);
+    position: relative;
   }
-  #cta-262 .cs-container {
+  #cta-51 .cs-container {
     width: 100%;
     max-width: 80rem;
     margin: auto;
-    /* 32px - 88px top & bottom */
-    /* 24px - 88px left & right */
-    padding: clamp(2em, 6.3vw, 5.5em) clamp(1.5em, 5.7vw, 5.5em);
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 2rem;
-    position: relative;
-    /* clips the corners for the border radius to show */
-    overflow: hidden;
-    z-index: 1;
-    /* prevents padding from adding to height and width */
-    box-sizing: border-box;
-  }
-  #cta-262 .cs-background {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    z-index: -1;
-  }
-  #cta-262 .cs-background:before {
-    /* black overlay */
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: #000;
-    opacity: 0.7;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-  #cta-262 .cs-background:after {
-    /* brown overlay */
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: var(--primaryLight);
-    opacity: 0.2;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    z-index: 2;
-  }
-  #cta-262 .cs-background img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  #cta-262 .cs-left-section {
-    max-width: 27.125rem;
-  }
-  #cta-262 .cs-title {
-    color: var(--bodyTextColorWhite);
-    margin-bottom: clamp(1.25rem, 4.2vw, 3rem);
-  }
-  #cta-262 .cs-button-solid {
-    font-size: 1rem;
-    /* 46px - 56px */
-    line-height: clamp(2.875em, 5.5vw, 3.5em);
-    text-decoration: none;
-    font-weight: 700;
-    text-align: center;
-    margin: auto;
-    color: #fff;
-    min-width: 9.375rem;
-    padding: 0 1.5rem;
-    background-color: var(--primary);
-    border-radius: 0.25rem;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    /* prevents padding from adding to the width */
-    box-sizing: border-box;
-  }
-  #cta-262 .cs-button-solid:before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    background: #000;
-    opacity: 1;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    border-radius: 0.25rem;
-    transition: width 0.3s;
-  }
-  #cta-262 .cs-button-solid:hover:before {
-    width: 100%;
-  }
-  #cta-262 .cs-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    /* 12px - 20px */
-    gap: clamp(0.75rem, 1.6vw, 1.25rem);
-  }
-  #cta-262 .cs-header {
-    /* 20px - 25px */
-    font-size: clamp(1.25rem, 2.4vw, 1.5625rem);
-    font-weight: bold;
-    color: var(--primaryLight);
-    display: block;
-  }
-  #cta-262 .cs-p {
-    /* 14px - 20px */
-    font-size: clamp(0.875rem, 1.5vw, 1.25rem);
-    line-height: 1.5em;
-    margin: 0;
-    color: var(--bodyTextColorWhite);
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #cta-262 .cs-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  #cta-262 .cs-content {
-    align-items: flex-end;
-    text-align: right;
-    /* prevents flexbox from squishing it */
-    flex: none;
-  }
-}
-/*-- -------------------------- -->
-<---            CTA             -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #cta-1294 {
-    width: 100%;
-    max-width: 80rem;
-    margin: auto;
-    margin-bottom: -5.625rem;
-    border-radius: 1rem;
-    overflow: hidden;
-    /* 40px - 80px */
-    padding: clamp(2.5rem, 5vw, 5rem);
-    /* prevents padding and border from affecting height and width */
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 15;
-    transform: translateY(-9.375rem);
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
   }
-  #cta-1294 .cs-content {
+  #cta-51 .cs-content {
     /* set text align to left if content needs to be left aligned */
     text-align: center;
     width: 100%;
-    /* changes to 100% at tablet */
-    max-width: 25rem;
     display: flex;
     flex-direction: column;
     /* centers content horizontally, set to flex-start to left align */
     align-items: center;
-    gap: 1.5rem;
   }
-  #cta-1294 .cs-title {
-    width: 100%;
-    margin: 0;
+  #cta-51 .cs-title {
     color: var(--bodyTextColorWhite);
   }
-  #cta-1294 .cs-form {
-    width: 100%;
-    max-width: 45.3125rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    /* prevents flexbox from squishing it */
-    flex: none;
+  #cta-51 .cs-text {
+    margin-bottom: 1rem;
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
   }
-  #cta-1294 .cs-input {
+  #cta-51 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #cta-51 .cs-button-solid {
     font-size: 1rem;
-    width: 100%;
-    height: clamp(2.875rem, 5.5vw, 3.5rem);
-    margin: 0;
-    padding: 0;
-    padding-left: 1.25rem;
-    border: none;
-    /* prevents padding from adding to width and height */
-    box-sizing: border-box;
-    display: block;
-  }
-  #cta-1294 .cs-input::placeholder {
-    color: #767676;
-  }
-  #cta-1294 .cs-button-solid {
-    font-size: 1rem;
+    text-align: center;
     /* 46px - 56px */
     line-height: clamp(2.875rem, 5.5vw, 3.5rem);
     text-decoration: none;
     font-weight: 700;
-    text-align: center;
+    /* clips corners of the before element */
+    overflow: hidden;
     margin: 0;
-    color: #fff;
-    min-width: 9.375rem;
-    padding: 0 1.5rem;
-    border-radius: 0.25rem;
-    background-color: var(--primary);
-    display: inline-block;
+    color: #000;
+    padding: 0 1.75rem;
+    background-color: var(--secondary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
     position: relative;
     z-index: 1;
-    /* prevents padding from adding to the width */
-    box-sizing: border-box;
+    transition: color 0.3s;
   }
-  #cta-1294 .cs-button-solid:before {
+  #cta-51 .cs-button-solid:before {
     content: "";
     position: absolute;
+    display: block;
     height: 100%;
     width: 0%;
-    background: #000;
+    background: var(--primary);
     opacity: 1;
     top: 0;
     left: 0;
     z-index: -1;
     transition: width 0.3s;
   }
-  #cta-1294 .cs-button-solid:hover:before {
+  #cta-51 .cs-button-solid:hover {
+    color: #fff;
+  }
+  #cta-51 .cs-button-solid:hover:before {
     width: 100%;
   }
-  #cta-1294 .cs-button-solid {
-    background-color: #fff;
-    color: var(--primary);
-  }
-  #cta-1294 .cs-background {
-    width: 100%;
+  #cta-51 .cs-picture {
     height: 100%;
-    background-color: var(--primary);
+    width: 100%;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
   }
-  #cta-1294 .cs-background img {
+  #cta-51 .cs-picture:before {
+    /* black color overlay */
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #cta-51 .cs-picture img {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     object-fit: cover;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #cta-1294 .cs-container {
-    padding-left: 3.75rem;
-    padding-right: 3.75rem;
-  }
-  #cta-1294 .cs-content {
-    text-align: left;
-    max-width: 100%;
-    justify-content: space-between;
-  }
-  #cta-1294 .cs-form {
-    flex-direction: row;
-  }
-  #cta-1294 .cs-input {
-    width: 100%;
-    max-width: 32.8125rem;
-  }
-  #cta-1294 .cs-submit {
-    width: auto;
-    min-width: 11.875rem;
-    /* prevents flexbox from squishing it */
-    flex: none;
-  }
-}
-/* Desktop - 1300px */
-@media only screen and (min-width: 81.25rem) {
-  #cta-1294 {
-    margin-bottom: 0rem;
-  }
-  #cta-1294 .cs-content {
-    flex-direction: row;
-  }
-  #cta-1294 .cs-form {
-    width: 60%;
   }
 }
 /*-- -------------------------- -->
@@ -1287,7 +1087,6 @@
 @media only screen and (min-width: 0rem) {
   #cs-footer-1294 {
     padding: var(--sectionPadding);
-    padding-top: 0;
     padding-bottom: 1.25rem;
     background-color: #1a1a1a;
     position: relative;
@@ -1515,9 +1314,6 @@
 }
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  #cs-footer-1294 {
-    margin-top: 120px;
-  }
   #cs-footer-1294 .cs-container {
     max-width: 80rem;
     flex-wrap: nowrap;
