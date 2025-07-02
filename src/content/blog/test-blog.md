@@ -1,11 +1,14 @@
 ---
 title: How Long Does a Roof Really Last in Pennsylvania?
 url: how-long-does-a-roof-last
-description: Lorem markdownum trabeati dicere deus.
+description: In Pennsylvania, your roof’s lifespan depends on what it’s made of,
+  how well it was installed, and how much punishment it takes from the weather.
+  Learn the truth in this article.
 author: Zade Dohan
 date: 2025-04-10T08:00:00.000Z
 tags:
   - post
+  - featured
 image: /assets/images/blog/img_2190.webp
 imageAlt: roof
 ---
