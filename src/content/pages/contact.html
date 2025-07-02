@@ -40,7 +40,7 @@ eleventyNavigation:
                 <span class="cs-topper">Contact Us</span>
                 <h2 class="cs-title">Get A Free Quote</h2>
                 <!--Form-->
-                <form class="cs-form" id="cs-form-1601" name="Contact Form" method="post" netlify>
+                <form class="cs-form" id="cs-form-1601" name="Contact Form" method="post" data-netlify="true" data-netlify-recaptcha="true">
                     <label class="cs-label">
                         Name
                         <input class="cs-input" required type="text" id="name-1601" name="name" placeholder="Name">
@@ -57,6 +57,7 @@ eleventyNavigation:
                         Message
                         <textarea class="cs-input cs-textarea" required name="Message" id="message-1601" placeholder="Write message..."></textarea>
                     </label>
+                    <div data-netlify-recaptcha="true"></div>
                     <button class="cs-button-solid cs-submit" type="submit">Submit Now</button>
                 </form>
             </div>
