@@ -4,8 +4,8 @@ url: how-long-does-a-roof-last
 description: In Pennsylvania, your roof’s lifespan depends on what it’s made of,
   how well it was installed, and how much punishment it takes from the weather.
   Learn the truth in this article.
-author: Zade Dohan
-date: 2025-04-10T08:00:00.000Z
+author: Donta Negron
+date: 2025-06-25T07:46:00.000Z
 tags:
   - post
   - featured
