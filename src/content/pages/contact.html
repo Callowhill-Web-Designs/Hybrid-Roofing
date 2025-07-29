@@ -40,7 +40,7 @@ eleventyNavigation:
                 <span class="cs-topper">Contact Us</span>
                 <h2 class="cs-title">Get A Free Quote</h2>
                 <!--Form-->
-                <form class="cs-form" id="cs-form-1601" name="Contact Form">
+                <form class="cs-form" id="cs-form-1601" name="Contact Form" method="post" data-netlify="true" data-netlify-recaptcha="true">
                     <label class="cs-label">
                         Name
                         <input class="cs-input" required type="text" id="name-1601" name="name" placeholder="Name">
@@ -51,18 +51,15 @@ eleventyNavigation:
                     </label>
                     <label class="cs-label cs-phone">
                         Phone
-                        <input class="cs-input" required type="tel" id="phone-1601" name="phone" placeholder="Phone">
+                        <input class="cs-input" required type="phone" id="phone-1601" name="phone" placeholder="Phone">
                     </label>
                     <label class="cs-label">
                         Message
-                        <textarea class="cs-input cs-textarea" required name="message" id="message-1601" placeholder="Write message..."></textarea>
+                        <textarea class="cs-input cs-textarea" required name="Message" id="message-1601" placeholder="Write message..."></textarea>
                     </label>
-                    <button class="cs-button-solid cs-submit" type="submit" id="submit-btn">Submit Now</button>
+                    <div data-netlify-recaptcha="true"></div>
+                    <button class="cs-button-solid cs-submit" type="submit">Submit Now</button>
                 </form>
-                <div id="thank-you-message" class="cs-thank-you" style="display: none;">
-                    <h3>Thank You!</h3>
-                    <p>Your message has been sent successfully. We'll get back to you soon!</p>
-                </div>
             </div>
             <div class="cs-wrapper">
                 <ul class="cs-card-group">
@@ -101,53 +98,5 @@ eleventyNavigation:
             </div>
         </div>
     </section>
-
-    <script>
-        document.getElementById('cs-form-1601').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = document.getElementById('submit-btn');
-            const form = document.getElementById('cs-form-1601');
-            const thankYouMessage = document.getElementById('thank-you-message');
-            
-            // Disable submit button and show loading state
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('name-1601').value,
-                email: document.getElementById('email-1601').value,
-                phone: document.getElementById('phone-1601').value,
-                message: document.getElementById('message-1601').value
-            };
-            
-            try {
-                // Send to Zapier webhook
-                const response = await fetch('https://hooks.zapier.com/hooks/catch/23354364/uu72xi3/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-                if (response.ok) {
-                    // Hide form and show thank you message
-                    form.style.display = 'none';
-                    thankYouMessage.style.display = 'block';
-                } else {
-                    throw new Error('Failed to send message');
-                }
-            } catch (error) {
-                alert('There was an error sending your message. Please try again.');
-                console.error('Error:', error);
-            } finally {
-                // Re-enable submit button
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit Now';
-            }
-        });
-    </script>
                                     
 {% endblock %}
