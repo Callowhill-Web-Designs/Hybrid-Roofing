@@ -88,6 +88,24 @@
   #contact-1601 .cs-submit:hover {
     cursor: pointer;
   }
+  #contact-1601 .cs-thank-you {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: #f0f9ff;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    margin-top: 1.25rem;
+  }
+  #contact-1601 .cs-thank-you h3 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+  }
+  #contact-1601 .cs-thank-you p {
+    color: var(--bodyTextColor);
+    margin: 0;
+    font-size: 1rem;
+  }
   #contact-1601 .cs-wrapper {
     /* 32px - 108px */
     padding: clamp(2rem, 8vw, 6.75rem) 0;
