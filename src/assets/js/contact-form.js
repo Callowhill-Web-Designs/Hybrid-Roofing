@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(form);
         
         // Send to PHP handler
-        fetch('../assets/php/contact-handler.php', {
+        fetch('/admin/contact-handler.php', {
             method: 'POST',
             body: formData
         })
