@@ -13,6 +13,8 @@ eleventyNavigation:
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/contact.css">
+    <script src="/assets/js/contact.js" defer></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqyzQIHadV47gbzcvCLq7GCzBxvwK4mEQ&libraries=places&callback=initAutocomplete"></script>
 {% endblock %}
 
 {% block body %}
@@ -45,14 +47,34 @@ eleventyNavigation:
                         Name
                         <input class="cs-input" required type="text" id="name-1601" name="name" placeholder="Name">
                     </label>
-                    <label class="cs-label cs-email">
-                        Email
-                        <input class="cs-input" required type="email" id="email-1601" name="email" placeholder="Email">
+                    <div class="cs-contact-row">
+                        <label class="cs-label cs-email">
+                            Email
+                            <input class="cs-input" required type="email" id="email-1601" name="email" placeholder="Email">
+                        </label>
+                        <label class="cs-label cs-phone">
+                            Phone
+                            <input class="cs-input" required type="phone" id="phone-1601" name="phone" placeholder="Phone">
+                        </label>
+                    </div>
+                    <label class="cs-label cs-address">
+                        Service Address
+                        <input class="cs-input" required type="text" id="address-1601" name="address" placeholder="Enter your service address" autocomplete="street-address">
                     </label>
-                    <label class="cs-label cs-phone">
-                        Phone
-                        <input class="cs-input" required type="phone" id="phone-1601" name="phone" placeholder="Phone">
-                    </label>
+                    <div class="cs-address-row">
+                        <label class="cs-label cs-city">
+                            City
+                            <input class="cs-input" required type="text" id="city-1601" name="city" placeholder="City" autocomplete="address-level2">
+                        </label>
+                        <label class="cs-label cs-state">
+                            State
+                            <input class="cs-input" required type="text" id="state-1601" name="state" placeholder="State" autocomplete="address-level1">
+                        </label>
+                        <label class="cs-label cs-zip">
+                            ZIP Code
+                            <input class="cs-input" required type="text" id="zip-1601" name="zip" placeholder="ZIP" autocomplete="postal-code">
+                        </label>
+                    </div>
                     <label class="cs-label">
                         Message
                         <textarea class="cs-input cs-textarea" required name="Message" id="message-1601" placeholder="Write message..."></textarea>
