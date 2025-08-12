@@ -1,5 +1,6 @@
 // Contact form address autocomplete functionality
 let autocomplete;
+let googleMapsLoaded = false;
 
 function initAutocomplete() {
     const addressField = document.getElementById('address-1601');
@@ -7,23 +8,53 @@ function initAutocomplete() {
     // Check if Google Maps API is available
     if (typeof google === 'undefined' || !google.maps || !google.maps.places) {
         console.warn('Google Places API not available, using basic address functionality');
+        enableBasicAddressFunctionality();
         return;
     }
 
-    // Initialize the autocomplete object, restricting the search predictions to addresses
-    autocomplete = new google.maps.places.Autocomplete(
-        addressField,
-        {
-            types: ['address'],
-            componentRestrictions: { 'country': 'us' }
-        }
-    );
+    try {
+        // Initialize the autocomplete object, restricting the search predictions to addresses
+        autocomplete = new google.maps.places.Autocomplete(
+            addressField,
+            {
+                types: ['address'],
+                componentRestrictions: { 'country': 'us' }
+            }
+        );
 
-    // When the user selects an address from the dropdown, populate the address fields
-    autocomplete.addListener('place_changed', fillInAddress);
+        // When the user selects an address from the dropdown, populate the address fields
+        autocomplete.addListener('place_changed', fillInAddress);
+        googleMapsLoaded = true;
+        console.log('Google Places API loaded successfully');
+    } catch (error) {
+        console.warn('Failed to initialize Google Places API:', error);
+        enableBasicAddressFunctionality();
+    }
+}
+
+function enableBasicAddressFunctionality() {
+    const addressField = document.getElementById('address-1601');
+    if (addressField) {
+        // Add a simple placeholder instruction
+        addressField.placeholder = 'Enter your full service address';
+        addressField.title = 'Please enter your complete address including street, city, state, and ZIP code';
+        
+        // Add some basic validation
+        addressField.addEventListener('blur', function() {
+            if (this.value.length > 0 && this.value.length < 10) {
+                this.style.borderColor = '#ff6b6b';
+                this.title = 'Please enter a more complete address';
+            } else {
+                this.style.borderColor = '';
+                this.title = 'Enter your full service address';
+            }
+        });
+    }
 }
 
 function fillInAddress() {
+    if (!autocomplete) return;
+    
     const place = autocomplete.getPlace();
     
     // Clear existing values
@@ -48,7 +79,7 @@ function fillInAddress() {
 // Bias the autocomplete object to the user's geographical location,
 // as supplied by the browser's 'navigator.geolocation' object.
 function geolocate() {
-    if (navigator.geolocation && autocomplete) {
+    if (navigator.geolocation && autocomplete && googleMapsLoaded) {
         navigator.geolocation.getCurrentPosition(function(position) {
             const geolocation = {
                 lat: position.coords.latitude,
@@ -105,6 +136,38 @@ function enhanceForm() {
             e.target.value = e.target.value.toUpperCase();
         });
     }
+
+    // Add form submission handling
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            // Basic validation
+            if (!validateForm()) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    }
+}
+
+function validateForm() {
+    const requiredFields = ['name-1601', 'email-1601', 'phone-1601', 'address-1601', 'city-1601', 'state-1601', 'zip-1601'];
+    let isValid = true;
+    
+    requiredFields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (field && field.value.trim() === '') {
+            field.style.borderColor = '#ff6b6b';
+            isValid = false;
+        } else if (field) {
+            field.style.borderColor = '';
+        }
+    });
+    
+    if (!isValid) {
+        alert('Please fill in all required fields.');
+    }
+    
+    return isValid;
 }
 
 // Initialize when the page loads
@@ -131,9 +194,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Enhance form functionality
     enhanceForm();
 
-    // Initialize autocomplete (this will be called by Google Maps API callback)
-    // If Google Maps fails to load, the form will still work without autocomplete
-    if (typeof google !== 'undefined' && google.maps && google.maps.places) {
-        initAutocomplete();
-    }
+    // Wait a bit for Google Maps to load, then try to initialize
+    setTimeout(() => {
+        if (typeof google !== 'undefined' && google.maps && google.maps.places) {
+            initAutocomplete();
+        } else {
+            enableBasicAddressFunctionality();
+        }
+    }, 1000);
 });
+
+// Handle Google Maps API load errors
+window.gm_authFailure = function() {
+    console.warn('Google Maps API authentication failed');
+    enableBasicAddressFunctionality();
+};

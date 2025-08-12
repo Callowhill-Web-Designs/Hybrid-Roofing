@@ -14,7 +14,10 @@ eleventyNavigation:
 {% block head %}
     <link rel="stylesheet" href="/assets/css/contact.css">
     <script src="/assets/js/contact.js" defer></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqyzQIHadV47gbzcvCLq7GCzBxvwK4mEQ&libraries=places&callback=initAutocomplete"></script>
+    <script async defer 
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqyzQIHadV47gbzcvCLq7GCzBxvwK4mEQ&libraries=places&callback=initAutocomplete"
+            onerror="console.warn('Google Maps API failed to load'); enableBasicAddressFunctionality();">
+    </script>
 {% endblock %}
 
 {% block body %}
