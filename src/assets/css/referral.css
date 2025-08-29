@@ -9,17 +9,6 @@
     background-color: #f3f3f3;
     position: relative;
     z-index: 1;
-    /*-- -------------------------- -->
-        <---        Terms Modal        -->
-        <--- -------------------------- -*/
-    /* Modal overlay - covers the entire screen */
-    /* Modal container */
-    /* Modal header */
-    /* Close button */
-    /* Modal content area */
-    /* Divider styling */
-    /* Modal animation */
-    /* Mobile responsiveness for modal */
   }
   #referrals-hero .cs-container {
     width: 100%;
@@ -186,109 +175,6 @@
   #referrals-hero .cs-bonus-text strong {
     font-weight: 700;
   }
-  #referrals-hero .cs-modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    padding: 1.25rem;
-    overflow-y: auto;
-  }
-  #referrals-hero .cs-modal-container {
-    position: relative;
-    max-width: 50rem;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: modalSlideIn 0.3s ease-out;
-  }
-  #referrals-hero .cs-modal-header {
-    padding: 1.5rem 1.5rem 0.75rem;
-    border-bottom: 1px solid #e5e7eb;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  #referrals-hero .cs-modal-header h3 {
-    margin: 0;
-    color: var(--headerColor);
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-  #referrals-hero .cs-modal-close {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #6b7280;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    transition: background-color 0.2s ease;
-  }
-  #referrals-hero .cs-modal-close:hover {
-    background-color: #f3f4f6;
-    color: var(--headerColor);
-  }
-  #referrals-hero .cs-modal-close:focus {
-    outline: 2px solid var(--primary);
-    outline-offset: 0.125rem;
-  }
-  #referrals-hero .cs-modal-content {
-    padding: 1.5rem;
-    max-height: 60vh;
-    overflow-y: auto;
-  }
-  #referrals-hero .cs-modal-content h4 {
-    color: var(--headerColor);
-    font-size: 1.125rem;
-    font-weight: 700;
-    margin: 1.5rem 0 0.75rem;
-  }
-  #referrals-hero .cs-modal-content h4:first-child {
-    margin-top: 0;
-  }
-  #referrals-hero .cs-modal-content p {
-    color: var(--bodyTextColor);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-  #referrals-hero .cs-modal-content p:last-child {
-    margin-bottom: 0;
-  }
-  #referrals-hero .cs-modal-content ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-  }
-  #referrals-hero .cs-modal-content ul li {
-    color: var(--bodyTextColor);
-    line-height: 1.6;
-    margin-bottom: 0.5rem;
-  }
-  #referrals-hero .cs-modal-content strong {
-    color: var(--headerColor);
-    font-weight: 700;
-  }
-  #referrals-hero .cs-divider {
-    border: none;
-    height: 1px;
-    background-color: #e5e7eb;
-    margin: 1.5rem 0;
-  }
-  @keyframes modalSlideIn {
-    from {
-      opacity: 0;
-      transform: translateY(-50px) scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
   #referrals-hero .cs-terms-button-wrapper {
     display: flex;
     justify-content: center;
@@ -320,24 +206,6 @@
   }
   #referrals-hero .cs-button-outline:active {
     transform: translateY(0);
-  }
-}
-@media only screen and (min-width: 0rem) and only screen and (max-width: 48rem) {
-  #referrals-hero .cs-modal-overlay {
-    padding: 1rem;
-  }
-  #referrals-hero .cs-modal-header {
-    padding: 1.25rem 1rem 0.75rem;
-  }
-  #referrals-hero .cs-modal-header h3 {
-    font-size: 1.25rem;
-  }
-  #referrals-hero .cs-modal-content {
-    padding: 1rem;
-    max-height: 70vh;
-  }
-  #referrals-hero .cs-modal-content h4 {
-    font-size: 1rem;
   }
 }
 /* Tablet - 768px */
