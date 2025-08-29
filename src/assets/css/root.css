@@ -67,6 +67,7 @@
     display: inline-block;
     background-color: var(--primary);
     width: auto;
+    border: none;
     padding: 0 1.875rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -74,6 +75,7 @@
     line-height: 3.125em;
     font-weight: bold;
     border-radius: 0.25rem;
+    overflow: hidden;
     color: #fff;
     transition: color 0.3s;
     transition-delay: 0.1s;
