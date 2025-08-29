@@ -80,50 +80,40 @@ eleventyNavigation:
     <!--                    Hero                      -->
     <!-- ============================================ -->
 
-    <section id="hero-2334">
+    <section id="hero">
         <div class="cs-container">
             <div class="cs-content">
-                <span class="cs-topper-secondary">Your Trusted Roofing Partner in the Tri-State Area</span>
-                <h1 class="cs-title">Hybrid Roofing & Renovations</h1>
+                <span class="cs-topper">Hybrid Roofing & Renovations</span>
+                <h1 class="cs-title">Expert Roofing & Renovations in PA, NJ & DE</h1>
                 <p class="cs-text">
-                    At Hybrid Roofing PA, we take pride in protecting what matters most—your home or business. With years of hands-on experience serving Pennsylvania, New Jersey, and Delaware, we offer expert craftsmanship, honest service, and durable solutions for all your exterior renovation needs.
+                    From storm damage repairs to complete roof replacements, we deliver quality craftsmanship and reliable service. Get your free estimate today and protect your investment with our expert roofing solutions.
                 </p>
-                <a href="/contact" class="cs-button-solid">Get A Quote</a>
-                <div class="cs-overlay">
-                    <img class="cs-graphic" aria-hidden="true" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/slashes.svg" alt="stripes graphic" width="1290" height="684">
+                <div class="cs-button-group">
+                    <a href="/contact" class="cs-button-transparent cs-alt">Get Free Quote</a>
+                    <a href="tel:{{ client.phoneForTel }}" class="cs-button-transparent">
+                        <svg class="cs-phone-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/>
+                        </svg>
+                        {{ client.phoneFormatted }}
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="cs-background-slider">
-            <picture class="cs-slide">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="./assets/images/rooftopdeckchair.webp">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="./assets/images/rooftopdeckchair.webp">
-                <img decoding="async" src="./assets/images/rooftopdeckchair.webp" width="2560" height="1440">
-            </picture>
-            <picture class="cs-slide">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="./assets/images/IMG_2191.webp">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="./assets/images/IMG_2191.webp">
-                <img decoding="async" src="./assets/images/IMG_2191.webp" width="2560" height="1440">
-            </picture>
-            <picture class="cs-slide">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="./assets/images/rooftopdeckblue.webp">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="./assets/images/rooftopdeckblue.webp">
-                <img decoding="async" src="./assets/images/rooftopdeckblue.webp" width="2560" height="1440">
-            </picture>
-            <picture class="cs-slide">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="./assets/images/workersonroof.webp">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="./assets/images/workersonroof.webp">
-                <img decoding="async" src="./assets/images/workersonroof.webp" width="2560" height="1440">
-            </picture>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <source media="(max-width: 600px)" srcset="/assets/images/shingles.webp">
+            <source media="(min-width: 601px)" srcset="/assets/images/shingles.webp">
+            <img loading="lazy" decoding="async" src="/assets/images/shingles.webp" alt="Professional roofing work by Hybrid Roofing" width="1920" height="1080" aria-hidden="true">
+        </picture>
+        <!--Animated Circles-->
+        <div class="cs-circles" aria-hidden="true">
+            <div class="cs-circle cs-circle-1"></div>
+            <div class="cs-circle cs-circle-2"></div>
+            <div class="cs-circle cs-circle-3"></div>
+            <div class="cs-circle cs-circle-4"></div>
         </div>
+        <!--Overlay-->
+        <div class="cs-overlay" aria-hidden="true"></div>
     </section>
            
     <!-- ============================================ -->
