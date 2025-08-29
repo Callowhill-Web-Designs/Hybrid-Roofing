@@ -2,7 +2,7 @@
 title: 'Referrals | Hybrid Roofing PA'
 description: 'Join our Referral Rewards Program and earn big while helping others get quality roofing, siding, and stucco services!'
 preloadImg: '/assets/images/construction.jpg'
-permalink: 'referral/'
+permalink: 'referrals/'
 eleventyNavigation:
     key: Referrals
     order: 600
@@ -11,8 +11,7 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/assets/css/referral.css">
-    <script src="/assets/js/modal.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/referrals.css">
 {% endblock %}
 
 {% block body %}
@@ -79,116 +78,12 @@ eleventyNavigation:
                         </p>
                     </div>
                     <div class="cs-terms-button-wrapper">
-                        <button id="termsModalButton" class="cs-button-outline">View Terms & Conditions</button>
+                        <a href="#referral-terms" class="cs-button-outline">View Terms & Conditions</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Terms & Conditions Modal -->
-    <div id="termsModal" class="cs-modal" aria-hidden="true">
-        <div class="cs-modal-overlay"></div>
-        <div class="cs-modal-container">
-            <div class="cs-modal-header">
-                <h3 class="cs-modal-title">Referral Program – Terms & Conditions</h3>
-                <button id="closeModal" class="cs-modal-close" aria-label="Close modal">&times;</button>
-            </div>
-            <div class="cs-modal-content">
-                <div class="cs-terms-text">
-                    <p><strong>Effective Date:</strong> [Insert Date]</p>
-                    <p><strong>Last Updated:</strong> [Insert Date]</p>
-                    
-                    <p>These Terms & Conditions ("Terms") govern participation in the Hybrid Roofing and Renovations LLC ("Company," "we," "our," or "us") Referral Program ("Program"). By participating, you ("Referrer") agree to be bound by these Terms.</p>
-                    
-                    <hr class="cs-divider">
-                    
-                    <h4>1. Eligibility</h4>
-                    <ul>
-                        <li>Referrers must be at least 18 years old and residents of the United States.</li>
-                        <li>Employees, contractors, and immediate family members of Hybrid Roofing and Renovations LLC are not eligible.</li>
-                        <li>The Program is void where prohibited by law.</li>
-                    </ul>
-                    
-                    <hr class="cs-divider">
-                    
-                    <h4>2. How the Program Works</h4>
-                    <ul>
-                        <li>A "Referral" occurs when a new customer ("Referred Customer") is introduced to us by the Referrer and signs a qualifying contract.</li>
-                        <li>A qualifying contract is any job valued over $3,000 before tax.</li>
-                        <li>The Referred Customer must not be an existing or previous customer of Hybrid Roofing and Renovations LLC.</li>
-                        <li>The Referrer must be the first person to submit the Referred Customer's information through our official referral submission form or in writing.</li>
-                    </ul>
-                    
-                    <hr class="cs-divider">
-                    
-                    <h4>3. Reward Structure</h4>
-                    <p>Rewards are issued per completed and paid qualifying job referred:</p>
-                    <ul>
-                        <li>1st Referral: $500</li>
-                        <li>2nd Referral: $750</li>
-                        <li>3rd Referral: $1,000</li>
-                        <li>4th Referral and beyond: $1,500 each</li>
-                    </ul>
-                    
-                    <hr class="cs-divider">
-                    
-                    <h4>4. Reward Conditions</h4>
-                    <ul>
-                        <li>Rewards are issued only after the referred project is signed, completed, and fully paid in full.</li>
-                        <li>Payments are made via check or other agreed method within 30 days of job completion.</li>
-                        <li>Rewards are considered taxable income; the Referrer is responsible for any applicable taxes.</li>
-                        <li>A Referred Customer can only be linked to one Referrer.</li>
-                    </ul>
-                    
-                    <hr class="cs-divider">
-                    
-                    <h4>5. Limitations & Disqualifications</h4>
-                    <p>A referral will be ineligible if:</p>
-                    <ul>
-                        <li>The referral information provided is incomplete, inaccurate, or fraudulent.</li>
-                        <li>The referred project is canceled, refunded, or reduced below the $3,000 qualifying amount.</li>
-                        <li>The Referred Customer's contact information was already in our database prior to submission.</li>
-                        <li>The Referrer engages in spam, misleading, or unethical marketing to obtain referrals.</li>
-                    </ul>
-                    
-                    <hr class="cs-divider">
-                    
-                    <h4>6. Program Changes</h4>
-                    <p>Hybrid Roofing and Renovations LLC reserves the right to:</p>
-                    <ul>
-                        <li>Modify, suspend, or terminate the Program at any time without prior notice.</li>
-                        <li>Adjust reward amounts, payment methods, or qualifying criteria.</li>
-                        <li>Disqualify any participant who violates these Terms.</li>
-                    </ul>
-                    
-                    <hr class="cs-divider">
-                    
-                    <h4>7. Liability</h4>
-                    <p>Hybrid Roofing and Renovations LLC is not responsible for:</p>
-                    <ul>
-                        <li>Technical issues preventing referral submission or processing.</li>
-                        <li>Lost, delayed, or misdirected communications.</li>
-                        <li>Any damages or losses resulting from participation in the Program.</li>
-                    </ul>
-                    
-                    <hr class="cs-divider">
-                    
-                    <h4>8. Governing Law</h4>
-                    <p>These Terms are governed by the laws of the State of [Your State], without regard to conflict of law principles.</p>
-                    
-                    <hr class="cs-divider">
-                    
-                    <h4>9. Contact</h4>
-                    <p>For questions or to submit a referral, contact:</p>
-                    <p><strong>Hybrid Roofing and Renovations LLC</strong><br>
-                    Phone: [Insert Phone Number]<br>
-                    Email: [Insert Email Address]<br>
-                    Website: [Insert Website]</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- ============================================ -->
     <!--                Rewards Tiers                -->
