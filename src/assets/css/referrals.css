@@ -1,0 +1,681 @@
+/* PAGE-SPECIFIC STYLES FOR THE REFERRALS PAGE */
+/*-- -------------------------- -->
+<---       Referrals Hero       -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #referrals-hero {
+    padding: var(--sectionPadding);
+    background-color: #f3f3f3;
+    position: relative;
+    z-index: 1;
+  }
+  #referrals-hero .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #referrals-hero .cs-content {
+    text-align: center;
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #referrals-hero .cs-topper {
+    color: var(--primary);
+  }
+  #referrals-hero .cs-title {
+    max-width: 25ch;
+    margin: 0 0 1.5rem 0;
+  }
+  #referrals-hero .cs-text.cs-large {
+    font-size: 1.125rem;
+    line-height: 1.6em;
+    margin: 0 0 2rem 0;
+  }
+  #referrals-hero .cs-how-it-works {
+    width: 100%;
+    max-width: 56.25rem;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+    border: 2px solid var(--primary);
+    border-radius: 1rem;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(22, 25, 73, 0.1);
+  }
+  #referrals-hero .cs-how-it-works:before {
+    content: '';
+    width: 0.375rem;
+    height: 3.75rem;
+    background: linear-gradient(180deg, var(--secondary) 0%, var(--secondaryLight) 100%);
+    position: absolute;
+    top: 1.25rem;
+    left: 0;
+    border-radius: 0 0.1875rem 0.1875rem 0;
+  }
+  #referrals-hero .cs-how-title {
+    font-size: 1.75rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+    color: var(--primary);
+    text-align: center;
+    position: relative;
+  }
+  #referrals-hero .cs-how-title:after {
+    content: '';
+    width: 3.75rem;
+    height: 0.1875rem;
+    background-color: var(--secondary);
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0.125rem;
+  }
+  #referrals-hero .cs-steps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  #referrals-hero .cs-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 20rem;
+    padding: 1.25rem;
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 16px rgba(22, 25, 73, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  #referrals-hero .cs-step:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(22, 25, 73, 0.15);
+  }
+  #referrals-hero .cs-step-number {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(22, 25, 73, 0.3);
+  }
+  #referrals-hero .cs-step-content {
+    flex: 1;
+    text-align: left;
+  }
+  #referrals-hero .cs-step-title {
+    font-size: 1.125rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+    color: var(--headerColor);
+  }
+  #referrals-hero .cs-step-text {
+    font-size: 0.875rem;
+    line-height: 1.4em;
+    margin: 0;
+    color: var(--bodyTextColor);
+  }
+  #referrals-hero .cs-step-arrow {
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity: 0.6;
+    transform: rotate(90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #referrals-hero .cs-arrow-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-right: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    transform: rotate(-45deg);
+    opacity: 0.7;
+  }
+  #referrals-hero .cs-bonus-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondaryLight) 100%);
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  #referrals-hero .cs-bonus-icon {
+    font-size: 1.5rem;
+    display: block;
+  }
+  #referrals-hero .cs-bonus-text {
+    font-size: 1rem;
+    line-height: 1.4em;
+    margin: 0;
+    color: var(--primary);
+    text-align: center;
+  }
+  #referrals-hero .cs-bonus-text strong {
+    font-weight: 700;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #referrals-hero .cs-steps-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  #referrals-hero .cs-step {
+    flex-direction: column;
+    text-align: center;
+    max-width: 12.5rem;
+    padding: 1.5rem 1rem;
+  }
+  #referrals-hero .cs-step-content {
+    text-align: center;
+  }
+  #referrals-hero .cs-step-arrow {
+    transform: rotate(0deg);
+    margin: 0 0.5rem;
+  }
+  #referrals-hero .cs-bonus-note {
+    max-width: 31.25rem;
+    margin: 2rem auto 0;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #referrals-hero .cs-how-it-works {
+    padding: 3rem 2.5rem;
+  }
+  #referrals-hero .cs-steps-container {
+    gap: 2rem;
+  }
+  #referrals-hero .cs-step {
+    max-width: 13.75rem;
+    padding: 1.75rem 1.25rem;
+  }
+  #referrals-hero .cs-step:hover {
+    transform: translateY(-4px);
+  }
+  #referrals-hero .cs-step-number {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+  }
+  #referrals-hero .cs-step-title {
+    font-size: 1.25rem;
+  }
+  #referrals-hero .cs-step-text {
+    font-size: 0.9375rem;
+  }
+}
+/*-- -------------------------- -->
+<---       Rewards Tiers        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #rewards-tiers {
+    padding: var(--sectionPadding);
+    position: relative;
+    z-index: 1;
+  }
+  #rewards-tiers .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #rewards-tiers .cs-content {
+    text-align: center;
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #rewards-tiers .cs-topper {
+    color: var(--secondary);
+  }
+  #rewards-tiers .cs-title {
+    max-width: 20ch;
+    margin: 0;
+  }
+  #rewards-tiers .cs-card-group {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+  }
+  #rewards-tiers .cs-item {
+    list-style: none;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    background-color: #fff;
+    border: 2px solid #e7e7e8;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    grid-column: span 12;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  #rewards-tiers .cs-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: 0 8px 24px rgba(22, 25, 73, 0.15);
+  }
+  #rewards-tiers .cs-item.cs-featured {
+    border-color: var(--secondary);
+    background: linear-gradient(135deg, #fff 0%, #fffef7 100%);
+  }
+  #rewards-tiers .cs-item.cs-featured:hover {
+    border-color: var(--primary);
+  }
+  #rewards-tiers .cs-item.cs-featured .cs-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--secondary);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 0.75rem;
+  }
+  #rewards-tiers .cs-number {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2em;
+    margin: 0 0 1rem 0;
+    color: var(--primary);
+    background-color: var(--primary);
+    color: #fff;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #rewards-tiers .cs-h3 {
+    font-size: 1.5rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+  }
+  #rewards-tiers .cs-reward {
+    font-size: 2.25rem;
+    line-height: 1.1em;
+    font-weight: 900;
+    margin: 0 0 1rem 0;
+    color: var(--secondary);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  }
+  #rewards-tiers .cs-item-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    margin: 0;
+    color: var(--bodyTextColor);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #rewards-tiers .cs-item {
+    grid-column: span 6;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #rewards-tiers .cs-item {
+    grid-column: span 3;
+  }
+}
+/*-- -------------------------- -->
+<---      Referral Benefits     -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #referral-benefits {
+    padding: var(--sectionPadding);
+    background-color: #f3f3f3;
+    position: relative;
+    z-index: 1;
+  }
+  #referral-benefits .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #referral-benefits .cs-flex-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  #referral-benefits .cs-content {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #referral-benefits .cs-topper {
+    color: var(--secondary);
+  }
+  #referral-benefits .cs-title {
+    max-width: 20ch;
+    margin: 0;
+  }
+  #referral-benefits .cs-ul {
+    width: 100%;
+    margin: 2rem 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  #referral-benefits .cs-li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  #referral-benefits .cs-icon {
+    width: 1.5rem;
+    height: auto;
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+  }
+  #referral-benefits .cs-li-content {
+    flex: 1;
+  }
+  #referral-benefits .cs-h3 {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: var(--headerColor);
+  }
+  #referral-benefits .cs-item-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    margin: 0;
+    color: var(--bodyTextColor);
+  }
+  #referral-benefits .cs-item-text strong {
+    color: var(--primary);
+    font-weight: 700;
+  }
+  #referral-benefits .cs-image-group {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    max-width: 32.625rem;
+    display: flex;
+    justify-content: center;
+  }
+  #referral-benefits .cs-picture {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+  #referral-benefits .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #referral-benefits .cs-flex-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5rem;
+  }
+  #referral-benefits .cs-content {
+    width: 50%;
+    max-width: 33.875rem;
+  }
+  #referral-benefits .cs-image-group {
+    width: 45%;
+  }
+}
+/*-- -------------------------- -->
+<---      Terms & Contact       -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #referral-terms {
+    padding: var(--sectionPadding);
+    position: relative;
+    z-index: 1;
+  }
+  #referral-terms .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #referral-terms .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #referral-terms .cs-topper {
+    color: var(--secondary);
+  }
+  #referral-terms .cs-title {
+    max-width: 20ch;
+    margin: 0 0 3rem 0;
+  }
+  #referral-terms .cs-terms-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  #referral-terms .cs-terms-item,
+  #referral-terms .cs-contact-item {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+  }
+  #referral-terms .cs-h3 {
+    font-size: 1.5rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    color: var(--headerColor);
+  }
+  #referral-terms .cs-terms-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  #referral-terms .cs-terms-list li {
+    font-size: 1rem;
+    line-height: 1.5em;
+    margin: 0 0 0.75rem 0;
+    padding-left: 1.5rem;
+    color: var(--bodyTextColor);
+    position: relative;
+  }
+  #referral-terms .cs-terms-list li:before {
+    content: '•';
+    color: var(--primary);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+  }
+  #referral-terms .cs-terms-list li:last-child {
+    margin-bottom: 0;
+  }
+  #referral-terms .cs-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #referral-terms .cs-contact-method {
+    font-size: 1rem;
+    line-height: 1.5em;
+    color: var(--bodyTextColor);
+  }
+  #referral-terms .cs-contact-method strong {
+    color: var(--headerColor);
+    font-weight: 700;
+    display: inline-block;
+    min-width: 5rem;
+  }
+  #referral-terms .cs-link {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  #referral-terms .cs-link:hover {
+    color: var(--primaryLight);
+    text-decoration: underline;
+  }
+  #referral-terms .cs-cta-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  #referral-terms .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-align: center;
+    text-decoration: none;
+    min-width: 12.5rem;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+  }
+  #referral-terms .cs-button-solid:before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: #000;
+    opacity: 1;
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #referral-terms .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #referral-terms .cs-button-transparent {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-align: center;
+    text-decoration: none;
+    min-width: 9.375rem;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    color: var(--primary);
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    border-radius: 0.25rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s, background-color 0.3s;
+  }
+  #referral-terms .cs-button-transparent .cs-phone-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--primary);
+    display: block;
+    transition: color 0.3s;
+  }
+  #referral-terms .cs-button-transparent:hover {
+    background-color: var(--primary);
+    color: #fff;
+  }
+  #referral-terms .cs-button-transparent:hover .cs-phone-icon {
+    color: #fff;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #referral-terms .cs-terms-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  #referral-terms .cs-cta-wrapper {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}
