@@ -137,9 +137,6 @@
     padding-top: 1.5rem;
     font-family: inherit;
   }
-  #contact-1601 .cs-submit {
-    border: none;
-  }
   #contact-1601 .cs-submit:hover {
     cursor: pointer;
   }
