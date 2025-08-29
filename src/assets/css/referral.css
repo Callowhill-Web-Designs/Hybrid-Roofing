@@ -711,3 +711,185 @@
     gap: 1.5rem;
   }
 }
+/*-- -------------------------- -->
+<---      Terms Modal           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  .cs-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+    box-sizing: border-box;
+  }
+  .cs-modal[aria-hidden="false"] {
+    display: flex;
+  }
+  .cs-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+  }
+  .cs-modal-container {
+    position: relative;
+    width: 100%;
+    max-width: 50rem;
+    max-height: 90vh;
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.9);
+    animation: modalAppear 0.3s ease forwards;
+  }
+  @keyframes modalAppear {
+    to {
+      transform: scale(1);
+    }
+  }
+  .cs-modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: #f8f9fa;
+  }
+  .cs-modal-title {
+    font-size: 1.25rem;
+    line-height: 1.3em;
+    font-weight: 700;
+    margin: 0;
+    color: var(--headerColor);
+    padding-right: 1rem;
+  }
+  .cs-modal-close {
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    border: none;
+    color: var(--bodyTextColor);
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .cs-modal-close:hover,
+  .cs-modal-close:focus {
+    background-color: var(--primary);
+    color: #fff;
+    outline: none;
+  }
+  .cs-modal-close:active {
+    transform: scale(0.95);
+  }
+  .cs-modal-content {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cs-terms-text {
+    font-size: 0.875rem;
+    line-height: 1.6em;
+    color: var(--bodyTextColor);
+  }
+  .cs-terms-text p {
+    margin: 0 0 1rem 0;
+  }
+  .cs-terms-text p:last-child {
+    margin-bottom: 0;
+  }
+  .cs-terms-text p strong {
+    color: var(--headerColor);
+    font-weight: 700;
+  }
+  .cs-terms-text h4 {
+    font-size: 1rem;
+    line-height: 1.3em;
+    font-weight: 700;
+    margin: 1.5rem 0 0.75rem 0;
+    color: var(--primary);
+  }
+  .cs-terms-text h4:first-child {
+    margin-top: 0;
+  }
+  .cs-terms-text ul {
+    margin: 0 0 1rem 1.25rem;
+    padding: 0;
+  }
+  .cs-terms-text ul li {
+    margin: 0 0 0.5rem 0;
+    padding: 0;
+  }
+  .cs-terms-text ul li:last-child {
+    margin-bottom: 0;
+  }
+  .cs-terms-text .cs-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    border: none;
+    margin: 1.25rem 0;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  .cs-modal {
+    padding: 2.5rem;
+  }
+  .cs-modal-container {
+    max-width: 56.25rem;
+  }
+  .cs-modal-header {
+    padding: 2rem 2rem 1.25rem;
+  }
+  .cs-modal-title {
+    font-size: 1.5rem;
+  }
+  .cs-modal-close {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.75rem;
+  }
+  .cs-modal-content {
+    padding: 2rem;
+  }
+  .cs-terms-text {
+    font-size: 0.9375rem;
+  }
+  .cs-terms-text h4 {
+    font-size: 1.125rem;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  .cs-modal-container {
+    max-width: 62.5rem;
+  }
+  .cs-terms-text {
+    font-size: 1rem;
+  }
+  .cs-terms-text h4 {
+    font-size: 1.25rem;
+  }
+}
