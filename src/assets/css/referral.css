@@ -28,9 +28,6 @@
     flex-direction: column;
     align-items: center;
   }
-  #referrals-hero .cs-topper {
-    color: var(--primary);
-  }
   #referrals-hero .cs-title {
     max-width: 25ch;
     margin: 0 0 1.5rem 0;
@@ -289,9 +286,6 @@
     flex-direction: column;
     align-items: center;
   }
-  #rewards-tiers .cs-topper {
-    color: var(--secondary);
-  }
   #rewards-tiers .cs-title {
     max-width: 20ch;
     margin: 0;
@@ -429,9 +423,6 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  #referral-benefits .cs-topper {
-    color: var(--secondary);
-  }
   #referral-benefits .cs-title {
     max-width: 20ch;
     margin: 0;
@@ -545,9 +536,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  #referral-terms .cs-topper {
-    color: var(--secondary);
   }
   #referral-terms .cs-title {
     max-width: 20ch;
