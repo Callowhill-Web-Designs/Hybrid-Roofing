@@ -1,7 +1,11 @@
 backend:
-    name: git-gateway
-    branch: main
+  name: git-gateway
+  repo: Callowhill-Web-Designs/winIT
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/fe4fac2b-8e78-450a-9428-ecb6313b9db4
+  gateway_url: https://gateway.decapbridge.com/
 
+  
 local_backend: true
 # change url to a link to the image you want to use, no file paths, must be a URL
 logo_url: https://callowhillwebdesigns.com/assets/svgs/logo.svg
