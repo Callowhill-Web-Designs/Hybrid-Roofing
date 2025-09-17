@@ -13,6 +13,7 @@ eleventyNavigation:
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/contact.css">
+    <script src="/assets/js/contact.js" defer></script>
 {% endblock %}
 
 {% block body %}
@@ -52,7 +53,7 @@ eleventyNavigation:
                         </label>
                         <label class="cs-label cs-phone">
                             Phone
-                            <input class="cs-input" required type="phone" id="phone-1601" name="phone" placeholder="Phone">
+                            <input class="cs-input" required type="tel" id="phone-1601" name="phone" placeholder="(123) 456-7890" autocomplete="tel" maxlength="14">
                         </label>
                     </div>
                     <label class="cs-label cs-address">
@@ -66,7 +67,7 @@ eleventyNavigation:
                         </label>
                         <label class="cs-label cs-state">
                             State
-                            <input class="cs-input" required type="text" id="state-1601" name="state" placeholder="State" autocomplete="address-level1">
+                            <input class="cs-input" required type="text" id="state-1601" name="state" placeholder="Type state name or PA" autocomplete="address-level1" maxlength="2">
                         </label>
                         <label class="cs-label cs-zip">
                             ZIP Code

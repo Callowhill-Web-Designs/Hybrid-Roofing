@@ -484,3 +484,43 @@
     right: 11.75rem;
   }
 }
+/* Form Enhancement Styles */
+.cs-error {
+  border-color: #ff4444 !important;
+  box-shadow: 0 0 5px rgba(255, 68, 68, 0.3) !important;
+}
+.cs-state-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.cs-state-option {
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.cs-state-option:hover {
+  background-color: #f5f5f5;
+}
+.cs-state-option:last-child {
+  border-radius: 0 0 4px 4px;
+}
+.cs-state-option.cs-priority-state {
+  background-color: #f0f8ff;
+  font-weight: 600;
+}
+.cs-state-option.cs-priority-state:hover {
+  background-color: #e6f3ff;
+}
+.cs-label.cs-state {
+  position: relative;
+}
