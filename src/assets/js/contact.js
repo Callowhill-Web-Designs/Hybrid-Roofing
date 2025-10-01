@@ -18,8 +18,12 @@ class ContactForm {
                 this.setupFormHandlers();
                 this.setupPhoneFormatting();
                 this.setupStateAutocomplete();
-                this.initializeGooglePlaces();
                 this.setupFormValidation();
+                
+                // Try to initialize Google Places if API is already loaded
+                if (window.google && window.google.maps && window.google.maps.places) {
+                    this.initializeGooglePlaces();
+                }
             }
         });
     }
@@ -29,8 +33,13 @@ class ContactForm {
      */
     initializeGooglePlaces() {
         const addressInput = document.getElementById('address-1601');
-        if (!addressInput || !window.google) {
-            console.warn('Google Places API not loaded or address input not found');
+        if (!addressInput) {
+            console.warn('Address input not found');
+            return;
+        }
+        
+        if (!window.google || !window.google.maps || !window.google.maps.places) {
+            console.warn('Google Places API not fully loaded yet');
             return;
         }
 
@@ -768,4 +777,13 @@ class ContactForm {
 }
 
 // Initialize the contact form
-new ContactForm();
+window.contactFormInstance = new ContactForm();
+
+// Global callback function for Google Maps API
+window.initMap = function() {
+    console.log('Google Places API loaded');
+    // Initialize Google Places when API is ready
+    if (window.contactFormInstance) {
+        window.contactFormInstance.initializeGooglePlaces();
+    }
+};
