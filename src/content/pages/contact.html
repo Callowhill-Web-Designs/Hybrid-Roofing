@@ -13,26 +13,6 @@ eleventyNavigation:
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/contact.css">
-    <!-- Define initMap callback before loading Google Maps API -->
-    <script>
-        // Global callback function for Google Maps API
-        window.initMap = function() {
-            console.log('Google Places API loaded');
-            // Initialize Google Places when API is ready
-            if (window.contactFormInstance && window.contactFormInstance.initializeGooglePlaces) {
-                window.contactFormInstance.initializeGooglePlaces();
-            } else {
-                // If ContactForm isn't ready yet, try again after a short delay
-                setTimeout(() => {
-                    if (window.contactFormInstance && window.contactFormInstance.initializeGooglePlaces) {
-                        window.contactFormInstance.initializeGooglePlaces();
-                    }
-                }, 100);
-            }
-        };
-    </script>
-    <!-- Google Places API for address autocomplete with new PlaceAutocompleteElement -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqyzQIHadV47gbzcvCLq7GCzBxvwK4mEQ&libraries=places&loading=async&callback=initMap&v=beta" async defer></script>
     <script src="/assets/js/contact.js" defer></script>
 {% endblock %}
 
@@ -100,8 +80,8 @@ eleventyNavigation:
                     <label class="cs-label cs-address">
                         Service Address *
                         <input class="cs-input" required type="text" id="address-1601" name="address" 
-                               placeholder="Start typing your address..." autocomplete="street-address" 
-                               aria-describedby="address-error address-help" maxlength="200">
+                               placeholder="Enter your service address" autocomplete="street-address" 
+                               aria-describedby="address-error" maxlength="200">
                     </label>
                     
                     <div class="cs-address-row">

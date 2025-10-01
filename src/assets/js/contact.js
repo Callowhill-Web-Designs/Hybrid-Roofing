@@ -1,12 +1,11 @@
 /**
- * Enhanced Contact Form with Google Places Autocomplete, Validation, and Security
- * Features: Google Places API, reCAPTCHA, Honeypot, Phone formatting, State autocomplete
+ * Enhanced Contact Form with Validation and Security
+ * Features: reCAPTCHA, Honeypot, Phone formatting, State autocomplete
  */
 
 class ContactForm {
     constructor() {
         this.form = null;
-        this.autocomplete = null;
         this.isSubmitting = false;
         this.init();
     }
@@ -19,230 +18,19 @@ class ContactForm {
                 this.setupPhoneFormatting();
                 this.setupStateAutocomplete();
                 this.setupFormValidation();
-                
-                // Try to initialize Google Places if API is already loaded
-                if (window.google && window.google.maps && window.google.maps.places) {
-                    this.initializeGooglePlaces();
-                }
             }
         });
     }
 
-    /**
-     * Initialize Google Places Autocomplete
-     */
-    initializeGooglePlaces() {
-        const addressInput = document.getElementById('address-1601');
-        if (!addressInput) {
-            console.warn('Address input not found');
-            return;
-        }
-        
-        if (!window.google || !window.google.maps || !window.google.maps.places) {
-            console.warn('Google Places API not fully loaded yet');
-            return;
-        }
 
-        try {
-            // Create the new PlaceAutocompleteElement
-            const autocompleteElement = document.createElement('gmp-place-autocomplete');
-            
-            // Configure autocomplete options
-            autocompleteElement.setAttribute('type', 'address');
-            autocompleteElement.setAttribute('country-restriction', 'us');
-            autocompleteElement.setAttribute('field-mask', 'address_components,formatted_address,geometry');
-            
-            // Style the element to match our input
-            autocompleteElement.style.width = '100%';
-            autocompleteElement.style.height = addressInput.style.height || 'clamp(2.875rem, 4vw, 3.5rem)';
-            autocompleteElement.style.borderRadius = '8px';
-            autocompleteElement.style.border = 'none';
-            autocompleteElement.style.fontSize = '1rem';
-            autocompleteElement.style.paddingLeft = '1.5rem';
-            autocompleteElement.style.backgroundColor = '#f7f7f7';
-            autocompleteElement.style.color = 'var(--headerColor)';
-            autocompleteElement.style.boxSizing = 'border-box';
-            
-            // Set placeholder
-            autocompleteElement.setAttribute('placeholder', 'Start typing your address...');
-            
-            // Replace the input with the autocomplete element
-            addressInput.parentNode.insertBefore(autocompleteElement, addressInput);
-            addressInput.style.display = 'none';
-            
-            // Store reference
-            this.autocompleteElement = autocompleteElement;
-            
-            // Listen for place selection
-            autocompleteElement.addEventListener('gmp-placechange', (event) => {
-                this.handlePlaceSelectNew(event.detail);
-                // Also update the hidden input for form submission
-                addressInput.value = event.detail.formatted_address || '';
-            });
 
-            console.log('Google Places Autocomplete initialized with new API');
-        } catch (error) {
-            console.error('Error initializing Google Places:', error);
-            // Fallback to old API if new one fails
-            this.initializeGooglePlacesLegacy(addressInput);
-        }
-    }
 
-    /**
-     * Fallback to legacy Google Places API
-     */
-    initializeGooglePlacesLegacy(addressInput) {
-        try {
-            // Configure autocomplete options
-            const options = {
-                types: ['address'],
-                componentRestrictions: { country: 'us' },
-                fields: ['address_components', 'formatted_address', 'geometry']
-            };
 
-            this.autocomplete = new google.maps.places.Autocomplete(addressInput, options);
-            
-            // Listen for place selection
-            this.autocomplete.addListener('place_changed', () => {
-                this.handlePlaceSelect();
-            });
 
-            // Style the Google Places dropdown
-            this.styleGooglePlacesDropdown();
-            console.log('Google Places Autocomplete initialized with legacy API');
-        } catch (error) {
-            console.error('Error initializing legacy Google Places:', error);
-        }
-    }
 
-    /**
-     * Handle Google Places selection with new API
-     */
-    handlePlaceSelectNew(place) {
-        if (!place || !place.address_components) {
-            console.warn('No address components found');
-            return;
-        }
 
-        // Clear previous values
-        document.getElementById('city-1601').value = '';
-        document.getElementById('state-1601').value = '';
-        document.getElementById('zip-1601').value = '';
 
-        // Parse address components
-        const addressComponents = {};
-        place.address_components.forEach(component => {
-            const types = component.types;
-            if (types.includes('locality')) {
-                addressComponents.city = component.long_name;
-            } else if (types.includes('administrative_area_level_1')) {
-                addressComponents.state = component.short_name;
-            } else if (types.includes('postal_code')) {
-                addressComponents.zip = component.long_name;
-            }
-        });
 
-        // Fill in the form fields
-        if (addressComponents.city) {
-            document.getElementById('city-1601').value = addressComponents.city;
-        }
-        if (addressComponents.state) {
-            document.getElementById('state-1601').value = addressComponents.state;
-            this.hideStateDropdown();
-        }
-        if (addressComponents.zip) {
-            document.getElementById('zip-1601').value = addressComponents.zip;
-        }
-
-        // Remove any error styling
-        this.clearFieldError('address-1601');
-        this.clearFieldError('city-1601');
-        this.clearFieldError('state-1601');
-        this.clearFieldError('zip-1601');
-    }
-
-    /**
-     * Handle Google Places selection and auto-fill form fields
-     */
-    handlePlaceSelect() {
-        const place = this.autocomplete.getPlace();
-        
-        if (!place.address_components) {
-            console.warn('No address components found');
-            return;
-        }
-
-        // Clear previous values
-        document.getElementById('city-1601').value = '';
-        document.getElementById('state-1601').value = '';
-        document.getElementById('zip-1601').value = '';
-
-        // Parse address components
-        const addressComponents = {};
-        place.address_components.forEach(component => {
-            const types = component.types;
-            if (types.includes('locality')) {
-                addressComponents.city = component.long_name;
-            } else if (types.includes('administrative_area_level_1')) {
-                addressComponents.state = component.short_name;
-            } else if (types.includes('postal_code')) {
-                addressComponents.zip = component.long_name;
-            }
-        });
-
-        // Fill in the form fields
-        if (addressComponents.city) {
-            document.getElementById('city-1601').value = addressComponents.city;
-        }
-        if (addressComponents.state) {
-            document.getElementById('state-1601').value = addressComponents.state;
-            this.hideStateDropdown();
-        }
-        if (addressComponents.zip) {
-            document.getElementById('zip-1601').value = addressComponents.zip;
-        }
-
-        // Remove any error styling
-        this.clearFieldError('address-1601');
-        this.clearFieldError('city-1601');
-        this.clearFieldError('state-1601');
-        this.clearFieldError('zip-1601');
-    }
-
-    /**
-     * Style Google Places dropdown to match site design
-     */
-    styleGooglePlacesDropdown() {
-        const style = document.createElement('style');
-        style.textContent = `
-            .pac-container {
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                border: 1px solid #e1e1e1;
-                font-family: inherit;
-            }
-            .pac-item {
-                padding: 12px 16px;
-                border-bottom: 1px solid #f0f0f0;
-                cursor: pointer;
-            }
-            .pac-item:hover {
-                background-color: #f8f9fa;
-            }
-            .pac-item-selected {
-                background-color: var(--primary, #007bff);
-                color: white;
-            }
-            .pac-item-query {
-                font-weight: 600;
-                color: inherit;
-            }
-            .pac-matched {
-                font-weight: 700;
-            }
-        `;
-        document.head.appendChild(style);
-    }
 
     /**
      * Setup phone number formatting
