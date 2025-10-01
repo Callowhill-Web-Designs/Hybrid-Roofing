@@ -773,7 +773,7 @@ new ContactForm();
 // Load Google Places API if not already loaded
 if (!window.google) {
     const script = document.createElement('script');
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_PLACES_API_KEY&libraries=places';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCqyzQIHadV47gbzcvCLq7GCzBxvwK4mEQ&libraries=places';
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);
