@@ -110,21 +110,21 @@
             .cs-label {
                 margin-bottom: (20/16rem);
                 flex: 1;
-                min-width: (120/16rem);
+                min-width: (100/16rem); /* Reduced from 120px */
 
                 &.cs-city {
                     flex: 2;
-                    min-width: (160/16rem);
+                    min-width: (120/16rem); /* Reduced from 160px */
                 }
 
                 &.cs-state {
                     flex: 1;
-                    min-width: (80/16rem);
+                    min-width: (60/16rem); /* Reduced from 80px */
                 }
 
                 &.cs-zip {
                     flex: 1;
-                    min-width: (100/16rem);
+                    min-width: (80/16rem); /* Reduced from 100px */
                 }
             }
 
@@ -136,6 +136,25 @@
                 .cs-label {
                     width: 100%;
                     min-width: auto;
+                }
+            }
+            
+            // Tablet - reduce minimum widths further
+            @media only screen and (max-width: 768px) {
+                .cs-label {
+                    min-width: (80/16rem);
+                    
+                    &.cs-city {
+                        min-width: (100/16rem);
+                    }
+                    
+                    &.cs-state {
+                        min-width: (50/16rem);
+                    }
+                    
+                    &.cs-zip {
+                        min-width: (60/16rem);
+                    }
                 }
             }
         }
@@ -150,16 +169,16 @@
             .cs-label {
                 margin-bottom: (20/16rem);
                 flex: 1;
-                min-width: (200/16rem);
+                min-width: (160/16rem); /* Reduced from 200px */
 
                 &.cs-email {
                     flex: 1.5;
-                    min-width: (220/16rem);
+                    min-width: (180/16rem); /* Reduced from 220px */
                 }
 
                 &.cs-phone {
                     flex: 1;
-                    min-width: (180/16rem);
+                    min-width: (140/16rem); /* Reduced from 180px */
                 }
             }
 
@@ -171,6 +190,21 @@
                 .cs-label {
                     width: 100%;
                     min-width: auto;
+                }
+            }
+            
+            // Tablet - reduce minimum widths further
+            @media only screen and (max-width: 768px) {
+                .cs-label {
+                    min-width: (120/16rem);
+                    
+                    &.cs-email {
+                        min-width: (140/16rem);
+                    }
+                    
+                    &.cs-phone {
+                        min-width: (120/16rem);
+                    }
                 }
             }
         }

@@ -98,19 +98,23 @@
   #contact-1601 .cs-address-row .cs-label {
     margin-bottom: 1.25rem;
     flex: 1;
-    min-width: 7.5rem;
+    min-width: 6.25rem;
+    /* Reduced from 120px */
   }
   #contact-1601 .cs-address-row .cs-label.cs-city {
     flex: 2;
-    min-width: 10rem;
+    min-width: 7.5rem;
+    /* Reduced from 160px */
   }
   #contact-1601 .cs-address-row .cs-label.cs-state {
     flex: 1;
-    min-width: 5rem;
+    min-width: 3.75rem;
+    /* Reduced from 80px */
   }
   #contact-1601 .cs-address-row .cs-label.cs-zip {
     flex: 1;
-    min-width: 6.25rem;
+    min-width: 5rem;
+    /* Reduced from 100px */
   }
   #contact-1601 .cs-contact-row {
     width: 100%;
@@ -122,15 +126,18 @@
   #contact-1601 .cs-contact-row .cs-label {
     margin-bottom: 1.25rem;
     flex: 1;
-    min-width: 12.5rem;
+    min-width: 10rem;
+    /* Reduced from 200px */
   }
   #contact-1601 .cs-contact-row .cs-label.cs-email {
     flex: 1.5;
-    min-width: 13.75rem;
+    min-width: 11.25rem;
+    /* Reduced from 220px */
   }
   #contact-1601 .cs-contact-row .cs-label.cs-phone {
     flex: 1;
-    min-width: 11.25rem;
+    min-width: 8.75rem;
+    /* Reduced from 180px */
   }
   #contact-1601 .cs-input {
     font-size: 1rem;
@@ -568,6 +575,20 @@
     min-width: auto;
   }
 }
+@media only screen and (min-width: 0rem) and only screen and (max-width: 768px) {
+  #contact-1601 .cs-address-row .cs-label {
+    min-width: 5rem;
+  }
+  #contact-1601 .cs-address-row .cs-label.cs-city {
+    min-width: 6.25rem;
+  }
+  #contact-1601 .cs-address-row .cs-label.cs-state {
+    min-width: 3.125rem;
+  }
+  #contact-1601 .cs-address-row .cs-label.cs-zip {
+    min-width: 3.75rem;
+  }
+}
 @media only screen and (min-width: 0rem) and only screen and (max-width: 600px) {
   #contact-1601 .cs-contact-row {
     flex-direction: column;
@@ -576,6 +597,17 @@
   #contact-1601 .cs-contact-row .cs-label {
     width: 100%;
     min-width: auto;
+  }
+}
+@media only screen and (min-width: 0rem) and only screen and (max-width: 768px) {
+  #contact-1601 .cs-contact-row .cs-label {
+    min-width: 7.5rem;
+  }
+  #contact-1601 .cs-contact-row .cs-label.cs-email {
+    min-width: 8.75rem;
+  }
+  #contact-1601 .cs-contact-row .cs-label.cs-phone {
+    min-width: 7.5rem;
   }
 }
 @media only screen and (min-width: 0rem) and only screen and (max-width: 600px) {
