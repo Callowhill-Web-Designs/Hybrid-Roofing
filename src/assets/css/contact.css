@@ -58,12 +58,35 @@
     justify-content: center;
     align-items: flex-start;
     gap: 0.25rem;
+    margin-bottom: 1.25rem;
+    /* Space for error messages */
   }
   #contact-1601 .cs-label:last-of-type {
     margin-bottom: 2rem;
   }
   #contact-1601 .cs-label.cs-address {
-    margin-bottom: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  #contact-1601 .cs-label.cs-urgency,
+  #contact-1601 .cs-label.cs-contact-time {
+    margin-bottom: 2rem;
+  }
+  #contact-1601 .cs-input-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  #contact-1601 .cs-help-text {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 0.25rem;
+    font-style: italic;
+    line-height: 1.4;
+  }
+  #contact-1601 .cs-submit-help {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: var(--primary);
   }
   #contact-1601 .cs-address-row {
     width: 100%;
@@ -73,7 +96,7 @@
     margin-bottom: 0.75rem;
   }
   #contact-1601 .cs-address-row .cs-label {
-    margin-bottom: 0;
+    margin-bottom: 1.25rem;
     flex: 1;
     min-width: 7.5rem;
   }
@@ -97,7 +120,7 @@
     margin-bottom: 0.75rem;
   }
   #contact-1601 .cs-contact-row .cs-label {
-    margin-bottom: 0;
+    margin-bottom: 1.25rem;
     flex: 1;
     min-width: 12.5rem;
   }
@@ -122,7 +145,7 @@
     border: none;
     /* prevents padding from adding to height and width */
     box-sizing: border-box;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
   }
   #contact-1601 .cs-input::placeholder {
     color: #7D799C;
@@ -131,14 +154,153 @@
   #contact-1601 .cs-input:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--primary);
+    background-color: #fff;
+  }
+  #contact-1601 .cs-input.cs-select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23666' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+    appearance: none;
+    cursor: pointer;
+    padding-right: 2.5rem;
   }
   #contact-1601 .cs-textarea {
     min-height: 7.5rem;
     padding-top: 1.5rem;
     font-family: inherit;
   }
+  #contact-1601 .cs-submit {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3.5rem;
+    transition: all 0.3s ease;
+  }
   #contact-1601 .cs-submit:hover {
     cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  #contact-1601 .cs-submit:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+    box-shadow: none;
+  }
+  #contact-1601 .cs-submit .cs-button-text {
+    font-weight: 600;
+  }
+  #contact-1601 .cs-submit .cs-button-icon {
+    font-size: 1.125rem;
+    transition: transform 0.3s ease;
+  }
+  #contact-1601 .cs-submit:hover .cs-button-icon {
+    transform: translateX(4px);
+  }
+  #contact-1601 .cs-service-preferences,
+  #contact-1601 .cs-contact-method {
+    width: 100%;
+    margin: 1.25rem 0;
+    border: none;
+    padding: 0;
+  }
+  #contact-1601 .cs-fieldset-legend {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--headerColor);
+    margin-bottom: 0.75rem;
+    padding: 0;
+    border: none;
+  }
+  #contact-1601 .cs-checkbox-group,
+  #contact-1601 .cs-radio-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+  }
+  #contact-1601 .cs-checkbox-label,
+  #contact-1601 .cs-radio-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+  #contact-1601 .cs-checkbox-label:hover,
+  #contact-1601 .cs-radio-label:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  #contact-1601 .cs-checkbox,
+  #contact-1601 .cs-radio {
+    width: 1rem;
+    height: 1rem;
+    margin: 0.125rem 0 0 0;
+    accent-color: var(--primary);
+    cursor: pointer;
+  }
+  #contact-1601 .cs-checkbox-text,
+  #contact-1601 .cs-radio-text {
+    flex: 1;
+    color: var(--bodyTextColor);
+    user-select: none;
+  }
+  #contact-1601 .cs-privacy-consent {
+    margin: 1.25rem 0;
+    font-size: 0.875rem;
+  }
+  #contact-1601 .cs-privacy-consent .cs-checkbox-text {
+    line-height: 1.5;
+  }
+  #contact-1601 .cs-privacy-consent .cs-checkbox-text a {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+  #contact-1601 .cs-privacy-consent .cs-checkbox-text a:hover {
+    text-decoration: none;
+  }
+  #contact-1601 .cs-recaptcha-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1.25rem 0;
+  }
+  #contact-1601 .cs-recaptcha-container .g-recaptcha {
+    transform-origin: center;
+  }
+  #contact-1601 .cs-field-error {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    color: #ff4444;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    animation: slideInError 0.3s ease;
+    z-index: 10;
+    padding-top: 0.25rem;
+  }
+  #contact-1601 .cs-field-error::before {
+    content: "⚠";
+    font-size: 0.875rem;
+  }
+  @keyframes slideInError {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   #contact-1601 .cs-thank-you {
     text-align: center;
@@ -416,6 +578,17 @@
     min-width: auto;
   }
 }
+@media only screen and (min-width: 0rem) and only screen and (max-width: 600px) {
+  #contact-1601 .cs-checkbox-group,
+  #contact-1601 .cs-radio-group {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (min-width: 0rem) and only screen and (max-width: 600px) {
+  #contact-1601 .cs-recaptcha-container .g-recaptcha {
+    transform: scale(0.85);
+  }
+}
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #contact-1601 .cs-container {
@@ -487,7 +660,8 @@
 /* Form Enhancement Styles */
 .cs-error {
   border-color: #ff4444 !important;
-  box-shadow: 0 0 5px rgba(255, 68, 68, 0.3) !important;
+  box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.2) !important;
+  background-color: #fef2f2 !important;
 }
 .cs-state-dropdown {
   position: absolute;
@@ -495,32 +669,179 @@
   left: 0;
   right: 0;
   background: white;
-  border: 1px solid #ccc;
+  border: 1px solid #e1e1e1;
   border-top: none;
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 8px 8px;
   max-height: 200px;
   overflow-y: auto;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.cs-state-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+.cs-state-dropdown::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
 }
 .cs-state-option {
-  padding: 10px 12px;
+  padding: 12px 16px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #f5f5f5;
 }
 .cs-state-option:hover {
-  background-color: #f5f5f5;
+  background-color: #f8f9fa;
+  color: var(--primary);
 }
 .cs-state-option:last-child {
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 8px 8px;
+  border-bottom: none;
 }
 .cs-state-option.cs-priority-state {
   background-color: #f0f8ff;
   font-weight: 600;
+  border-left: 3px solid var(--primary);
 }
 .cs-state-option.cs-priority-state:hover {
   background-color: #e6f3ff;
 }
 .cs-label.cs-state {
   position: relative;
+}
+/* Google Places Autocomplete Styling */
+.pac-container {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid #e1e1e1 !important;
+  font-family: inherit !important;
+  z-index: 1001 !important;
+}
+.pac-item {
+  padding: 12px 16px !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+  cursor: pointer !important;
+  font-size: 0.875rem !important;
+}
+.pac-item:hover {
+  background-color: #f8f9fa !important;
+}
+.pac-item:last-child {
+  border-bottom: none !important;
+}
+.pac-item-selected {
+  background-color: var(--primary) !important;
+  color: white !important;
+}
+.pac-item-query {
+  font-weight: 600 !important;
+  color: inherit !important;
+}
+.pac-matched {
+  font-weight: 700 !important;
+}
+/* Loading States */
+.cs-form.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+.cs-form.loading .cs-submit {
+  position: relative;
+}
+.cs-form.loading .cs-submit::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+.cs-form.loading .cs-submit .cs-button-text,
+.cs-form.loading .cs-submit .cs-button-icon {
+  opacity: 0;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Enhanced Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* Focus visible for better keyboard navigation */
+.cs-input:focus-visible,
+.cs-checkbox:focus-visible,
+.cs-radio:focus-visible,
+.cs-submit:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .cs-input {
+    border: 2px solid #000;
+  }
+  .cs-input:focus {
+    border-color: var(--primary);
+  }
+  .cs-error {
+    border-color: #ff0000 !important;
+  }
+}
+/* Service Area Notification */
+.cs-service-notification {
+  background-color: #ff4444;
+  color: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+  animation: slideIn 0.3s ease-out;
+}
+.cs-service-notification .cs-notification-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+.cs-service-notification .cs-notification-content strong {
+  font-weight: 600;
+}
+.cs-service-notification .cs-notification-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+.cs-service-notification .cs-notification-close:hover {
+  opacity: 0.8;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

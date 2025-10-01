@@ -64,14 +64,40 @@
             justify-content: center;
             align-items: flex-start;
             gap: (4/16rem);
+            margin-bottom: (20/16rem); /* Space for error messages */
 
             &:last-of-type {
                 margin-bottom: (32/16rem);
             }
 
             &.cs-address {
-                margin-bottom: (12/16rem);
+                margin-bottom: (32/16rem);
             }
+
+            &.cs-urgency,
+            &.cs-contact-time {
+                margin-bottom: (32/16rem);
+            }
+        }
+
+        .cs-input-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .cs-help-text {
+            font-size: (12/16rem);
+            color: #666;
+            margin-top: (4/16rem);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .cs-submit-help {
+            text-align: center;
+            margin-top: (8/16rem);
+            font-weight: 500;
+            color: var(--primary);
         }
 
         .cs-address-row {
@@ -82,7 +108,7 @@
             margin-bottom: (12/16rem);
 
             .cs-label {
-                margin-bottom: 0;
+                margin-bottom: (20/16rem);
                 flex: 1;
                 min-width: (120/16rem);
 
@@ -122,7 +148,7 @@
             margin-bottom: (12/16rem);
 
             .cs-label {
-                margin-bottom: 0;
+                margin-bottom: (20/16rem);
                 flex: 1;
                 min-width: (200/16rem);
 
@@ -162,7 +188,7 @@
             border: none;
             /* prevents padding from adding to height and width */
             box-sizing: border-box;
-            transition: box-shadow 0.3s ease;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
             
             &::placeholder {
                 color: #7D799C;
@@ -172,6 +198,17 @@
             &:focus {
                 outline: none;
                 box-shadow: 0 0 0 2px var(--primary);
+                background-color: #fff;
+            }
+
+            &.cs-select {
+                background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23666' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+                background-repeat: no-repeat;
+                background-position: right 12px center;
+                background-size: 12px;
+                appearance: none;
+                cursor: pointer;
+                padding-right: (40/16rem);
             }
         }
 
@@ -182,8 +219,165 @@
         }
 
         .cs-submit {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: (8/16rem);
+            min-height: (56/16rem);
+            transition: all 0.3s ease;
+
             &:hover {
                 cursor: pointer;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            &:disabled {
+                cursor: not-allowed;
+                opacity: 0.7;
+                transform: none;
+                box-shadow: none;
+            }
+
+            .cs-button-text {
+                font-weight: 600;
+            }
+
+            .cs-button-icon {
+                font-size: (18/16rem);
+                transition: transform 0.3s ease;
+            }
+
+            &:hover .cs-button-icon {
+                transform: translateX(4px);
+            }
+        }
+
+        // New form field styles
+        .cs-service-preferences,
+        .cs-contact-method {
+            width: 100%;
+            margin: (20/16rem) 0;
+            border: none;
+            padding: 0;
+        }
+
+        .cs-fieldset-legend {
+            font-size: (16/16rem);
+            font-weight: 600;
+            color: var(--headerColor);
+            margin-bottom: (12/16rem);
+            padding: 0;
+            border: none;
+        }
+
+        .cs-checkbox-group,
+        .cs-radio-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: (8/16rem);
+            
+            @media only screen and (max-width: 600px) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cs-checkbox-label,
+        .cs-radio-label {
+            display: flex;
+            align-items: flex-start;
+            gap: (8/16rem);
+            cursor: pointer;
+            padding: (8/16rem);
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+            font-size: (14/16rem);
+            line-height: 1.4;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.03);
+            }
+        }
+
+        .cs-checkbox,
+        .cs-radio {
+            width: (16/16rem);
+            height: (16/16rem);
+            margin: (2/16rem) 0 0 0;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .cs-checkbox-text,
+        .cs-radio-text {
+            flex: 1;
+            color: var(--bodyTextColor);
+            user-select: none;
+        }
+
+        .cs-privacy-consent {
+            margin: (20/16rem) 0;
+            font-size: (14/16rem);
+            
+            .cs-checkbox-text {
+                line-height: 1.5;
+                
+                a {
+                    color: var(--primary);
+                    text-decoration: underline;
+                    
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .cs-recaptcha-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: (20/16rem) 0;
+            
+            .g-recaptcha {
+                transform-origin: center;
+                
+                @media only screen and (max-width: 600px) {
+                    transform: scale(0.85);
+                }
+            }
+        }
+
+        // Field error styling
+        .cs-field-error {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            color: #ff4444;
+            font-size: (12/16rem);
+            display: flex;
+            align-items: center;
+            gap: (4/16rem);
+            animation: slideInError 0.3s ease;
+            z-index: 10;
+            padding-top: (4/16rem);
+            
+            &::before {
+                content: "⚠";
+                font-size: (14/16rem);
+            }
+        }
+
+        @keyframes slideInError {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -580,7 +774,8 @@
 /* Form Enhancement Styles */
 .cs-error {
     border-color: #ff4444 !important;
-    box-shadow: 0 0 5px rgba(255, 68, 68, 0.3) !important;
+    box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.2) !important;
+    background-color: #fef2f2 !important;
 }
 
 .cs-state-dropdown {
@@ -589,31 +784,45 @@
     left: 0;
     right: 0;
     background: white;
-    border: 1px solid #ccc;
+    border: 1px solid #e1e1e1;
     border-top: none;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 8px 8px;
     max-height: 200px;
     overflow-y: auto;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 3px;
+    }
 }
 
 .cs-state-option {
-    padding: 10px 12px;
+    padding: 12px 16px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
+    font-size: (14/16rem);
+    border-bottom: 1px solid #f5f5f5;
 
     &:hover {
-        background-color: #f5f5f5;
+        background-color: #f8f9fa;
+        color: var(--primary);
     }
 
     &:last-child {
-        border-radius: 0 0 4px 4px;
+        border-radius: 0 0 8px 8px;
+        border-bottom: none;
     }
 
     &.cs-priority-state {
         background-color: #f0f8ff;
         font-weight: 600;
+        border-left: 3px solid var(--primary);
         
         &:hover {
             background-color: #e6f3ff;
@@ -623,5 +832,159 @@
 
 .cs-label.cs-state {
     position: relative;
+}
+
+/* Google Places Autocomplete Styling */
+.pac-container {
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid #e1e1e1 !important;
+    font-family: inherit !important;
+    z-index: 1001 !important;
+}
+
+.pac-item {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    cursor: pointer !important;
+    font-size: (14/16rem) !important;
+    
+    &:hover {
+        background-color: #f8f9fa !important;
+    }
+    
+    &:last-child {
+        border-bottom: none !important;
+    }
+}
+
+.pac-item-selected {
+    background-color: var(--primary) !important;
+    color: white !important;
+}
+
+.pac-item-query {
+    font-weight: 600 !important;
+    color: inherit !important;
+}
+
+.pac-matched {
+    font-weight: 700 !important;
+}
+
+/* Loading States */
+.cs-form.loading {
+    pointer-events: none;
+    opacity: 0.7;
+    
+    .cs-submit {
+        position: relative;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid transparent;
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        .cs-button-text,
+        .cs-button-icon {
+            opacity: 0;
+        }
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Enhanced Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus visible for better keyboard navigation */
+.cs-input:focus-visible,
+.cs-checkbox:focus-visible,
+.cs-radio:focus-visible,
+.cs-submit:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .cs-input {
+        border: 2px solid #000;
+        
+        &:focus {
+            border-color: var(--primary);
+        }
+    }
+    
+    .cs-error {
+        border-color: #ff0000 !important;
+    }
+}
+
+/* Service Area Notification */
+.cs-service-notification {
+    background-color: #ff4444;
+    color: white;
+    padding: (16/16rem);
+    margin: (16/16rem) 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+    animation: slideIn 0.3s ease-out;
+
+    .cs-notification-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: (12/16rem);
+
+        strong {
+            font-weight: 600;
+        }
+    }
+
+    .cs-notification-close {
+        background: none;
+        border: none;
+        color: white;
+        font-size: (20/16rem);
+        font-weight: bold;
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
                                 

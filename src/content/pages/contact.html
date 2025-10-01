@@ -13,7 +13,15 @@ eleventyNavigation:
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/contact.css">
+    <!-- Google Places API for address autocomplete -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqyzQIHadV47gbzcvCLq7GCzBxvwK4mEQ&libraries=places&callback=initMap" async defer></script>
     <script src="/assets/js/contact.js" defer></script>
+    <script>
+        function initMap() {
+            // Google Places API callback
+            console.log('Google Places API loaded');
+        }
+    </script>
 {% endblock %}
 
 {% block body %}
@@ -41,45 +49,91 @@ eleventyNavigation:
                 <span class="cs-topper">Contact Us</span>
                 <h2 class="cs-title">Get A Free Quote</h2>
                 <!--Form-->
-                <form class="cs-form" id="cs-form-1601" name="Contact Form" method="post" data-netlify="true" data-netlify-recaptcha="true">
+                <form class="cs-form" id="cs-form-1601" name="Contact Form" method="post" 
+                      action="/" data-netlify="true" data-netlify-recaptcha="true" 
+                      data-netlify-honeypot="bot-field" novalidate>
+                    
+                    <!-- Honeypot field for bot protection -->
+                    <div style="display: none;">
+                        <label>Don't fill this out if you're human: 
+                            <input name="bot-field" />
+                        </label>
+                    </div>
+
+                    <!-- Hidden field for form identification -->
+                    <input type="hidden" name="form-name" value="Contact Form" />
+                    
                     <label class="cs-label">
-                        Name
-                        <input class="cs-input" required type="text" id="name-1601" name="name" placeholder="Name">
+                        Name *
+                        <input class="cs-input" required type="text" id="name-1601" name="name" 
+                               placeholder="Enter your full name" autocomplete="name" 
+                               aria-describedby="name-error" maxlength="100">
                     </label>
+                    
                     <div class="cs-contact-row">
                         <label class="cs-label cs-email">
-                            Email
-                            <input class="cs-input" required type="email" id="email-1601" name="email" placeholder="Email">
+                            Email *
+                            <input class="cs-input" required type="email" id="email-1601" name="email" 
+                                   placeholder="your.email@example.com" autocomplete="email" 
+                                   aria-describedby="email-error" maxlength="254">
                         </label>
                         <label class="cs-label cs-phone">
-                            Phone
-                            <input class="cs-input" required type="tel" id="phone-1601" name="phone" placeholder="(123) 456-7890" autocomplete="tel" maxlength="14">
+                            Phone *
+                            <input class="cs-input" required type="tel" id="phone-1601" name="phone" 
+                                   placeholder="(123) 456-7890" autocomplete="tel" 
+                                   aria-describedby="phone-error" maxlength="14">
                         </label>
                     </div>
+                    
                     <label class="cs-label cs-address">
-                        Service Address
-                        <input class="cs-input" required type="text" id="address-1601" name="address" placeholder="Enter your service address" autocomplete="street-address">
+                        Service Address *
+                        <input class="cs-input" required type="text" id="address-1601" name="address" 
+                               placeholder="Start typing your address..." autocomplete="street-address" 
+                               aria-describedby="address-error address-help" maxlength="200">
                     </label>
+                    
                     <div class="cs-address-row">
                         <label class="cs-label cs-city">
-                            City
-                            <input class="cs-input" required type="text" id="city-1601" name="city" placeholder="City" autocomplete="address-level2">
+                            City *
+                            <input class="cs-input" required type="text" id="city-1601" name="city" 
+                                   placeholder="City" autocomplete="address-level2" 
+                                   aria-describedby="city-error" maxlength="100">
                         </label>
                         <label class="cs-label cs-state">
-                            State
-                            <input class="cs-input" required type="text" id="state-1601" name="state" placeholder="Type state name or PA" autocomplete="address-level1" maxlength="2">
+                            State *
+                            <input class="cs-input" required type="text" id="state-1601" name="state" 
+                                   placeholder="PA" autocomplete="address-level1" 
+                                   aria-describedby="state-error state-help" maxlength="2" 
+                                   style="text-transform: uppercase;">
                         </label>
                         <label class="cs-label cs-zip">
-                            ZIP Code
-                            <input class="cs-input" required type="text" id="zip-1601" name="zip" placeholder="ZIP" autocomplete="postal-code">
+                            ZIP Code *
+                            <input class="cs-input" required type="text" id="zip-1601" name="zip" 
+                                   placeholder="12345" autocomplete="postal-code" 
+                                   aria-describedby="zip-error" maxlength="10" pattern="[0-9]{5}(-[0-9]{4})?">
                         </label>
                     </div>
+                    
                     <label class="cs-label">
-                        Message
-                        <textarea class="cs-input cs-textarea" required name="Message" id="message-1601" placeholder="Write message..."></textarea>
+                        Project Description *
+                        <textarea class="cs-input cs-textarea" required name="message" id="message-1601" 
+                                  placeholder="Please describe your roofing project, including any specific concerns or requirements..." 
+                                  aria-describedby="message-error message-help" maxlength="2000" rows="5"></textarea>
                     </label>
-                    <div data-netlify-recaptcha="true"></div>
-                    <button class="cs-button-solid cs-submit" type="submit">Submit Now</button>
+
+                    <!-- Netlify reCAPTCHA -->
+                    <div class="cs-recaptcha-container">
+                        <div data-netlify-recaptcha="true"></div>
+                    </div>
+                    
+                    <button class="cs-button-solid cs-submit" type="submit" 
+                            aria-describedby="submit-help">
+                        <span class="cs-button-text">Get Free Quote</span>
+                        <span class="cs-button-icon" aria-hidden="true">→</span>
+                    </button>
+                    <small id="submit-help" class="cs-help-text cs-submit-help">
+                        We'll respond within 48 hours to provide your free estimate
+                    </small>
                 </form>
             </div>
             <div class="cs-wrapper">
