@@ -6,7 +6,6 @@
 class ContactForm {
     constructor() {
         this.form = null;
-        this.isSubmitting = false;
         this.allowedStates = ['PA', 'MD', 'DE', 'NJ'];
         this.init();
     }
@@ -351,67 +350,26 @@ class ContactForm {
      */
     setupFormHandlers() {
         this.form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.handleFormSubmit();
+            // Check honeypot
+            const honeypot = document.querySelector('input[name="bot-field"]');
+            if (honeypot && honeypot.value !== '') {
+                console.warn('Bot detected');
+                e.preventDefault();
+                return;
+            }
+
+            // Validate all fields before submission
+            const isValid = this.validateAllFields();
+            if (!isValid) {
+                e.preventDefault();
+                return;
+            }
+
+            // Let Netlify handle the rest - no preventDefault
         });
     }
 
-    /**
-     * Handle form submission with comprehensive validation
-     */
-    async handleFormSubmit() {
-        if (this.isSubmitting) return;
 
-        // Check honeypot
-        const honeypot = document.querySelector('input[name="bot-field"]');
-        if (honeypot && honeypot.value !== '') {
-            console.warn('Bot detected');
-            return;
-        }
-
-        // Validate all fields
-        const isValid = this.validateAllFields();
-        if (!isValid) {
-            this.showErrorMessage('Please correct the errors above and try again.');
-            return;
-        }
-
-        // Check if we're outside Pennsylvania
-        const state = document.getElementById('state-1601').value.toUpperCase();
-        if (state !== 'PA') {
-            this.showServiceAreaNotification(state);
-            return;
-        }
-
-        this.isSubmitting = true;
-        this.showLoadingState();
-
-        try {
-            // Submit form (Netlify handles reCAPTCHA verification server-side)
-            const formData = new FormData(this.form);
-            
-            const response = await fetch(this.form.action || '/', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                this.showSuccessMessage();
-                this.resetForm();
-            } else {
-                throw new Error('Network response was not ok');
-            }
-        } catch (error) {
-            console.error('Form submission error:', error);
-            this.showErrorMessage(error.message || 'There was an error submitting your form. Please try again.');
-        } finally {
-            this.isSubmitting = false;
-            this.hideLoadingState();
-        }
-    }
 
     /**
      * Validate all form fields
@@ -438,198 +396,9 @@ class ContactForm {
         return isValid;
     }
 
-    /**
-     * Show service area notification for out-of-state inquiries
-     */
-    showServiceAreaNotification(state) {
-        const existingNotification = document.querySelector('.cs-service-notification');
-        if (existingNotification) {
-            existingNotification.remove();
-        }
 
-        const notification = document.createElement('div');
-        notification.className = 'cs-service-notification';
-        notification.innerHTML = `
-            <div class="cs-notification-content">
-                <div>
-                    <strong>Service Area Notice:</strong> We currently only serve Pennsylvania. 
-                    We'll keep your information on file for future expansion to ${this.getStateName(state)}.
-                </div>
-                <button type="button" class="cs-notification-close" aria-label="Close notification">&times;</button>
-            </div>
-        `;
 
-        this.form.insertBefore(notification, this.form.firstChild);
-
-        // Handle close button
-        notification.querySelector('.cs-notification-close').addEventListener('click', () => {
-            notification.remove();
-        });
-
-        // Auto-remove after 10 seconds
-        setTimeout(() => {
-            if (notification.parentElement) {
-                notification.remove();
-            }
-        }, 10000);
-    }
-
-    /**
-     * Get full state name from code
-     */
-    getStateName(code) {
-        const states = {
-            'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California',
-            'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia',
-            'HI': 'Hawaii', 'ID': 'Idaho', 'IL': 'Illinois', 'IN': 'Indiana', 'IA': 'Iowa',
-            'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana', 'ME': 'Maine', 'MD': 'Maryland',
-            'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota', 'MS': 'Mississippi', 'MO': 'Missouri',
-            'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada', 'NH': 'New Hampshire', 'NJ': 'New Jersey',
-            'NM': 'New Mexico', 'NY': 'New York', 'NC': 'North Carolina', 'ND': 'North Dakota', 'OH': 'Ohio',
-            'OK': 'Oklahoma', 'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina',
-            'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VT': 'Vermont',
-            'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming'
-        };
-        return states[code] || code;
-    }
-
-    /**
-     * Show loading state during form submission
-     */
-    showLoadingState() {
-        const submitButton = this.form.querySelector('.cs-submit');
-        if (submitButton) {
-            submitButton.disabled = true;
-            submitButton.textContent = 'Submitting...';
-            submitButton.style.opacity = '0.7';
-        }
-    }
-
-    /**
-     * Hide loading state after form submission
-     */
-    hideLoadingState() {
-        const submitButton = this.form.querySelector('.cs-submit');
-        if (submitButton) {
-            submitButton.disabled = false;
-            submitButton.textContent = 'Submit Now';
-            submitButton.style.opacity = '1';
-        }
-    }
-
-    /**
-     * Show success message after successful submission
-     */
-    showSuccessMessage() {
-        this.showPopup(
-            'Thank You!',
-            'Your message has been sent successfully. We\'ll get back to you within 24 hours.',
-            'success'
-        );
-    }
-
-    /**
-     * Show error message
-     */
-    showErrorMessage(message) {
-        this.showPopup(
-            'Error',
-            message,
-            'error'
-        );
-    }
-
-    /**
-     * Show popup message
-     */
-    showPopup(title, message, type = 'success') {
-        // Remove existing popup
-        const existingPopup = document.querySelector('.thank-you-popup');
-        if (existingPopup) {
-            existingPopup.remove();
-        }
-
-        const popup = document.createElement('div');
-        popup.className = 'thank-you-popup';
-        
-        const bgColor = type === 'success' ? '#28a745' : '#dc3545';
-        
-        popup.innerHTML = `
-            <div class="thank-you-overlay">
-                <div class="thank-you-content">
-                    <div class="thank-you-header">
-                        <h3 style="color: ${bgColor};">${title}</h3>
-                        <button type="button" class="thank-you-close" aria-label="Close">&times;</button>
-                    </div>
-                    <p>${message}</p>
-                    <div class="thank-you-actions">
-                        <button type="button" class="cs-button-solid thank-you-ok" style="background-color: ${bgColor};">OK</button>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        document.body.appendChild(popup);
-
-        // Show popup
-        setTimeout(() => {
-            popup.classList.add('show');
-        }, 10);
-
-        // Handle close events
-        const closeButtons = popup.querySelectorAll('.thank-you-close, .thank-you-ok');
-        closeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                this.closePopup(popup);
-            });
-        });
-
-        // Close on overlay click
-        popup.querySelector('.thank-you-overlay').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) {
-                this.closePopup(popup);
-            }
-        });
-
-        // Close on escape key
-        const escapeHandler = (e) => {
-            if (e.key === 'Escape') {
-                this.closePopup(popup);
-                document.removeEventListener('keydown', escapeHandler);
-            }
-        };
-        document.addEventListener('keydown', escapeHandler);
-    }
-
-    /**
-     * Close popup with animation
-     */
-    closePopup(popup) {
-        popup.classList.add('closing');
-        setTimeout(() => {
-            popup.remove();
-        }, 300);
-    }
-
-    /**
-     * Reset form after successful submission
-     */
-    resetForm() {
-        this.form.reset();
-        
-        // Clear any error states
-        this.form.querySelectorAll('.cs-error').forEach(element => {
-            element.classList.remove('cs-error');
-        });
-        
-        this.form.querySelectorAll('.cs-field-error').forEach(error => {
-            error.remove();
-        });
-
-        // Hide state dropdown
-        this.hideStateDropdown();
-    }
 }
 
 // Initialize the contact form
-window.contactFormInstance = new ContactForm();
+new ContactForm();
