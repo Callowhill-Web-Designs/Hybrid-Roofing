@@ -41,12 +41,11 @@ eleventyNavigation:
                 <span class="cs-topper">Contact Us</span>
                 <h2 class="cs-title">Get A Free Quote</h2>
                 <!--Form-->
-                <form class="cs-form" id="cs-form-1601" name="Contact Form" method="post" data-netlify="true" data-netlify-recaptcha="true" data-netlify-honeypot="bot-field">
+                <form class="cs-form" id="cs-form-1601" name="Contact Form" method="post" data-netlify="true" data-netlify-recaptcha="true" data-netlify-honeypot="select">
                     
-                    <!-- Honeypot field for bot protection -->
                     <div style="display: none;">
-                        <label>Don't fill this out if you're human: 
-                            <input name="bot-field" />
+                        <label> 
+                            <input name="select" />
                         </label>
                     </div>
 
@@ -105,8 +104,8 @@ eleventyNavigation:
                     </div>
                     
                     <label class="cs-label">
-                        Project Description *
-                        <textarea class="cs-input cs-textarea" required name="message" id="message-1601" 
+                        Project Description
+                        <textarea class="cs-input cs-textarea" name="message" id="message-1601" 
                                   placeholder="Please describe your roofing project, including any specific concerns or requirements..." 
                                   aria-describedby="message-error message-help" maxlength="2000" rows="5"></textarea>
                     </label>
