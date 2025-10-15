@@ -31,6 +31,9 @@ logo_url: https://callowhillwebdesigns.com/assets/svgs/logo.svg
 # Add site links in Decap CMS (optional)
 site_url: https://hybridroofingpa.com
 
+media_folder: "src/assets/images/blog"
+public_folder: "/assets/images/blog"
+
 collections:
     - name: "blog"
       label: "Blog"
