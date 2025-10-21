@@ -71,6 +71,9 @@
   #contact-1601 .cs-label.cs-contact-time {
     margin-bottom: 2rem;
   }
+  #contact-1601 .cs-label-select {
+    display: none;
+  }
   #contact-1601 .cs-input-wrapper {
     position: relative;
     width: 100%;
