@@ -294,10 +294,30 @@
     color: var(--headerColor);
   }
   .recent-articles .blog-desc {
-    margin: 1rem 0 2rem;
+    margin: 1rem 0 1.5rem;
     font-size: 1rem;
     line-height: 1.5em;
     color: var(--bodyTextColor);
+  }
+  .recent-articles .blog-icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--secondary);
+  }
+  .recent-articles .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .recent-articles .project-tag {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+    background-color: var(--secondary);
+    color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
   }
   .recent-articles .blog-link {
     z-index: 1;

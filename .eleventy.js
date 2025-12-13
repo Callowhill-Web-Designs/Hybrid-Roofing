@@ -98,6 +98,20 @@ module.exports = function (eleventyConfig) {
      *  https://moment.github.io/luxon/api-docs/index.html#datetime
      */
     eleventyConfig.addFilter("postDate", filterPostDate);
+    // JSON stringify helper for Nunjucks templates
+    eleventyConfig.addFilter("jsonify", function(value) {
+        try {
+            return JSON.stringify(value);
+        } catch (e) {
+            return '[]';
+        }
+    });
+    // Filter to remove system tags (sitemap, job-posts, post, etc.) and return only service tags
+    eleventyConfig.addFilter("serviceTags", function(tags) {
+        if (!Array.isArray(tags)) return [];
+        const systemTags = ['sitemap', 'job-posts', 'post', 'pages'];
+        return tags.filter(tag => !systemTags.includes(tag));
+    });
     /**=====================================================================
                                     END FILTERS
     =======================================================================*/
@@ -112,6 +126,16 @@ module.exports = function (eleventyConfig) {
      *  Use - {% year %}
      */
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+    /**
+     * Job posts collection
+     * Allows templates to access collections['job-posts'] for map and listings
+     */
+    eleventyConfig.addCollection("job-posts", (collectionApi) => {
+        return collectionApi.getFilteredByGlob("./src/content/job-posts/**/*.md").sort((a, b) => {
+            // Sort by date (newest first)
+            return (a.date && b.date) ? b.date - a.date : 0;
+        });
+    });
     /**=====================================================================
                                 END SHORTCODES
     =======================================================================*/

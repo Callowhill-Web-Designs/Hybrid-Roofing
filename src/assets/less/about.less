@@ -159,6 +159,217 @@
     }
 }
 
+/*-- -------------------------- -->
+<---        Areas Served        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #areas-served {
+        padding: var(--sectionPadding);
+        background: linear-gradient(180deg, #fff 0%, #f9f9f9 100%);
+        position: relative;
+        overflow: hidden;
+        
+        &:before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23161949' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 1;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            max-width: (750/16rem);
+            margin-bottom: (48/16rem);
+        }
+
+        .cs-topper {
+            margin-bottom: (4/16rem);
+        }
+
+        .cs-title {
+            margin: 0 0 (24/16rem);
+        }
+
+        .cs-text {
+            margin: 0 auto (32/16rem);
+            max-width: (630/16rem);
+        }
+
+        .cs-button-solid {
+            margin-top: (24/16rem);
+        }
+
+        .cs-map-wrapper {
+            width: 100%;
+            position: relative;
+            background: #fff;
+            padding: (24/16rem);
+            border-radius: (24/16rem);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        #areas-map {
+            width: 100%;
+            height: (400/16rem);
+            border-radius: (16/16rem);
+            overflow: hidden;
+        }
+    }
+
+    /* Custom pin markers */
+    .custom-pin {
+        background: transparent;
+        border: none;
+        
+        svg {
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));
+            transition: transform 0.2s ease;
+            
+            .pin-fill {
+                fill: var(--secondary);
+            }
+            .pin-outline {
+                fill: var(--primary);
+            }
+            .pin-center {
+                fill: var(--primary);
+            }
+        }
+        
+        &:hover svg {
+            transform: scale(1.1);
+        }
+    }
+
+    /* Popup styling */
+    .leaflet-popup-content-wrapper {
+        padding: 0;
+        border-radius: (12/16rem);
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+    
+    .leaflet-popup-content {
+        margin: 0;
+        width: auto !important;
+    }
+    
+    .marker-popup {
+        min-width: (220/16rem);
+        max-width: (280/16rem);
+    }
+    
+    .marker-popup .popup-image {
+        width: 100%;
+        height: (160/16rem);
+        object-fit: cover;
+        display: block;
+    }
+    
+    .marker-popup .popup-title {
+        display: block;
+        font-size: (18/16rem);
+        font-weight: 700;
+        color: var(--headerColor);
+        margin: (16/16rem) (16/16rem) (8/16rem);
+        line-height: 1.3em;
+    }
+    
+    .marker-popup .popup-address {
+        font-size: (14/16rem);
+        color: var(--bodyTextColor);
+        margin: 0 (16/16rem) (16/16rem);
+        line-height: 1.5em;
+    }
+    
+    .marker-popup .popup-link {
+        display: block;
+        padding: (12/16rem);
+        background: var(--primary);
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 700;
+        font-size: (14/16rem);
+        transition: background 0.3s ease;
+        
+        &:hover {
+            background: var(--primaryLight);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #areas-served {
+        .cs-map-wrapper {
+            padding: (32/16rem);
+        }
+
+        #areas-map {
+            height: (500/16rem);
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #areas-served {
+        .cs-container {
+            flex-direction: row;
+            align-items: center;
+            gap: (80/16rem);
+        }
+
+        .cs-content {
+            width: 45%;
+            max-width: (550/16rem);
+            text-align: left;
+            margin-bottom: 0;
+            flex: none;
+        }
+
+        .cs-topper,
+        .cs-title,
+        .cs-text {
+            text-align: left;
+        }
+
+        .cs-text {
+            margin: 0;
+        }
+
+        .cs-map-wrapper {
+            width: 50%;
+            flex: 1;
+        }
+
+        #areas-map {
+            height: (550/16rem);
+        }
+    }
+}
+
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
@@ -200,6 +411,42 @@
             .cs-quote-icon {
                 opacity: 0.2;
             }
+        }
+
+        #areas-served {
+            background: linear-gradient(180deg, var(--dark) 0%, rgba(0, 0, 0, 0.5) 100%);
+
+            .cs-topper {
+                color: var(--secondaryLight);
+            }
+
+            .cs-title,
+            .cs-text {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-map-wrapper {
+                background: var(--medium);
+            }
+        }
+
+        /* Dark mode for map pins and popups */
+        .custom-pin svg {
+            .pin-fill {
+                fill: var(--secondaryLight);
+            }
+            .pin-outline {
+                fill: var(--primaryLight);
+            }
+            .pin-center {
+                fill: var(--primaryLight);
+            }
+        }
+        .marker-popup .popup-title {
+            color: var(--bodyTextColorWhite);
+        }
+        .marker-popup .popup-address {
+            color: var(--bodyTextColorWhite);
         }
     }
 }

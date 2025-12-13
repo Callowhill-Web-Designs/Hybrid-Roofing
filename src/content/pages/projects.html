@@ -1,0 +1,77 @@
+---
+title: 'Recent Projects | Hybrid Roofing PA'
+description: 'Browse our recent roofing and siding projects throughout the Greater Philadelphia area. See the quality work we deliver to our customers.'
+preloadImg: '/assets/images/shingles.webp'
+permalink: 'projects/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/projects.css">
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">Recent Projects</h1>
+        <picture>
+            <source media="(max-width: 600px)" srcset="/assets/images/shingles.webp">
+            <source media="(min-width: 601px)" srcset="/assets/images/shingles.webp">
+            <img aria-hidden="true" decoding="async" src="/assets/images/shingles.webp" alt="roofing projects" loading="eager" width="2500" height="1667">
+        </picture>
+
+    </section>
+
+    <!-- ============================================ -->
+    <!--                Projects Gallery              -->
+    <!-- ============================================ -->
+
+    <section id="projects-gallery">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Our Work</span>
+                <h2 class="cs-title">Completed Projects Throughout the Greater Philadelphia Area</h2>
+                <p class="cs-text">
+                    Browse our portfolio of recent roofing and siding projects. Each project showcases our commitment to quality craftsmanship and customer satisfaction.
+                </p>
+            </div>
+            
+            {% if collections['job-posts'] | length == 0 %}
+                <div class="cs-no-projects">
+                    <p>No projects to display at this time.</p>
+                </div>
+            {% else %}
+                <div class="cs-gallery">
+                    {%- for project in collections['job-posts'] -%}
+                        <a href="{{ project.url }}" class="cs-project-card">
+                            <picture class="cs-picture">
+                                <source media="(max-width: 600px)" srcset="{{ project.data.image }}">
+                                <source media="(min-width: 601px)" srcset="{{ project.data.image }}">
+                                <img loading="lazy" decoding="async" src="{{ project.data.image }}" alt="{{ project.data.imageAlt }}" width="413" height="420">
+                            </picture>
+                            <div class="cs-info">
+                                {% set serviceTags = project.data.tags | serviceTags %}
+                                {% if serviceTags.length > 0 %}
+                                    <span class="cs-tag">{{ serviceTags[0] | title }}</span>
+                                {% endif %}
+                                <h3 class="cs-project-title">{{ project.data.title }}</h3>
+                                <div class="cs-location">
+                                    <svg class="cs-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 0C5.243 0 3 2.243 3 5C3 8.25 8 14 8 14C8 14 13 8.25 13 5C13 2.243 10.757 0 8 0ZM8 7C6.895 7 6 6.105 6 5C6 3.895 6.895 3 8 3C9.105 3 10 3.895 10 5C10 6.105 9.105 7 8 7Z" fill="currentColor"/>
+                                    </svg>
+                                    <span>{{ project.data.city }}, {{ project.data.state }}</span>
+                                </div>
+                            </div>
+                        </a>
+                    {%- endfor -%}
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+    {% include "components/cta.html" %}
+{% endblock %}

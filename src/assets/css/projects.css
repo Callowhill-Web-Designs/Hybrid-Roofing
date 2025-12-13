@@ -824,3 +824,700 @@
     bottom: 4rem;
   }
 }
+/*-- -------------------------- -->
+<---       Job Post Hero        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #job-hero {
+    padding: 0;
+    position: relative;
+    min-height: 25rem;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--primary);
+  }
+  #job-hero .cs-hero-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    padding: 3rem 1rem 2rem;
+    position: relative;
+    z-index: 10;
+  }
+  #job-hero .cs-hero-content {
+    max-width: 50rem;
+  }
+  #job-hero .cs-breadcrumb {
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  #job-hero .cs-breadcrumb a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+  #job-hero .cs-breadcrumb a:hover {
+    opacity: 0.8;
+  }
+  #job-hero .cs-breadcrumb .cs-separator {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.5;
+  }
+  #job-hero .cs-breadcrumb .cs-current {
+    color: var(--bodyTextColorWhite);
+  }
+  #job-hero .cs-hero-title {
+    margin: 0 0 1.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1em;
+    font-weight: 900;
+    color: #fff;
+  }
+  #job-hero .cs-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  #job-hero .cs-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--bodyTextColorWhite);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  #job-hero .cs-meta-item .cs-icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--secondary);
+    flex-shrink: 0;
+  }
+  #job-hero .cs-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  #job-hero .cs-hero-image picture,
+  #job-hero .cs-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  #job-hero .cs-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(22, 25, 73, 0.7) 0%, rgba(22, 25, 73, 0.9) 100%);
+    z-index: 2;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #job-hero {
+    min-height: 31.25rem;
+  }
+  #job-hero .cs-hero-container {
+    padding: 5rem 1.5rem 3rem;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #job-hero {
+    min-height: 37.5rem;
+  }
+  #job-hero .cs-hero-container {
+    padding: 6.25rem 2.5rem 3.75rem;
+  }
+}
+/*-- -------------------------- -->
+<---    Job Post Overview       -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #job-overview {
+    padding: var(--sectionPadding);
+    background-color: #fff;
+  }
+  #job-overview .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+  }
+  #job-overview .cs-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  #job-overview .cs-main-content {
+    width: 100%;
+  }
+  #job-overview .cs-section-header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  #job-overview .cs-topper {
+    margin-bottom: 0.5rem;
+  }
+  #job-overview .cs-title {
+    margin: 0;
+  }
+  #job-overview .cs-project-picture {
+    width: 100%;
+    margin: 0 0 2.5rem;
+    display: block;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  #job-overview .cs-project-picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  #job-overview .cs-project-description {
+    margin-bottom: 3rem;
+  }
+  #job-overview .cs-project-description p {
+    margin: 0 0 1.25rem;
+    font-size: 1.125rem;
+    line-height: 1.7em;
+    color: var(--bodyTextColor);
+  }
+  #job-overview .cs-project-description p:last-child {
+    margin-bottom: 0;
+  }
+  #job-overview .cs-project-description ul,
+  #job-overview .cs-project-description ol {
+    margin: 1.25rem 0;
+    padding-left: 2rem;
+  }
+  #job-overview .cs-project-description ul li,
+  #job-overview .cs-project-description ol li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.7em;
+    color: var(--bodyTextColor);
+  }
+  #job-overview .cs-project-description strong {
+    color: var(--headerColor);
+    font-weight: 700;
+  }
+  #job-overview .cs-highlight-box {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+    border-left: 4px solid var(--secondary);
+    border-radius: 0.75rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  #job-overview .cs-highlight-icon {
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+  }
+  #job-overview .cs-highlight-content {
+    flex: 1;
+  }
+  #job-overview .cs-highlight-title {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.3em;
+    font-weight: 900;
+    color: var(--primary);
+  }
+  #job-overview .cs-highlight-text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6em;
+    color: var(--bodyTextColor);
+  }
+  #job-overview .cs-sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  #job-overview .cs-info-card {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--primary);
+  }
+  #job-overview .cs-card-title {
+    margin: 0 0 1.5rem;
+    font-size: 1.375rem;
+    line-height: 1.3em;
+    font-weight: 900;
+    color: var(--headerColor);
+  }
+  #job-overview .cs-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  #job-overview .cs-info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  #job-overview .cs-info-row:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  #job-overview .cs-info-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+  }
+  #job-overview .cs-info-value {
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 600;
+    color: var(--headerColor);
+  }
+}
+/*-- -------------------------- -->
+<---         Job CTA            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #job-cta {
+    padding: var(--sectionPadding);
+    position: relative;
+  }
+  #job-cta .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #job-cta .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally */
+    align-items: center;
+  }
+  #job-cta .cs-topper-secondary {
+    font-size: 1rem;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+  #job-cta .cs-title {
+    /* 39px - 61px */
+    font-size: clamp(2.4375rem, 6vw, 3.8125rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    /* 23 characters including spaces */
+    max-width: 23ch;
+    margin: 0 0 1rem 0;
+    color: var(--bodyTextColorWhite);
+    position: relative;
+  }
+  #job-cta .cs-text {
+    /* 16px - 20px */
+    font-size: clamp(1rem, 1.95vw, 1.25rem);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    /* 464px - 622px */
+    max-width: clamp(29rem, 60vw, 38.875rem);
+    margin: 0;
+    margin-bottom: 2rem;
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+  }
+  #job-cta .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    overflow: hidden;
+    margin: 0;
+    color: #000;
+    padding: 0 1.75rem;
+    background-color: var(--secondary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+  }
+  #job-cta .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: var(--primary);
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #job-cta .cs-button-solid:hover {
+    color: #fff;
+  }
+  #job-cta .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #job-cta .cs-picture {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #job-cta .cs-picture:before {
+    /* black color overlay */
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #job-cta .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #job-overview .cs-section-header {
+    text-align: left;
+  }
+  #job-overview .cs-highlight-box {
+    padding: 2.5rem;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #job-overview .cs-content-wrapper {
+    flex-direction: row;
+    gap: 3.75rem;
+  }
+  #job-overview .cs-main-content {
+    width: 65%;
+    flex: none;
+  }
+  #job-overview .cs-sidebar {
+    width: 32%;
+    position: sticky;
+    top: 7.5rem;
+    align-self: flex-start;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #job-hero {
+    background: var(--dark);
+  }
+  body.dark-mode #job-hero .cs-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%);
+  }
+  body.dark-mode #job-overview {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode #job-overview .cs-project-picture {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+  body.dark-mode #job-overview .cs-project-description p,
+  body.dark-mode #job-overview .cs-project-description li {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #job-overview .cs-project-description strong {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #job-overview .cs-highlight-box {
+    background: var(--medium);
+    border-left-color: var(--secondaryLight);
+  }
+  body.dark-mode #job-overview .cs-highlight-title {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #job-overview .cs-highlight-text {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #job-overview .cs-info-card {
+    background: var(--medium);
+    border-top-color: var(--primaryLight);
+  }
+  body.dark-mode #job-overview .cs-card-title {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #job-overview .cs-info-label {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #job-overview .cs-info-value {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #job-overview .cs-info-row {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+  body.dark-mode #job-cta .cs-topper-secondary {
+    color: var(--secondaryLight);
+  }
+  body.dark-mode #projects-gallery .cs-topper {
+    color: var(--secondaryLight);
+  }
+  body.dark-mode #projects-gallery .cs-title,
+  body.dark-mode #projects-gallery .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #projects-gallery .cs-project-card:hover .cs-picture:before {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  body.dark-mode #projects-gallery .cs-project-card:hover .cs-picture img {
+    opacity: 0.5;
+  }
+  body.dark-mode #projects-gallery .cs-project-card:hover .cs-tag,
+  body.dark-mode #projects-gallery .cs-project-card:hover .cs-project-title,
+  body.dark-mode #projects-gallery .cs-project-card:hover .cs-location {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  body.dark-mode #projects-gallery .cs-tag {
+    background-color: var(--primaryLight);
+  }
+  body.dark-mode #projects-gallery .cs-project-title {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #projects-gallery .cs-location {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #projects-gallery .cs-icon {
+    color: var(--secondaryLight);
+  }
+}
+/*-- -------------------------- -->
+<---    Projects Gallery        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #projects-gallery {
+    padding: var(--sectionPadding);
+    background-color: #fff;
+    position: relative;
+  }
+  #projects-gallery .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+  }
+  #projects-gallery .cs-content {
+    text-align: center;
+    width: 100%;
+    max-width: 46.875rem;
+    margin: 0 auto 3rem;
+  }
+  #projects-gallery .cs-topper {
+    margin-bottom: 0.25rem;
+  }
+  #projects-gallery .cs-title {
+    margin: 0 0 1.5rem;
+  }
+  #projects-gallery .cs-text {
+    margin: 0;
+  }
+  #projects-gallery .cs-no-projects {
+    text-align: center;
+    padding: 5rem 0;
+  }
+  #projects-gallery .cs-no-projects p {
+    font-size: 1.125rem;
+    color: var(--bodyTextColor);
+  }
+  #projects-gallery .cs-gallery {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1rem, 1.5vw, 1.25rem);
+  }
+  #projects-gallery .cs-project-card {
+    text-decoration: none;
+    grid-column: span 12;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    transition: transform 0.3s;
+  }
+  #projects-gallery .cs-project-card:hover {
+    transform: translateY(-8px);
+  }
+  #projects-gallery .cs-project-card:hover .cs-picture:before {
+    opacity: 0.4;
+  }
+  #projects-gallery .cs-project-card:hover .cs-picture img {
+    transform: scale(1.1);
+  }
+  #projects-gallery .cs-project-card:hover .cs-tag,
+  #projects-gallery .cs-project-card:hover .cs-project-title,
+  #projects-gallery .cs-project-card:hover .cs-location {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  #projects-gallery .cs-picture {
+    width: 100%;
+    height: clamp(300px, 50vw, 420px);
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  #projects-gallery .cs-picture:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    opacity: 0.6;
+    z-index: 1;
+    transition: opacity 0.3s;
+  }
+  #projects-gallery .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.6s, opacity 0.3s;
+  }
+  #projects-gallery .cs-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  #projects-gallery .cs-tag {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.375rem 0.75rem;
+    color: var(--primary);
+    background-color: var(--secondary);
+    display: inline-block;
+    align-self: flex-start;
+    transform: translateY(10px);
+    opacity: 0.95;
+    transition: transform 0.3s 0.1s, opacity 0.3s;
+  }
+  #projects-gallery .cs-project-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin: 0;
+    color: #fff;
+    transform: translateY(10px);
+    opacity: 0.95;
+    transition: transform 0.3s 0.15s, opacity 0.3s;
+  }
+  #projects-gallery .cs-location {
+    font-size: 0.875rem;
+    line-height: 1.5em;
+    color: var(--bodyTextColorWhite);
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    transform: translateY(10px);
+    opacity: 0.9;
+    transition: transform 0.3s 0.2s, opacity 0.3s;
+  }
+  #projects-gallery .cs-location span {
+    color: var(--bodyTextColorWhite);
+  }
+  #projects-gallery .cs-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+    flex-shrink: 0;
+    color: var(--secondary);
+  }
+}
+/* Tablet - 600px */
+@media only screen and (min-width: 37.5rem) {
+  #projects-gallery .cs-project-card {
+    grid-column: span 6;
+  }
+  #projects-gallery .cs-picture {
+    height: 26.25rem;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #projects-gallery .cs-content {
+    text-align: left;
+    max-width: 100%;
+    margin-bottom: 4rem;
+  }
+  #projects-gallery .cs-topper,
+  #projects-gallery .cs-title {
+    text-align: left;
+  }
+  #projects-gallery .cs-text {
+    max-width: 46.875rem;
+  }
+  #projects-gallery .cs-project-card {
+    grid-column: span 4;
+  }
+  #projects-gallery .cs-picture {
+    height: 26.25rem;
+  }
+  #projects-gallery .cs-project-title {
+    font-size: 1.375rem;
+  }
+}

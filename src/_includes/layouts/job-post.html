@@ -1,0 +1,148 @@
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/projects.css">
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                  Hero Banner                 -->
+    <!-- ============================================ -->
+
+    <section id="job-hero">
+        <div class="cs-hero-container">
+            <div class="cs-hero-content">
+                <div class="cs-breadcrumb">
+                    <a href="/">Home</a>
+                    <span class="cs-separator">›</span>
+                    <a href="/about#areas-served">Projects</a>
+                    <span class="cs-separator">›</span>
+                    <span class="cs-current">{{ city }}</span>
+                </div>
+                <h1 class="cs-hero-title">{{ title }}</h1>
+                <div class="cs-hero-meta">
+                    <div class="cs-meta-item">
+                        <svg class="cs-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 0C5.243 0 3 2.243 3 5C3 8.25 8 14 8 14C8 14 13 8.25 13 5C13 2.243 10.757 0 8 0ZM8 7C6.895 7 6 6.105 6 5C6 3.895 6.895 3 8 3C9.105 3 10 3.895 10 5C10 6.105 9.105 7 8 7Z" fill="currentColor"/>
+                        </svg>
+                        <span>{{ city }}, {{ state }}</span>
+                    </div>
+                    <div class="cs-meta-item">
+                        <svg class="cs-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 0C3.582 0 0 3.582 0 8C0 12.418 3.582 16 8 16C12.418 16 16 12.418 16 8C16 3.582 12.418 0 8 0ZM8 14C4.686 14 2 11.314 2 8C2 4.686 4.686 2 8 2C11.314 2 14 4.686 14 8C14 11.314 11.314 14 8 14Z" fill="currentColor"/>
+                            <path d="M8 4V8L11 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>{{ date | postDate }}</span>
+                    </div>
+                    {% set serviceTags = tags | serviceTags %}
+                    {% if serviceTags.length > 0 %}
+                    <div class="cs-meta-item">
+                        <svg class="cs-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5 7.5L8.5 1.5C8.367 1.367 8.184 1.3 8 1.3H2C1.448 1.3 1 1.748 1 2.3V8C1 8.184 1.067 8.367 1.2 8.5L7.2 14.5C7.467 14.767 7.867 14.767 8.133 14.5L14.133 8.5C14.4 8.233 14.4 7.833 14.133 7.5H14.5ZM4 5C3.448 5 3 4.552 3 4C3 3.448 3.448 3 4 3C4.552 3 5 3.448 5 4C5 4.552 4.552 5 4 5Z" fill="currentColor"/>
+                        </svg>
+                        <span>{{ serviceTags | join(', ') | title }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% if image %}
+        <div class="cs-hero-image">
+            <picture>
+                <source media="(max-width: 600px)" srcset="{{ image }}">
+                <source media="(min-width: 601px)" srcset="{{ image }}">
+                <img src="{{ image }}" alt="{{ imageAlt }}" width="1920" height="800" loading="eager" decoding="async">
+            </picture>
+            <div class="cs-overlay"></div>
+        </div>
+        {% endif %}
+    </section>
+
+    <!-- ============================================ -->
+    <!--              Project Overview                -->
+    <!-- ============================================ -->
+
+    <section id="job-overview">
+        <div class="cs-container">
+            <div class="cs-content-wrapper">
+                <div class="cs-main-content">
+                    <div class="cs-section-header">
+                        <span class="cs-topper">Project Showcase</span>
+                        <h2 class="cs-title">Project Details</h2>
+                    </div>
+
+                    {% if image %}
+                    <picture class="cs-project-picture">
+                        <source media="(max-width: 600px)" srcset="{{ image }}">
+                        <source media="(min-width: 601px)" srcset="{{ image }}">
+                        <img loading="lazy" decoding="async" src="{{ image }}" alt="{{ imageAlt }}" width="1280" height="720">
+                    </picture>
+                    {% endif %}
+                    
+                    <div class="cs-project-description">
+                        {{ content | safe }}
+                    </div>
+
+                    <div class="cs-highlight-box">
+                        <svg class="cs-highlight-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="24" fill="var(--secondary)" opacity="0.2"/>
+                            <path d="M20 25L22.5 27.5L28 22" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="cs-highlight-content">
+                            <h3 class="cs-highlight-title">Completed to Perfection</h3>
+                            <p class="cs-highlight-text">This project exemplifies our commitment to quality workmanship and customer satisfaction. Every detail was carefully executed to ensure lasting results.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cs-sidebar">
+                    <div class="cs-info-card">
+                        <h3 class="cs-card-title">Project Information</h3>
+                        <div class="cs-info-list">
+                            <div class="cs-info-row">
+                                <span class="cs-info-label">Location</span>
+                                <span class="cs-info-value">{{ city }}, {{ state }}</span>
+                            </div>
+                            <div class="cs-info-row">
+                                <span class="cs-info-label">Address</span>
+                                <span class="cs-info-value">{{ address }}</span>
+                            </div>
+                            <div class="cs-info-row">
+                                <span class="cs-info-label">Services</span>
+                                <span class="cs-info-value">{% set serviceTags = tags | serviceTags %}{% if serviceTags.length > 0 %}{{ serviceTags | join(', ') | title }}{% endif %}</span>
+                            </div>
+                            <div class="cs-info-row">
+                                <span class="cs-info-label">Completed</span>
+                                <span class="cs-info-value">{{ date | postDate }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                  Full Width CTA              -->
+    <!-- ============================================ -->
+
+    <section id="job-cta">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper-secondary">Ready to Get Started?</span>
+                <h2 class="cs-title">Need Similar Work?</h2>
+                <p class="cs-text">
+                    Let us bring the same level of quality and professionalism to your next project. Get a free estimate today.
+                </p>
+                <a href="/contact" class="cs-button-solid">Get Free Estimate</a>
+            </div>
+        </div>
+        <!-- Background Image-->
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="/assets/images/phillyskyline1440crop.webp">
+            <source media="(min-width: 601px)" srcset="/assets/images/phillyskyline1440crop.webp">
+            <img loading="lazy" decoding="async" src="/assets/images/phillyskyline1440crop.webp" alt="Philadelphia skyline" width="1920" height="1280" aria-hidden="true">
+        </picture>
+    </section>
+                                    
+{% endblock %}

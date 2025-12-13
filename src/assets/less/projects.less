@@ -963,4 +963,845 @@
         }
     }
 }
+
+/*-- -------------------------- -->
+<---       Job Post Hero        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #job-hero {
+        padding: 0;
+        position: relative;
+        min-height: (400/16rem);
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        background: var(--primary);
+
+        .cs-hero-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            padding: (48/16rem) (16/16rem) (32/16rem);
+            position: relative;
+            z-index: 10;
+        }
+
+        .cs-hero-content {
+            max-width: (800/16rem);
+        }
+
+        .cs-breadcrumb {
+            margin-bottom: (16/16rem);
+            font-size: (14/16rem);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: (8/16rem);
+
+            a {
+                color: var(--secondary);
+                text-decoration: none;
+                transition: opacity 0.3s;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+
+            .cs-separator {
+                color: var(--bodyTextColorWhite);
+                opacity: 0.5;
+            }
+
+            .cs-current {
+                color: var(--bodyTextColorWhite);
+            }
+        }
+
+        .cs-hero-title {
+            margin: 0 0 (24/16rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.1em;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .cs-hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: (24/16rem);
+        }
+
+        .cs-meta-item {
+            display: flex;
+            align-items: center;
+            gap: (8/16rem);
+            color: var(--bodyTextColorWhite);
+            font-size: (14/16rem);
+            font-weight: 600;
+
+            .cs-icon {
+                width: (16/16rem);
+                height: (16/16rem);
+                color: var(--secondary);
+                flex-shrink: 0;
+            }
+        }
+
+        .cs-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+
+            picture, img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        .cs-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(22, 25, 73, 0.7) 0%, rgba(22, 25, 73, 0.9) 100%);
+            z-index: 2;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #job-hero {
+        min-height: (500/16rem);
+
+        .cs-hero-container {
+            padding: (80/16rem) (24/16rem) (48/16rem);
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #job-hero {
+        min-height: (600/16rem);
+
+        .cs-hero-container {
+            padding: (100/16rem) (40/16rem) (60/16rem);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---    Job Post Overview       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #job-overview {
+        padding: var(--sectionPadding);
+        background-color: #fff;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+        }
+
+        .cs-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: (48/16rem);
+        }
+
+        .cs-main-content {
+            width: 100%;
+        }
+
+        .cs-section-header {
+            margin-bottom: (40/16rem);
+            text-align: center;
+        }
+
+        .cs-topper {
+            margin-bottom: (8/16rem);
+        }
+
+        .cs-title {
+            margin: 0;
+        }
+
+        .cs-project-picture {
+            width: 100%;
+            margin: 0 0 (40/16rem);
+            display: block;
+            border-radius: (16/16rem);
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        .cs-project-description {
+            margin-bottom: (48/16rem);
+
+            p {
+                margin: 0 0 (20/16rem);
+                font-size: (18/16rem);
+                line-height: 1.7em;
+                color: var(--bodyTextColor);
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            ul, ol {
+                margin: (20/16rem) 0;
+                padding-left: (32/16rem);
+
+                li {
+                    margin-bottom: (12/16rem);
+                    font-size: (16/16rem);
+                    line-height: 1.7em;
+                    color: var(--bodyTextColor);
+                }
+            }
+
+            strong {
+                color: var(--headerColor);
+                font-weight: 700;
+            }
+        }
+
+        .cs-highlight-box {
+            padding: (32/16rem);
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            border-left: 4px solid var(--secondary);
+            border-radius: (12/16rem);
+            display: flex;
+            gap: (24/16rem);
+            align-items: flex-start;
+        }
+
+        .cs-highlight-icon {
+            width: (48/16rem);
+            height: (48/16rem);
+            flex-shrink: 0;
+        }
+
+        .cs-highlight-content {
+            flex: 1;
+        }
+
+        .cs-highlight-title {
+            margin: 0 0 (12/16rem);
+            font-size: (20/16rem);
+            line-height: 1.3em;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .cs-highlight-text {
+            margin: 0;
+            font-size: (16/16rem);
+            line-height: 1.6em;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-sidebar {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: (24/16rem);
+        }
+
+        .cs-info-card {
+            padding: (32/16rem);
+            background: #fff;
+            border-radius: (16/16rem);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid var(--primary);
+        }
+
+        .cs-card-title {
+            margin: 0 0 (24/16rem);
+            font-size: (22/16rem);
+            line-height: 1.3em;
+            font-weight: 900;
+            color: var(--headerColor);
+        }
+
+        .cs-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: (20/16rem);
+        }
+
+        .cs-info-row {
+            display: flex;
+            flex-direction: column;
+            gap: (6/16rem);
+            padding-bottom: (20/16rem);
+            border-bottom: 1px solid #e8e8e8;
+
+            &:last-child {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+        }
+
+        .cs-info-label {
+            font-size: (12/16rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+        }
+
+        .cs-info-value {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            font-weight: 600;
+            color: var(--headerColor);
+        }
+
+    }
+}
+
+/*-- -------------------------- -->
+<---         Job CTA            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #job-cta {
+        padding: var(--sectionPadding);
+        position: relative;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally */
+            align-items: center;
+        }
+
+        .cs-topper-secondary {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            text-transform: uppercase;
+            text-align: inherit;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: (4/16rem);
+            display: block;
+        }
+
+        .cs-title {
+            /* 39px - 61px */
+            font-size: clamp(2.4375rem, 6vw, 3.8125rem);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: inherit;
+            /* 23 characters including spaces */
+            max-width: 23ch;
+            margin: 0 0 (16/16rem) 0;
+            color: var(--bodyTextColorWhite);
+            position: relative;
+        }
+
+        .cs-text {
+            /* 16px - 20px */
+            font-size: clamp(1rem, 1.95vw, 1.25rem);
+            line-height: 1.5em;
+            text-align: inherit;
+            width: 100%;
+            /* 464px - 622px */
+            max-width: clamp(29rem, 60vw, 38.875rem);
+            margin: 0;
+            margin-bottom: (32/16rem);
+            color: var(--bodyTextColorWhite);
+            opacity: 0.8;
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            overflow: hidden;
+            margin: 0;
+            color: #000;
+            padding: 0 (28/16rem);
+            background-color: var(--secondary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: (12/16rem);
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s;
+
+            &:before {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 100%;
+                width: 0%;
+                background: var(--primary);
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                color: #fff;
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-picture {
+            height: 100%;
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            &:before {
+                /* black color overlay */
+                content: "";
+                position: absolute;
+                display: block;
+                height: 100%;
+                width: 100%;
+                background: #000;
+                opacity: 0.8;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #job-overview {
+        .cs-section-header {
+            text-align: left;
+        }
+
+        .cs-highlight-box {
+            padding: (40/16rem);
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #job-overview {
+        .cs-content-wrapper {
+            flex-direction: row;
+            gap: (60/16rem);
+        }
+
+        .cs-main-content {
+            width: 65%;
+            flex: none;
+        }
+
+        .cs-sidebar {
+            width: 32%;
+            position: sticky;
+            top: (120/16rem);
+            align-self: flex-start;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #job-hero {
+            background: var(--dark);
+
+            .cs-overlay {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%);
+            }
+        }
+
+        #job-overview {
+            background-color: rgba(0, 0, 0, 0.2);
+
+            .cs-project-picture {
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            }
+
+            .cs-project-description {
+                p, li {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                strong {
+                    color: var(--bodyTextColorWhite);
+                }
+            }
+
+            .cs-highlight-box {
+                background: var(--medium);
+                border-left-color: var(--secondaryLight);
+            }
+
+            .cs-highlight-title {
+                color: var(--primaryLight);
+            }
+
+            .cs-highlight-text {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-info-card {
+                background: var(--medium);
+                border-top-color: var(--primaryLight);
+            }
+
+            .cs-card-title {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-info-label {
+                color: var(--primaryLight);
+            }
+
+            .cs-info-value {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-info-row {
+                border-bottom-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        #job-cta {
+            .cs-topper-secondary {
+                color: var(--secondaryLight);
+            }
+        }
+
+        #projects-gallery {
+            .cs-topper {
+                color: var(--secondaryLight);
+            }
+
+            .cs-title,
+            .cs-text {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-project-card {
+                &:hover {
+                    .cs-picture {
+                        &:before {
+                            background: rgba(0, 0, 0, 0.7);
+                        }
+
+                        img {
+                            opacity: 0.5;
+                        }
+                    }
+
+                    .cs-tag,
+                    .cs-project-title,
+                    .cs-location {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .cs-tag {
+                background-color: var(--primaryLight);
+            }
+
+            .cs-project-title {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-location {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-icon {
+                color: var(--secondaryLight);
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---    Projects Gallery        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #projects-gallery {
+        padding: var(--sectionPadding);
+        background-color: #fff;
+        position: relative;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            max-width: (750/16rem);
+            margin: 0 auto (48/16rem);
+        }
+
+        .cs-topper {
+            margin-bottom: (4/16rem);
+        }
+
+        .cs-title {
+            margin: 0 0 (24/16rem);
+        }
+
+        .cs-text {
+            margin: 0;
+        }
+
+        .cs-no-projects {
+            text-align: center;
+            padding: (80/16rem) 0;
+
+            p {
+                font-size: (18/16rem);
+                color: var(--bodyTextColor);
+            }
+        }
+
+        .cs-gallery {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: clamp(1rem, 1.5vw, 1.25rem);
+        }
+
+        .cs-project-card {
+            text-decoration: none;
+            grid-column: span 12;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border-radius: (8/16rem);
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: translateY(-8px);
+
+                .cs-picture {
+                    &:before {
+                        opacity: 0.4;
+                    }
+
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .cs-tag,
+                .cs-project-title,
+                .cs-location {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .cs-picture {
+            width: 100%;
+            height: clamp(300px, 50vw, 420px);
+            display: block;
+            position: relative;
+            overflow: hidden;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+                opacity: 0.6;
+                z-index: 1;
+                transition: opacity 0.3s;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: transform 0.6s, opacity 0.3s;
+            }
+        }
+
+        .cs-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: (24/16rem);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: (12/16rem);
+        }
+
+        .cs-tag {
+            font-size: (13/16rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: (6/16rem) (12/16rem);
+            color: var(--primary);
+            background-color: var(--secondary);
+            display: inline-block;
+            align-self: flex-start;
+            transform: translateY(10px);
+            opacity: 0.95;
+            transition: transform 0.3s 0.1s, opacity 0.3s;
+        }
+
+        .cs-project-title {
+            font-size: (20/16rem);
+            font-weight: 700;
+            line-height: 1.3em;
+            margin: 0;
+            color: #fff;
+            transform: translateY(10px);
+            opacity: 0.95;
+            transition: transform 0.3s 0.15s, opacity 0.3s;
+        }
+
+        .cs-location {
+            font-size: (14/16rem);
+            line-height: 1.5em;
+            color: var(--bodyTextColorWhite);
+            display: flex;
+            align-items: center;
+            gap: (6/16rem);
+            transform: translateY(10px);
+            opacity: 0.9;
+            transition: transform 0.3s 0.2s, opacity 0.3s;
+
+            span {
+                color: var(--bodyTextColorWhite);
+            }
+        }
+
+        .cs-icon {
+            width: (14/16rem);
+            height: (14/16rem);
+            flex-shrink: 0;
+            color: var(--secondary);
+        }
+    }
+}
+
+/* Tablet - 600px */
+@media only screen and (min-width: 37.5rem) {
+    #projects-gallery {
+        .cs-project-card {
+            grid-column: span 6;
+        }
+
+        .cs-picture {
+            height: (420/16rem);
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #projects-gallery {
+        .cs-content {
+            text-align: left;
+            max-width: 100%;
+            margin-bottom: (64/16rem);
+        }
+
+        .cs-topper,
+        .cs-title {
+            text-align: left;
+        }
+
+        .cs-text {
+            max-width: (750/16rem);
+        }
+
+        .cs-project-card {
+            grid-column: span 4;
+        }
+
+        .cs-picture {
+            height: (420/16rem);
+        }
+
+        .cs-project-title {
+            font-size: (22/16rem);
+        }
+    }
+}
                                 
