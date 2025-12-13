@@ -1,5 +1,5 @@
 ---
-title: "Custom Trex Deck with Glass Railings & TPO Roof in Philadelphia"
+title: "Custom Trex Deck with Glass Railings & TPO Roof in Philadelphia | Hybrid Roofing PA"
 url: "north-st-custom-deck-tpo"
 permalink: "/job-posts/north-st-custom-deck-tpo/"
 description: "Custom Trex deck with all-glass railings and TPO roof installation at 2413 North St, Philadelphia. 20-year warranty on premium roofing system."

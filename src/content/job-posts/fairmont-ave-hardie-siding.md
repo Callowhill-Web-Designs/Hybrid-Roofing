@@ -1,5 +1,5 @@
 ---
-title: "Custom Hardie Board and Batten Siding Installation in Philadelphia"
+title: "Custom Hardie Board and Batten Siding Installation in Philadelphia | Hybrid Roofing PA"
 url: "fairmont-ave-hardie-siding"
 permalink: "/job-posts/fairmont-ave-hardie-siding/"
 description: "Complete siding replacement at 104 Fairmont Ave, Philadelphia featuring custom Hardie board and batten siding with matching soffit installation."

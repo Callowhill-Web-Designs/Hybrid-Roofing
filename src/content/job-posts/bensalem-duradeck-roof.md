@@ -1,5 +1,5 @@
 ---
-title: "Duradeck Roof Installation in Bensalem, PA"
+title: "Duradeck Roof Installation in Bensalem, PA | Hybrid Roofing PA"
 url: "bensalem-duradeck-roof"
 permalink: "/job-posts/bensalem-duradeck-roof/"
 description: "Professional Duradeck waterproof roof deck installation at 325 Chestnutwood Lane, Bensalem PA. Durable, low-maintenance outdoor living space solution."
