@@ -2,6 +2,7 @@
 const pluginEleventyNavigation = require("@11ty/eleventy-navigation");
 const pluginMinifier = require("@sherby/eleventy-plugin-files-minifier");
 const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
+const pluginLlmsTxt = require("eleventy-plugin-llms-txt");
 
 // Configs
 const configCss = require("./src/config/css");
@@ -56,6 +57,13 @@ module.exports = function (eleventyConfig) {
      *  https://www.npmjs.com/package/@quasibit/eleventy-plugin-sitemap
      */
     eleventyConfig.addPlugin(pluginSitemap, configSitemap);
+
+    /**
+     *  LLMS.TXT GENERATOR
+     *  Automatically generates llms.txt and llms-full.txt files for LLM context
+     *  https://github.com/CleverCloud/eleventy-plugin-llms-txt
+     */
+    eleventyConfig.addPlugin(pluginLlmsTxt);
 
     /**
      *  MINIFIER 
