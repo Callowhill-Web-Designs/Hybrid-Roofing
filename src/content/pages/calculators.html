@@ -1,0 +1,228 @@
+---
+title: 'Calculators | Hybrid Roofing PA'
+description: 'Use our roofing calculators to estimate costs for your roofing projects. Get quick and accurate estimates for shingles, flat roofs, siding, and more with Hybrid Roofing PA.'
+preloadImg: '/assets/images/construction.jpg'
+permalink: 'calculators/'
+eleventyNavigation:
+    key: Calculators
+    order: 4300
+    parent: Resources
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/calculators.css">
+    <script src="/assets/js/calculator.js" defer></script>
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">Roofing Cost Calculator</h1>
+        <picture>
+            <source media="(max-width: 600px)" srcset="/assets/images/workersonroof.webp">
+            <source media="(min-width: 601px)" srcset="/assets/images/workersonroof.webp">
+            <img aria-hidden="true" decoding="async" src="/assets/images/workersonroof.webp" alt="construction site" loading="eager" width="2500" height="1667">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                  Calculator                  -->
+    <!-- ============================================ -->
+
+    <section id="calculator-section">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Instant Estimate</span>
+                <h2 class="cs-title">Get Your Roofing Estimate in Seconds</h2>
+                <p class="cs-text">
+                    Enter your project details below to receive an instant cost estimate for your roofing project.
+                </p>
+            </div>
+
+            <div class="cs-calculator-wrapper">
+                <form id="roofingCalculator" class="cs-calculator-form">
+                    <div class="cs-form-group">
+                        <label for="address" class="cs-label">
+                            Property Address
+                            <span class="cs-required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="address" 
+                            name="address" 
+                            class="cs-input" 
+                            placeholder="123 Main Street"
+                            required
+                        >
+                    </div>
+
+                    <div class="cs-form-group">
+                        <label for="zipcode" class="cs-label">
+                            Zip Code
+                            <span class="cs-required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="zipcode" 
+                            name="zipcode" 
+                            class="cs-input" 
+                            placeholder="19123"
+                            pattern="[0-9]{5}"
+                            maxlength="5"
+                            required
+                        >
+                    </div>
+
+                    <div class="cs-form-group">
+                        <label for="roofType" class="cs-label">
+                            Roofing Type
+                            <span class="cs-required">*</span>
+                            <button type="button" class="cs-tooltip-trigger" aria-label="Learn about roofing types">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M10 14V10M10 6H10.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </label>
+                        <div class="cs-tooltip" role="tooltip">
+                            <div class="cs-tooltip-content">
+                                <h4>Roofing Types Explained</h4>
+                                <div class="cs-tooltip-item">
+                                    <strong>Torchdown:</strong> A modified bitumen roofing system applied with a torch. Durable and ideal for flat or low-slope roofs. Common in commercial and residential flat roofs.
+                                </div>
+                                <div class="cs-tooltip-item">
+                                    <strong>Shingles:</strong> Traditional asphalt shingles, the most common residential roofing material. Great for sloped roofs with classic appearance and reliable protection.
+                                </div>
+                                <div class="cs-tooltip-item">
+                                    <strong>TPO:</strong> Thermoplastic Polyolefin, a single-ply roofing membrane. Energy-efficient white roofing ideal for flat commercial roofs and modern homes.
+                                </div>
+                            </div>
+                        </div>
+                        <select 
+                            id="roofType" 
+                            name="roofType" 
+                            class="cs-select" 
+                            required
+                        >
+                            <option value="">Select Roofing Type</option>
+                            <option value="torchdown">Torchdown</option>
+                            <option value="shingles">Shingles</option>
+                            <option value="tpo">TPO</option>
+                        </select>
+                    </div>
+
+                    <div class="cs-form-group">
+                        <label for="squareFootage" class="cs-label">
+                            Roof Square Footage
+                            <span class="cs-required">*</span>
+                        </label>
+                        <input 
+                            type="number" 
+                            id="squareFootage" 
+                            name="squareFootage" 
+                            class="cs-input" 
+                            placeholder="1500"
+                            min="100"
+                            max="50000"
+                            required
+                        >
+                        <small class="cs-help-text">Enter the total square footage of your roof</small>
+                    </div>
+
+                    <button type="submit" class="cs-button-solid">Calculate Estimate</button>
+                </form>
+
+                <div id="calculatorResults" class="cs-results" style="display: none;">
+                    <div class="cs-results-header">
+                        <h3 class="cs-results-title">Your Estimated Cost</h3>
+                        <p class="cs-results-subtitle">Based on your project details</p>
+                    </div>
+                    
+                    <div class="cs-results-body">
+                        <div class="cs-price-range">
+                            <div class="cs-price-item">
+                                <span class="cs-price-label">Low Estimate</span>
+                                <span class="cs-price-value" id="lowEstimate">$0</span>
+                            </div>
+                            <div class="cs-price-divider">-</div>
+                            <div class="cs-price-item">
+                                <span class="cs-price-label">High Estimate</span>
+                                <span class="cs-price-value" id="highEstimate">$0</span>
+                            </div>
+                        </div>
+
+                        <div class="cs-results-details">
+                            <div class="cs-detail-row">
+                                <span class="cs-detail-label">Roofing Type:</span>
+                                <span class="cs-detail-value" id="resultRoofType">-</span>
+                            </div>
+                            <div class="cs-detail-row">
+                                <span class="cs-detail-label">Roof Area:</span>
+                                <span class="cs-detail-value" id="resultSquareFootage">-</span>
+                            </div>
+                            <div class="cs-detail-row">
+                                <span class="cs-detail-label">Material Waste:</span>
+                                <span class="cs-detail-value" id="resultWaste">-</span>
+                            </div>
+                        </div>
+
+                        <div class="cs-results-disclaimer">
+                            <p><strong>Please Note:</strong> This is an estimated range based on typical material and labor costs. Actual pricing may vary based on roof complexity, accessibility, current material costs, and specific project requirements. Contact us for a detailed quote.</p>
+                        </div>
+
+                        <div class="cs-results-actions">
+                            <a href="/contact" class="cs-button-solid">Get Exact Quote</a>
+                            <button type="button" id="resetCalculator" class="cs-button-transparent">Calculate Again</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--               Why Choose Us                 -->
+    <!-- ============================================ -->
+
+    <section id="why-choose-us">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Our Advantage</span>
+                <h2 class="cs-title">Why Work With Hybrid Roofing?</h2>
+                <p class="cs-text">
+                    Professional roofing services backed by expertise and quality craftsmanship.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <img class="cs-icon" src="/assets/svgs/check.svg" alt="checkmark" aria-hidden="true">
+                    <h3 class="cs-h3">Competitive Pricing</h3>
+                    <p class="cs-item-text">Fair, transparent pricing with no hidden fees or surprises.</p>
+                </li>
+                <li class="cs-item">
+                    <img class="cs-icon" src="/assets/svgs/check.svg" alt="checkmark" aria-hidden="true">
+                    <h3 class="cs-h3">Quality Materials</h3>
+                    <p class="cs-item-text">We use only premium roofing materials from trusted manufacturers.</p>
+                </li>
+                <li class="cs-item">
+                    <img class="cs-icon" src="/assets/svgs/check.svg" alt="checkmark" aria-hidden="true">
+                    <h3 class="cs-h3">Expert Installation</h3>
+                    <p class="cs-item-text">Experienced crews ensuring proper installation and lasting results.</p>
+                </li>
+                <li class="cs-item">
+                    <img class="cs-icon" src="/assets/svgs/check.svg" alt="checkmark" aria-hidden="true">
+                    <h3 class="cs-h3">Warranty Protection</h3>
+                    <p class="cs-item-text">Comprehensive warranties on materials and workmanship for peace of mind.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    {% include "components/cta.html" %}
+
+{% endblock %}
