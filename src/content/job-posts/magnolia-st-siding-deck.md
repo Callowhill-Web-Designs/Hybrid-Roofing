@@ -1,5 +1,5 @@
 ---
-title: "Siding Replacement and Deck Rebuild with Duradeck in Philadelphia | Hybrid Roofing PA"
+title: "Siding Replacement and Deck Rebuild with Duradeck in Philadelphia | Hybrid Roofing & Renovations LLC"
 url: "magnolia-st-siding-deck"
 permalink: "/job-posts/magnolia-st-siding-deck/"
 description: "Complete siding replacement and deck rebuild at 6532 Magnolia St, Philadelphia with waterproof Duradeck roof installation. Expert exterior renovation."

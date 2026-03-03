@@ -1,5 +1,5 @@
 ---
-title: "Stucco Remediation and Entry Door Installation in Philadelphia | Hybrid Roofing PA"
+title: "Stucco Remediation and Entry Door Installation in Philadelphia | Hybrid Roofing & Renovations LLC"
 url: "kater-st-stucco-door"
 permalink: "/job-posts/kater-st-stucco-door/"
 description: "Professional stucco remediation and new door installation at 900 Kater St, Philadelphia. Expert moisture mitigation and exterior upgrade."

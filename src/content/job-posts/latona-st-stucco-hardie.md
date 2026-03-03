@@ -1,5 +1,5 @@
 ---
-title: "Stucco Remediation with Custom Hardie Architectural Panels in Philadelphia | Hybrid Roofing PA"
+title: "Stucco Remediation with Custom Hardie Architectural Panels in Philadelphia | Hybrid Roofing & Renovations LLC"
 url: "latona-st-stucco-hardie"
 permalink: "/job-posts/latona-st-stucco-hardie/"
 description: "Professional stucco remediation at 1201 Latona St, Philadelphia with custom Hardie architectural panels, custom paint finish, planter box, and new Provia door."

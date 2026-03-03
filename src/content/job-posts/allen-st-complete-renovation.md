@@ -1,5 +1,5 @@
 ---
-title: "Complete Exterior Renovation: Siding, Deck & TPO Roof in Philadelphia | Hybrid Roofing PA"
+title: "Complete Exterior Renovation: Siding, Deck & TPO Roof in Philadelphia | Hybrid Roofing & Renovations LLC"
 url: "allen-st-complete-renovation"
 permalink: "/job-posts/allen-st-complete-renovation/"
 description: "Full exterior renovation at 229 Allen St, Philadelphia featuring new siding, rebuilt Duradeck roof deck, TPO pilot house roof, custom glass door, and wrought iron railings."
