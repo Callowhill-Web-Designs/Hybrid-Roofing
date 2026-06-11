@@ -98,6 +98,7 @@
     height: 100%;
     z-index: 1;
     overflow: hidden;
+    pointer-events: none;
   }
   #hero .cs-circle {
     position: absolute;
