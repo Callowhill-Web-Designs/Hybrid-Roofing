@@ -1,0 +1,449 @@
+---
+title: 'Free Storm Damage Roof Quote | Hybrid Roofing & Renovations'
+description: 'Worried about storm damage to your roof? Get a FREE expert roof quote from Hybrid Roofing & Renovations. Serving Philadelphia, PA and surrounding areas. Schedule today.'
+preloadImg: '/assets/images/storm-hero.webp'
+permalink: 'storm-inspection/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/storm-inspection.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                   Hero                       -->
+    <!-- ============================================ -->
+
+    <section id="storm-hero">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Free Roof Quote — No Obligation</span>
+                <h1 class="cs-title">
+                    Worried About Storm Damage
+                    to Your Roof? <span class="cs-accent">We've Got You Covered.</span>
+                </h1>
+                <p class="cs-text">
+                    Don't wait for a small crack or missing shingle to become a costly disaster. Our licensed experts will inspect your entire roof completely free and give you a straight answer about its condition.
+                </p>
+                <div class="cs-button-group">
+                    <a href="#storm-form" class="cs-button-solid">Get My Free Quote</a>
+                    <a href="tel:{{client.phoneForTel}}" class="cs-button-transparent">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.6.57 1 1 0 011 1V21a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        Call {{client.phoneFormatted}}
+                    </a>
+                </div>
+                <div class="cs-trust-strip">
+                    <span class="cs-trust-item">4.9★ Google Rating</span>
+                    <div class="cs-trust-divider" aria-hidden="true"></div>
+                    <span class="cs-trust-item">72+ Verified Reviews</span>
+                    <div class="cs-trust-divider" aria-hidden="true"></div>
+                    <span class="cs-trust-item">Licensed &amp; Insured</span>
+                    <div class="cs-trust-divider" aria-hidden="true"></div>
+                    <span class="cs-trust-item">Philadelphia &amp; Surrounding Areas</span>
+                </div>
+            </div>
+        </div>
+        <div class="cs-overlay" aria-hidden="true"></div>
+        <picture class="cs-background" aria-hidden="true">
+            <source media="(max-width: 600px)" srcset="/assets/images/storm-hero-m.webp">
+            <source media="(min-width: 601px)" srcset="/assets/images/storm-hero.webp">
+            <img decoding="async" src="/assets/images/storm-hero.webp" alt="Lightning storm over a residential neighborhood" loading="eager" width="1920" height="1262">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                Urgency Band                  -->
+    <!-- ============================================ -->
+
+    <div id="urgency-band" role="alert">
+        <div class="cs-container">
+            <span class="cs-band-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd"/>
+                </svg>
+            </span>
+            <p class="cs-band-text">
+                <strong>Storm damage claims typically have a 1-year deadline in Pennsylvania.</strong>
+                Act now to protect your home and your insurance benefits.
+                <a class="cs-band-link" href="#storm-form">Schedule your free quote today.</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!--              Why Act Now                     -->
+    <!-- ============================================ -->
+
+    <section id="why-act-now">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Don't Delay</span>
+                <h2 class="cs-title">Storm Damage Gets Worse — Fast</h2>
+                <p class="cs-text">
+                    Even minor storm damage can quickly lead to expensive repairs if left unchecked. Here's why acting quickly matters:
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item cs-danger">
+                    <div class="cs-icon-wrap" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="cs-h3">Hidden Damage You Can't See</h3>
+                    <p class="cs-item-text">
+                        Hail, wind, and heavy rain cause damage that's invisible from the ground. Cracked seals, lifted shingles, and compromised flashing often go unnoticed until a leak forms, sometimes months later.
+                    </p>
+                </li>
+                <li class="cs-item cs-warning">
+                    <div class="cs-icon-wrap" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="cs-h3">Insurance Claim Deadlines</h3>
+                    <p class="cs-item-text">
+                        Most homeowners insurance policies require you to file storm damage claims within a specific window. Waiting too long can mean losing coverage you've already paid for.
+                    </p>
+                </li>
+                <li class="cs-item cs-info">
+                    <div class="cs-icon-wrap" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.25c-.31 0-.595.143-.78.388C9.565 4.8 4.5 11.37 4.5 15a7.5 7.5 0 0015 0c0-3.63-5.065-10.2-6.72-12.362A.975.975 0 0012 2.25z"/>
+                        </svg>
+                    </div>
+                    <h3 class="cs-h3">Small Leaks Become Big Problems</h3>
+                    <p class="cs-item-text">
+                        A pinhole leak or a few lifted shingles can allow water intrusion that damages insulation, drywall, and structural framing. Catching it early saves thousands.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--           What We Inspect                    -->
+    <!-- ============================================ -->
+
+    <section id="inspection-details">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">100% Free — No Strings Attached</span>
+                <h2 class="cs-title">What's Included in Your Free Quote</h2>
+                <p class="cs-text">
+                    Our experienced team performs a thorough, top-to-bottom evaluation of your entire roof system. You'll receive an honest report, whether you need work done or not.
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li">Shingle condition &amp; granule loss assessment</li>
+                    <li class="cs-li">Flashing integrity (chimney, vents, skylights)</li>
+                    <li class="cs-li">Gutter &amp; downspout check</li>
+                    <li class="cs-li">Ridge cap &amp; hip check</li>
+                    <li class="cs-li">Fascia &amp; soffit evaluation</li>
+                    <li class="cs-li">Attic ventilation check</li>
+                    <li class="cs-li">Structural sagging or ponding areas</li>
+                    <li class="cs-li">Photo documentation of all findings</li>
+                    <li class="cs-li">Written summary with next-step options</li>
+                    <li class="cs-li">Insurance claim assistance guidance</li>
+                </ul>
+                <a href="#storm-form" class="cs-button-solid">Schedule My Free Quote</a>
+            </div>
+            <div class="cs-picture-wrapper">
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="/assets/images/finishedroof1.webp">
+                    <source media="(min-width: 601px)" srcset="/assets/images/finishedroof1.webp">
+                    <img loading="lazy" decoding="async" src="/assets/images/finishedroof1.webp" alt="Hybrid Roofing completed roof inspection" width="800" height="600">
+                </picture>
+                <span class="cs-badge">100% Free · No Obligation</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            How It Works                      -->
+    <!-- ============================================ -->
+
+    <section id="how-it-works">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Simple 4-Step Process</span>
+                <h2 class="cs-title">Getting Your Free Quote Is Easy</h2>
+                <p class="cs-text">From first contact to final report, we make the whole process stress-free.</p>
+            </div>
+            <ol class="cs-steps">
+                <li class="cs-step">
+                    <div class="cs-step-num" aria-hidden="true">1</div>
+                    <div class="cs-step-content">
+                        <h3 class="cs-step-title">Submit the Form Below</h3>
+                        <p class="cs-step-text">Fill out the quick form with your contact info and a brief description of your concern.</p>
+                    </div>
+                </li>
+                <li class="cs-step">
+                    <div class="cs-step-num" aria-hidden="true">2</div>
+                    <div class="cs-step-content">
+                        <h3 class="cs-step-title">We Schedule &amp; Come to You</h3>
+                        <p class="cs-step-text">We'll call you within 48 hours to schedule a convenient time. Our crew comes to your home.</p>
+                    </div>
+                </li>
+                <li class="cs-step">
+                    <div class="cs-step-num" aria-hidden="true">3</div>
+                    <div class="cs-step-content">
+                        <h3 class="cs-step-title">Thorough On-Site Assessment</h3>
+                        <p class="cs-step-text">Our licensed roofer inspects every inch with photos and a detailed written report.</p>
+                    </div>
+                </li>
+                <li class="cs-step">
+                    <div class="cs-step-num" aria-hidden="true">4</div>
+                    <div class="cs-step-content">
+                        <h3 class="cs-step-title">Honest Report &amp; Free Estimate</h3>
+                        <p class="cs-step-text">You get a clear summary of findings and a no-pressure estimate, only if repairs are needed.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              Social Proof                    -->
+    <!-- ============================================ -->
+
+    <section id="social-proof">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Real Philadelphia Homeowners</span>
+                <h2 class="cs-title">What Our Customers Are Saying</h2>
+                <div class="cs-rating-row">
+                    <span class="cs-stars" aria-label="5 stars">★★★★★</span>
+                    <span class="cs-rating-text">4.9 / 5</span>
+                </div>
+                <p class="cs-reviews-count">Based on 72+ Google Reviews</p>
+            </div>
+            <ul class="cs-review-group">
+                <li class="cs-review-item">
+                    <div class="cs-review-stars" aria-label="5 stars">★★★★★</div>
+                    <p class="cs-review-text">
+                        "After the storm last spring I wasn't sure if we had damage. Hybrid came out the same week, gave us a full quote with photos, and found two spots that needed immediate attention. Saved us from a major leak. Couldn't recommend them more."
+                    </p>
+                    <div class="cs-reviewer">
+                        <div class="cs-reviewer-avatar" aria-hidden="true">M</div>
+                        <div class="cs-reviewer-info">
+                            <span class="cs-reviewer-name">Mark T.</span>
+                            <span class="cs-reviewer-location">Northeast Philadelphia</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="cs-review-item">
+                    <div class="cs-review-stars" aria-label="5 stars">★★★★★</div>
+                    <p class="cs-review-text">
+                        "Hybrid Roofing was honest from the start. They actually told me my roof was in good shape and didn't try to sell me anything I didn't need. That kind of integrity is rare. Will definitely use them when the time comes."
+                    </p>
+                    <div class="cs-reviewer">
+                        <div class="cs-reviewer-avatar" aria-hidden="true">S</div>
+                        <div class="cs-reviewer-info">
+                            <span class="cs-reviewer-name">Sandra R.</span>
+                            <span class="cs-reviewer-location">Bensalem, PA</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="cs-review-item">
+                    <div class="cs-review-stars" aria-label="5 stars">★★★★★</div>
+                    <p class="cs-review-text">
+                        "Fast, professional, and thorough. They helped me understand what my insurance would cover and walked me through the whole repair process. The crew was respectful and cleaned up completely after the job."
+                    </p>
+                    <div class="cs-reviewer">
+                        <div class="cs-reviewer-avatar" aria-hidden="true">J</div>
+                        <div class="cs-reviewer-info">
+                            <span class="cs-reviewer-name">James K.</span>
+                            <span class="cs-reviewer-location">Abington, PA</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              Quote Form                      -->
+    <!-- ============================================ -->
+
+    <section id="storm-form">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Get Started Today — It's Free</span>
+                <h2 class="cs-title">Schedule Your Free Roof Quote</h2>
+                <p class="cs-text">
+                    Fill out the form below and we'll be in touch within 48 hours to schedule your quote at a time that works for you.
+                </p>
+            </div>
+            <div class="cs-form-card">
+                <form
+                    class="cs-form"
+                    id="storm-inspection-form"
+                    name="Storm Quote Form"
+                    method="post"
+                    data-netlify="true"
+                    data-netlify-honeypot="website"
+                    data-netlify-recaptcha="true"
+                >
+                    <!-- Honeypot -->
+                    <label class="cs-label-select">
+                        Website
+                        <input class="cs-input" type="text" name="website" tabindex="-1" autocomplete="off">
+                    </label>
+
+                    <!-- Hidden form-name for Netlify -->
+                    <input type="hidden" name="form-name" value="Storm Quote Form">
+
+                    <!-- Name + Phone -->
+                    <label class="cs-label cs-half">
+                        <span>Full Name <span class="cs-required" aria-hidden="true">*</span></span>
+                        <input
+                            class="cs-input"
+                            required
+                            type="text"
+                            id="si-name"
+                            name="name"
+                            placeholder="Jane Smith"
+                            autocomplete="name"
+                            maxlength="100"
+                        >
+                    </label>
+                    <label class="cs-label cs-half">
+                        <span>Phone Number <span class="cs-required" aria-hidden="true">*</span></span>
+                        <input
+                            class="cs-input"
+                            required
+                            type="tel"
+                            id="si-phone"
+                            name="phone"
+                            placeholder="(215) 555-0123"
+                            autocomplete="tel"
+                            maxlength="14"
+                        >
+                    </label>
+
+                    <!-- Email -->
+                    <label class="cs-label">
+                        <span>Email Address <span class="cs-required" aria-hidden="true">*</span></span>
+                        <input
+                            class="cs-input"
+                            required
+                            type="email"
+                            id="si-email"
+                            name="email"
+                            placeholder="jane@example.com"
+                            autocomplete="email"
+                            maxlength="254"
+                        >
+                    </label>
+
+                    <!-- Property Address -->
+                    <label class="cs-label">
+                        <span>Property Address <span class="cs-required" aria-hidden="true">*</span></span>
+                        <input
+                            class="cs-input"
+                            required
+                            type="text"
+                            id="si-address"
+                            name="address"
+                            placeholder="123 Main St, Philadelphia, PA 19136"
+                            autocomplete="street-address"
+                            maxlength="200"
+                        >
+                    </label>
+
+                    <!-- Storm / Damage Type -->
+                    <label class="cs-label cs-half">
+                        Type of Storm or Damage
+                        <select class="cs-input cs-select" name="storm-type" id="si-storm-type">
+                            <option value="" disabled selected>Select one...</option>
+                            <option value="hail">Hail Damage</option>
+                            <option value="wind">Wind / High Winds</option>
+                            <option value="fallen-tree">Fallen Tree or Debris</option>
+                            <option value="heavy-rain">Heavy Rain / Flooding</option>
+                            <option value="ice-snow">Ice / Snow / Freeze</option>
+                            <option value="unknown">Not Sure / General Concern</option>
+                        </select>
+                    </label>
+
+                    <!-- Urgency -->
+                    <label class="cs-label cs-half">
+                        How Soon Do You Need This?
+                        <select class="cs-input cs-select" name="urgency" id="si-urgency">
+                            <option value="" disabled selected>Select one...</option>
+                            <option value="asap">As soon as possible</option>
+                            <option value="this-week">This week</option>
+                            <option value="next-week">Next week</option>
+                            <option value="flexible">I'm flexible</option>
+                        </select>
+                    </label>
+
+                    <!-- Message -->
+                    <label class="cs-label">
+                        Describe What You've Noticed (Optional)
+                        <textarea
+                            class="cs-input cs-textarea"
+                            name="message"
+                            id="si-message"
+                            placeholder="E.g. missing shingles after last Thursday's storm, small water stain on ceiling..."
+                            maxlength="1500"
+                            rows="4"
+                        ></textarea>
+                    </label>
+
+                    <!-- reCAPTCHA -->
+                    <div style="width:100%;display:flex;justify-content:center;margin: 0.5rem 0;">
+                        <div data-netlify-recaptcha="true"></div>
+                    </div>
+
+                    <div class="cs-form-divider" aria-hidden="true"></div>
+
+                    <!-- Submit -->
+                    <div class="cs-submit-wrap">
+                        <button class="cs-submit" type="submit">
+                            Schedule My Free Quote
+                        </button>
+                        <p class="cs-submit-note">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z" clip-rule="evenodd"/>
+                            </svg>
+                            Your information is secure. We respond within 48 hours and will never share your data.
+                        </p>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="cs-form-trust">
+                        <span class="cs-trust-badge">Licensed &amp; Insured</span>
+                        <span class="cs-trust-badge">No Obligation</span>
+                        <span class="cs-trust-badge">Local Philadelphia Company</span>
+                        <span class="cs-trust-badge">4.9★ Google Rating</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inline script: phone formatting for landing page form -->
+    <script>
+        (function () {
+            var phone = document.getElementById('si-phone');
+            if (!phone) return;
+            phone.addEventListener('input', function (e) {
+                var v = e.target.value.replace(/\D/g, '').substring(0, 10);
+                if (v.length >= 7) {
+                    v = '(' + v.substring(0, 3) + ') ' + v.substring(3, 6) + '-' + v.substring(6);
+                } else if (v.length >= 4) {
+                    v = '(' + v.substring(0, 3) + ') ' + v.substring(3);
+                } else if (v.length > 0) {
+                    v = '(' + v;
+                }
+                e.target.value = v;
+            });
+        })();
+    </script>
+
+{% endblock %}
